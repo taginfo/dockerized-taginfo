@@ -6,9 +6,9 @@ services:
 before_install:
   - docker-compose -v
   - docker -v
-	- docker pull ruby:2.5-alpine3.7
-	- docker pull mdillon/postgis:10
-	- docker pull ubuntu:18.04
+  - docker pull ruby:2.5-alpine3.7
+  - docker pull mdillon/postgis:10
+  - docker pull ubuntu:18.04
   - docker images
   
 script:
