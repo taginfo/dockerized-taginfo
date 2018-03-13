@@ -33,6 +33,7 @@ down:
 	docker-compose down
 
 testdatainit:
+	mkdir -p ./ne
 	cp ./testdata/planet.osm.pbf  ./import_admin/
 	cp ./testdata/NE1_50M_SR.zip  ./ne/
 	cd ./ne && unzip NE1_50M_SR.zip  
