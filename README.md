@@ -2,7 +2,7 @@
 
 Work in progress .. 
 
-Development site: [http://taginfo-dev.opengeodata.hu](taginfo-dev.opengeodata.hu)
+Development site: http://taginfo-dev.opengeodata.hu
 * http://taginfo-dev.opengeodata.hu/africa/                  ~ 65 Taginfo service   
 * http://taginfo-dev.opengeodata.hu/antarctica/           ~  1 Taginfo service
 * http://taginfo-dev.opengeodata.hu/central-america/  ~ 33 Taginfo service
