@@ -1,0 +1,103 @@
+baseURL = "http://taginfo-dev.opengeodata.hu"
+languageCode = "en-us"
+title = "Dockerized taginfo - development site"
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+
+buildDrafts = true
+
+[params]
+	# General information
+	author = "Digitalcraftsman"
+	description = "A material design theme for documentations."
+	copyright = "Released under the GPL-3.0 license"
+
+	# Repository
+	provider = "GitHub"
+	repo_url = "https://github.com/taginfo/dockerized-taginfo"
+
+	version = "0.0.1"
+	logo = "/images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "green"
+    	accent  = "teal"
+
+[social]
+	twitter = ""
+	github  = "taginfo/dockerized-taginfo"
+
+
+[[menu.main]]
+	name   = "--About--"
+	url    = "/"
+	weight = 1
+
+[[menu.main]]
+	name   = "Africa"
+	url    = "africa"
+	weight = 10
+
+[[menu.main]]
+	name   = "Antarctica"
+	url    = "antarctica"
+	weight = 11
+
+[[menu.main]]
+	name   = "Asia"
+	url    = "asia"
+	weight = 12
+
+[[menu.main]]
+	name   = "Australia and Oceania"
+	url    = "australia-oceania"
+	weight = 13
+
+
+[[menu.main]]
+	name   = "Europe"
+	url    = "europe"
+	weight = 14
+
+
+[[menu.main]]
+	name   = "North America"
+	url    = "north-america"
+	weight = 15
+
+[[menu.main]]
+	name   = "Central America"
+	url    = "central-america"
+	weight = 16
+
+[[menu.main]]
+	name   = "South America"
+	url    = "south-america"
+	weight = 17
+
+[[menu.main]]
+	name   = "Russia"
+	url    = "russia"
+	weight = 18
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
+
