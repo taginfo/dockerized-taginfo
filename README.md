@@ -1,11 +1,5 @@
-# Dockerizing the OSM Taginfo  
+# Dockerizing Taginfo   
 
-Work in progress ..
-Not ready!
+Work in progress ..   Not ready!
+[![Build Status](https://secure.travis-ci.org/taginfo/dockerized-taginfo.png)](https://travis-ci.org/taginfo/dockerized-taginfo)
 
-# Developer/Test system
-  * sometimes works
-
-# Roadmap
-
-# 
