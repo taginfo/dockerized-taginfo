@@ -1,7 +1,8 @@
 # Dockerizing Taginfo [![Build Status](https://secure.travis-ci.org/taginfo/dockerized-taginfo.png)](https://travis-ci.org/taginfo/dockerized-taginfo)
 
-Work in progress ..   Not ready!
+Work in progress .. 
 
+Development site: [taginfo-dev.opengeodata.hu](taginfo-dev.opengeodata.hu)
 
 # Testing:
 
@@ -90,14 +91,14 @@ geofabrik continent | short continent code | first port |
 
 # Taginfo customisations:
 
-* taginfo customised for smaller extracts - showing data problems on the long tails
+* taginfo customized for smaller extracts - showing data problems on the long tails
 * ....
 
 # License:
 
 * Config files derived from OpenStreetMap data ( ODBL )
-* Program code : GPL3
-
+* Program code, taginfo customisations : GPL3 
+* [Hugo-material-docs theme](https://github.com/digitalcraftsman/hugo-material-docs): MIT License
 # Credits:
 
 * OpenStreetMap contributors and community
@@ -107,7 +108,7 @@ geofabrik continent | short continent code | first port |
 * https://github.com/osmcode/osmium-tool
 * https://github.com/omniscale/imposm3  
 * NaturalEarth data : http://www.naturalearthdata.com/ 
-* and other Open Source projects ( linux, posgis, postgresql, osgeo, python, docker, etc )
+* and other Open Source projects ( linux, posgis, postgresql, osgeo, python, docker, hugo, caddy, nginx-proxy, etc )
 
 # Be careful!
 * This is an experimental software, test on a new VPS 
