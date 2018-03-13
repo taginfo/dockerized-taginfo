@@ -1,0 +1,51 @@
+# generated : {{utcnow}}  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT={{continent}}
+     - CONTINENT_LONG={{continent_long}}
+
+
+{% for item in items %}
+  #---------------------------------------------------------
+  # Service for : "{{item.iso}}" - "{{item.name_en}}"
+  #            continent: "{{continent}}"
+  #
+  taginfo-job-{{continent}}-{{item.iso}}:
+    image: taginfo_job
+    networks:
+      - taginfo    
+    volumes:
+     - ./{{item.iso}}/data:/osm/data
+     - ./{{item.iso}}/download:/osm/download
+     - ./{{item.iso}}/sources:/osm/sources
+     - ./{{item.iso}}:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID={{item.iso}}
+     - AREA_NAME="{{item.name_en}}"
+     - GDNAME={{item.gdname}}     
+     - CONTINENT={{continent}}
+     - CONTINENT_LONG={{continent_long}}
+
+{% endfor %}
+
+# generated : {{utcnow}}  

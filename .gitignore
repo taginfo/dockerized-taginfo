@@ -1,0 +1,16 @@
+# Data files
+import/
+export/
+service/zz
+caddy/
+postgres_data/
+dev_data/
+ne/
+
+import_admin/admin23456iso.osm.pbf
+import_admin/central-america.kml
+import_admin/planet_ids.txt
+
+_*
+
+

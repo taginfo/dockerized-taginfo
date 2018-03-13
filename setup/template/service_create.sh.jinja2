@@ -1,0 +1,6 @@
+# generated : {{utcnow}}  // template : ./setup/service_create.sh.jinja2
+
+{% for item in items %}
+ docker-compose create taginfo-{{continent}}-{{item.iso}}{% endfor %}
+ 
+# generated : {{utcnow}}

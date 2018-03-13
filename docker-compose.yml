@@ -1,0 +1,58 @@
+
+##version: '2'
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+#volumes:
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+  db:
+    image: mdillon/postgis:10
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    tmpfs:
+     - /tmp
+    networks:
+      - taginfo     
+    environment:
+     - POSTGRES_DB=osm
+     - POSTGRES_USER=osm
+     - POSTGRES_PASSWORD=osm
+
+  taginfo_dev:
+    image: taginfo_job
+    volumes:
+     - ./hugo:/osm/hugo
+     - ./caddy:/osm/caddy
+     - ./ne:/osm/ne
+     - ./dev_data/ca/ni/data:/osm/data
+     - ./dev_data/ca/ni:/osm/cfg
+     - ./dev_data:/osm/taginfo_data
+     - ./import:/osm/import
+     - ./import_admin:/osm/import_admin
+     - ./service:/osm/service
+     - ./setup:/osm/setup
+     - ./sh:/osm/sh
+    environment:
+     - INPUT_OSM=central-america-latest.osm.pbf
+     - AREA_ID=ni
+    links:
+     - db:db
+    networks:
+      - taginfo     
+    environment:
+     - PGHOST=db
+     - PGUSER=osm
+     - PGDATABASE=osm
+     - PGPASSWORD=osm
+
+

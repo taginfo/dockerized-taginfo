@@ -1,0 +1,16 @@
+# generated : {{utcnow}}  // template : ./setup/template/Makefile.jinja2
+
+down:
+	docker-compose down
+
+clean:
+	docker-compose rm -f -v
+
+{% for item in items %}
+taginfo-{{continent}}-{{item.iso}}:
+	@echo " Start test  {{continent}}-{{item.iso}} :: {{item.name_en}}     ::     mapped local port after finishing   127.0.0.1:{{item.port_order}}"
+	docker-compose  -f docker-compose-job.yml  run     --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/startlocal.sh 
+	docker-compose up taginfo-{{continent}}-{{item.iso}}
+{% endfor %}
+
+# generated : {{utcnow}}

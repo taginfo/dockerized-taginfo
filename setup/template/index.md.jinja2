@@ -1,0 +1,14 @@
+
+---
+title: "{{continent_long}}"
+---
+
+Work in progress!  Temporary links! 
+
+iso             | Country [en]   | taginfo url    |  Country        
+----------------|----------------|----------------| -------------
+{% for item in items -%}
+{{item.iso}} | {{item.name_en}}  | [{{continent}}-{{item.iso}}.{{domain}}](http://{{continent}}-{{item.iso}}.{{domain}}) |   {{item.name}} 
+{% endfor %}
+
+Generated from Geofabrik Extract [http://download.geofabrik.de/{{continent_long}}.html](http://download.geofabrik.de/{{continent_long}}.html)

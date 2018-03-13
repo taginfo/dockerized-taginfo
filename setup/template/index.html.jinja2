@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Taginfo for countries </title>
+	</head>
+	<body>
+
+    <br> Continent: {{continent}}
+    <br>
+    
+    {% for item in items %}
+     <br>   <a href="http://{{continent}}-{{item.iso}}.localhost"> {{continent}}-{{item.iso}} Taginfo for - {{item.name_en}} </a>  
+     {% endfor %}
+
+	</body>
+</html>

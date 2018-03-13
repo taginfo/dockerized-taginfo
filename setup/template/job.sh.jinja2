@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# generated : {{utcnow}}  // template : ./setup/template/job.sh.jinja2
+
+#######################################
+##  Download
+######################################
+
+time docker-compose  -f docker-compose-job.yml  run  --rm taginfo_download  /osm/sh/osm_download_continent.sh
+
+#######################################
+##  Run services processing - step by step 
+#######################################
+
+{% for item in items %}
+docker-compose  -f docker-compose-job.yml run --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/service_process.sh && docker-compose restart taginfo-{{continent}}-{{item.iso}} {% endfor %}
+
+# generated : {{utcnow}}

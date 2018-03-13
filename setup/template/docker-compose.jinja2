@@ -1,0 +1,33 @@
+# generated : {{utcnow}}  // template : ./setup/template/docker-compose.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+{% for item in items %}
+  #---------------------------------------------------------
+  # Service for : "{{item.iso}}"-"{{item.name_en}}" + {{domain}}
+  #               continent: "{{continent}}"
+
+  taginfo-{{continent}}-{{item.iso}}:
+    restart: always
+    image: taginfo_view
+    ports:
+      - "{{item.port_order}}:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST={{continent}}-{{item.iso}}.{{domain}}
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT={{item.port_order}}
+    volumes:
+     - ./{{item.iso}}/data:/osm/data
+     - ./{{item.iso}}/download:/osm/download
+     - ./{{item.iso}}:/osm/cfg
+     - ../../sh:/osm/sh:ro
+{% endfor %}
+
+# generated : {{utcnow}}  // template : /setup/docker-compose.jinja2

@@ -1,0 +1,76 @@
+use_single_id_space: true
+
+tables:
+  admin:
+    fields:
+    - name: id
+      type: id
+
+    - key: admin_level
+      name: admin_level
+      type: integer
+
+    - key: name
+      name: name
+      type: string
+
+    - key: int_name
+      name: int_name
+      type: string
+
+    - key: official_name
+      name: official_name
+      type: string
+
+    - key: 'name:en'
+      name: name_en
+      type: string
+
+    - key: maritime
+      name: maritime
+      type: string
+
+    - key: border_type
+      name: border_type
+      type: string
+
+    - key: 'ISO3166-1'
+      name: iso3166_1
+      type: string   
+
+    - key: 'ISO3166-2'
+      name: iso3166_2
+      type: string
+
+    - key: 'ISO3166-1:alpha3'
+      name: iso3166_1alpha3
+      type: string   
+      
+    - key: wikipedia
+      name: wikipedia
+      type: string
+
+    - key: wikidata
+      name: wikidata
+      type: string     
+
+    - key: flag
+      name: flag
+      type: string
+
+    - key: boundary
+      name: boundary
+      type: string
+
+    - name: geometry
+      type: geometry   
+         
+    mapping:
+      admin_level:
+      - '2'  
+      - '3'      
+      - '4'  
+      - '5'   
+      - '6'                               
+    type: polygon
+
