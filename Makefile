@@ -70,7 +70,16 @@ genservices:
 	./taginfo_genconfig.sh  south-america      sa  26000
 
 
-
+runservices:
+	./taginfo_run_service_refresh.sh  africa             af  10000
+	./taginfo_run_service_refresh.sh  antarctica         aq  12000
+	./taginfo_run_service_refresh.sh  asia               as  14000
+	./taginfo_run_service_refresh.sh  australia-oceania  ao  16000
+	./taginfo_run_service_refresh.sh  central-america    ca  18000
+	./taginfo_run_service_refresh.sh  europe             eu  20000
+	./taginfo_run_service_refresh.sh  north-america      na  22000
+	./taginfo_run_service_refresh.sh  russia             ru  24000
+	./taginfo_run_service_refresh.sh  south-america      sa  26000
 
 
 
