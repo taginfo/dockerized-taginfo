@@ -83,11 +83,13 @@ def run_config_gen():
             gentemplate(items,            'template/service_create.sh.jinja2',     '/osm/service/'+ CONTINENT +'/' ,   'config_all_service_create.sh.txt'   )
             gentemplate(items,            'template/service_up.sh.jinja2',         '/osm/service/'+ CONTINENT +'/' ,   'config_all_service_up.sh.txt'   )
             gentemplate(items,            'template/service_down.sh.jinja2',       '/osm/service/'+ CONTINENT +'/' ,   'config_all_service_down.sh.txt'   )
+            gentemplate(items,            'template/service_restart.sh.jinja2',    '/osm/service/'+ CONTINENT +'/' ,   'config_all_service_restart.sh.txt'   )
 
             gentemplate(items_tagservice, 'template/job.sh.jinja2',                '/osm/service/'+ CONTINENT +'/' ,   'service_job.sh'   )
             gentemplate(items_tagservice, 'template/service_create.sh.jinja2',     '/osm/service/'+ CONTINENT +'/' ,   'service_create.sh'   )
             gentemplate(items_tagservice, 'template/service_up.sh.jinja2',         '/osm/service/'+ CONTINENT +'/' ,   'service_up.sh'   )
             gentemplate(items_tagservice, 'template/service_down.sh.jinja2',       '/osm/service/'+ CONTINENT +'/' ,   'service_down.sh'   )
+            gentemplate(items_tagservice, 'template/service_restart.sh.jinja2',    '/osm/service/'+ CONTINENT +'/' ,   'service_restart.sh'   )
 
             gentemplate(items_tagservice, 'template/index.md.jinja2',              '/osm/service/'+ CONTINENT +'/' ,   'service_index.md'   )
 
