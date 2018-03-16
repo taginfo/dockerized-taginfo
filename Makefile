@@ -36,15 +36,14 @@ testdatainit:
 	mkdir -p ./ne
 	cp ./testdata/planet.osm.pbf  ./import_admin/
 	cp ./testdata/NE1_50M_SR.zip  ./ne/
-	cd ./ne && unzip NE1_50M_SR.zip  
+	cd ./ne && unzip -o NE1_50M_SR.zip  
 	cp ./ne/NE1_50M_SR/NE1_50M_SR.tif  ./ne/ne.tif
 	cp ./ne/NE1_50M_SR/NE1_50M_SR.prj  ./ne/ne.prj
 	cp ./ne/NE1_50M_SR/NE1_50M_SR.tfw  ./ne/ne.tfw
 	ls ./ne/* -la
 
 ca-zz-genservices:
-	./taginfo_genconfig.sh  central-america    zz  30000
-
+	./taginfo_genconfig.sh  central-america    zz  30000    "--"    "length(osm.iso)=2 or substr(osm.iso,1,2) in ('nl') "
 
 ca-zz-test:
 	cd ./service/zz && ./service_create.sh 	&& cd ../..   
@@ -58,16 +57,28 @@ naturalearth:
 init:
 	docker-compose run --rm -T taginfo_dev /osm/setup/init.sh
 
-genservices:
-	./taginfo_genconfig.sh  africa             af  10000
-	./taginfo_genconfig.sh  antarctica         aq  12000
-	./taginfo_genconfig.sh  asia               as  14000
-	./taginfo_genconfig.sh  australia-oceania  ao  16000
-	./taginfo_genconfig.sh  central-america    ca  18000
-	./taginfo_genconfig.sh  europe             eu  20000
-	./taginfo_genconfig.sh  north-america      na  22000
-	./taginfo_genconfig.sh  russia             ru  24000
-	./taginfo_genconfig.sh  south-america      sa  26000
+
+
+genservices:  af-genservices aq-genservices as-genservices ao-genservices ca-genservices eu-genservices na-genservices ru-genservices sa-genservices
+
+af-genservices:
+	./taginfo_genconfig.sh  africa             af  10000  "--"                     "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+aq-genservices:	
+	./taginfo_genconfig.sh  antarctica         aq  12000  "--"  				   "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+as-genservices:	
+	./taginfo_genconfig.sh  asia               as  14000  "where iso like 'n%'"    "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+ao-genservices:	
+	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where iso like 'n%'"    "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+ca-genservices:	
+	./taginfo_genconfig.sh  central-america    ca  18000  "--"                     "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+eu-genservices:	
+	./taginfo_genconfig.sh  europe             eu  20000  "where iso like 'hu-%'"  "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+na-genservices:	
+	./taginfo_genconfig.sh  north-america      na  22000  "where iso like 'ca%'"   "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+ru-genservices:	
+	./taginfo_genconfig.sh  russia             ru  24000  "where iso like 'ru%'"   "length(osm.iso)=>2 "
+sa-genservices:	
+	./taginfo_genconfig.sh  south-america      sa  26000  "--"                     "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl') "
 
 
 runservices:
@@ -84,21 +95,6 @@ runservices:
 
 
 
-
-af-genservices:
-	./taginfo_genconfig.sh  africa             af  10000
-	
-ca-genservices:	
-	./taginfo_genconfig.sh  central-america    ca  18000
-
-ao-genservices:
-	./taginfo_genconfig.sh  australia-oceania  ao  16000
-
-ru-genservices:
-	./taginfo_genconfig.sh  russia             ru  24000
-
-aq-genservices:
-	./taginfo_genconfig.sh  antarctica         aq  12000
 
 genproxy:
 	docker-compose run  --rm -T taginfo_dev  /osm/setup/genhugo.sh
@@ -155,7 +151,8 @@ service-job:
 
 
 peakcheck:
-	cat ./service/*/*/sources/log/*.log | grep peak:  | cut -d':' -f3 | sort -h | uniq
+	cat ./service/*/*/sources/log/*.log | grep peak:  	   | cut -d':' -f3 | sort -h | uniq
+	cat ./service/*/*/joblog/*.log | grep "Peak"           | cut -d':' -f3 | sort -h | uniq	
 
 dockerstat:
 	docker stats --format "table {{.Name}}\t {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.NetIO}}\t{{.BlockIO}}"

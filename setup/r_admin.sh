@@ -1,20 +1,17 @@
 #! /bin/bash
 
-
-#cd /osm/setup
-#wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip
-#unzip ne_10m_admin_0_countries.zip
-
-
+echo "check db connection"
 /osm/setup/pg_isready.sh
 
 echo CONTINENT_LONG="$CONTINENT_LONG"
 echo CONTINENT="$CONTINENT" 
 echo START_PORT=$START_PORT
 echo DOMAIN=$DOMAIN
+echo ISO_FILTER=$ISO_FILTER
+echo ISO_SERVICE_FILTER=$ISO_SERVICE_FILTER
 
 mkdir -p /osm/service/${CONTINENT}/
-rm -rf /osm/service/${CONTINENT}/*
+#rm -rf /osm/service/${CONTINENT}/*
 
 # import continent polygons   
 /osm/setup/09_download_geofabrik_polygons.sh
@@ -34,7 +31,14 @@ if [ "$CONTINENT" = "aq" ]; then
 ## Others
 else  
     # Posgresql postprocessing - calculating parameters for the config     
-	psql -a   -P pager=off   -f "/osm/setup/setup_xtaginfo_admin.sql"
+	psql -a -e -vISO_FILTER="${ISO_FILTER}"  -vISO_SERVICE_FILTER="${ISO_SERVICE_FILTER}"   -P pager=off   -f "/osm/setup/setup_xtaginfo_admin.sql"
+
+    echo """
+    --
+      select iso, name_en,area_pct,name,wikidata from osm_admin2_continent_all order by iso ;
+    --
+    """ | psql -e > /osm/service/${CONTINENT}/available_iso.txt
+
     python /osm/setup/setup_polygon.py
 fi
 

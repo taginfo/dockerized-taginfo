@@ -3,7 +3,10 @@
 ---
 ---  importand - imposm3 'use_single_id_space' id   to   short notations  
 ---
----
+---  External variables:
+--- ----------------------
+---  ISO_FILTER          = SQL filter for generating config files
+---  ISO_SERVICE_FILTER  = Generated config files, when Marked  'service' and generate them a service file 
 ---
 ---
 
@@ -180,27 +183,32 @@ LANGUAGE 'plpgsql' IMMUTABLE STRICT PARALLEL SAFE ;
 
 
 
-
-
-
-DROP TABLE IF EXISTS  osm_admin2_continent ;
-CREATE TABLE osm_admin2_continent
-as 
+DROP TABLE IF EXISTS  osm_admin2_continent_all ;
+CREATE TABLE          osm_admin2_continent_all as
 select a.*   
-       ,st_area( ST_Intersection(  c.wkb_geometry  ,   a.geometry )) / st_area(  a.geometry )  as area_pct
-       ,case 
+    ,st_area( ST_Intersection(  c.wkb_geometry  ,   a.geometry )) / st_area(  a.geometry )  as area_pct
+    ,case 
             when a.iso3166_2!=''  then lower(a.iso3166_2) 
                                   else lower(a.iso3166_1)
             end   
             as iso
-
 from KMLX_CONTINENT as c,
-     osm_admin      as a
+        osm_admin   as a
 where 
-        (  length(a.iso3166_1) = 2  or length(a.iso3166_2) > 3 )
-    and ST_Contains (  c.wkb_geometry  ,   St_PointOnSurface( a.geometry ))
-ORDER BY iso   
-;     
+        ( length(a.iso3166_1) = 2  or length(a.iso3166_2) > 3 )
+    and 
+        ST_Contains (c.wkb_geometry , St_PointOnSurface( a.geometry ))
+;;
+
+DROP TABLE IF EXISTS  osm_admin2_continent ;
+CREATE TABLE          osm_admin2_continent as
+select * 
+from osm_admin2_continent_all   
+  :ISO_FILTER
+order by iso
+;;    
+
+\d+ osm_admin2_continent;
 update osm_admin2_continent set name_en=name  where name_en='' ;
 
 
@@ -239,9 +247,8 @@ with pdata as
         ,flag
         ,geometry
         ,st_area(geometry) as iso_area
-        ,case when length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') 
-                  then 'yes'
-                  else ''
+        ,case when  (  :ISO_SERVICE_FILTER  )  then 'yes'
+                                               else ''
          end as service     
     from osm_admin2_continent as osm
     left join iso_gdname on osm.iso=iso_gdname.iso
@@ -271,14 +278,11 @@ with pdata as
        from pdata 
        where dx >= 200 
        )
-
-select * , get_xtaginfo(iso,txmin , txmax , tymin , tymax  )  as taginfo_scale   from  normal_data       
-    --where iso like 'h%'
+       select * , get_xtaginfo(iso,txmin , txmax , tymin , tymax )  as taginfo_scale   from  normal_data       
 union  select * , get_xtaginfo(iso,txmin , txmax , tymin , tymax )  as taginfo_scale   from  antimerdian_data
-    --where iso like 'h%'
-order by iso desc
-
+order by iso 
 ;
 
 
 select iso, taginfo_scale,ttype, area_pct,  service  from xtaginfo order by iso ; 
+

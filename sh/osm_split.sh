@@ -41,7 +41,10 @@ echo "Backup input file osm fileinfo for audit"
 osmium fileinfo ${inputpbf} > /osm/cfg/input/input_osm_fileinfo.txt
 
 echo "Start osmium extract"
-osmium extract  ${inputpbf} --overwrite  -s simple  -p /osm/cfg/poly/osm.poly -o /osm/cfg/input/area.osm.pbf
+
+time osmium extract  ${inputpbf}    --overwrite -v -s simple  -p /osm/cfg/poly/osm.poly -o /osm/cfg/input/area.osm.pbf
+# time osmium extract  ${CONTINENT_LONG}.ltw.osm.pbf --overwrite -v -s simple  -p /osm/cfg/poly/osm.poly -o /osm/cfg/input/area.ltw.osm.pbf
+
 
 chmod 644 /osm/cfg/input/area.osm.pbf
 
