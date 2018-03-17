@@ -94,7 +94,7 @@ RUN mkdir /tools \
     && ln -sf ${IMPOSM3VER} latest
 
 # install  julien-noblet/download-geofabrik
-ENV DOWNLOAD_GEOFABRIK_VERSION v2.1.0
+ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.0-beta-fix%2320
 RUN cd /tools \
     && wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
     && unzip download-geofabrik_linux_amd64.zip \
