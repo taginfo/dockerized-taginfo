@@ -16,4 +16,8 @@ free -m
 time /osm/sh/osm_split.sh
 time /osm/sh/osm_jobinit.sh
 
+# cleaning; because we don't have to much disk space :(
+rm -f /osm/cfg/input/area.osm.pbf
+rm -f /osm/data/old/taginfo-*
+
 echo "Processing OK"
