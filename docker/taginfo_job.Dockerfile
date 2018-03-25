@@ -101,7 +101,7 @@ RUN dpkg -i /hugo.deb \
 EXPOSE 1313
 
 # install  julien-noblet/download-geofabrik
-ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.0
+ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.2
 RUN cd /tools \
     && wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
     && unzip download-geofabrik_linux_amd64.zip \
