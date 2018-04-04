@@ -94,15 +94,15 @@ RUN mkdir /tools \
     && ln -sf ${IMPOSM3VER} latest
 
 # install hugo
-ENV HUGO_VERSION 0.37.1
+ENV HUGO_VERSION 0.38
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
 EXPOSE 1313
 
-# install  julien-noblet/download-geofabrik
-ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.2
+ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.3
 RUN cd /tools \
     && wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
     && unzip download-geofabrik_linux_amd64.zip \
     && rm download-geofabrik_linux_amd64.zip
+    
