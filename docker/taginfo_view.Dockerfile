@@ -1,5 +1,6 @@
 #FROM alpine:3.7
 FROM ruby:2.5-alpine3.7
+#FROM ruby:2.6-rc-alpine3.7
 
 RUN set -ex \
     \

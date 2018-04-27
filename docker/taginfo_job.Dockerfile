@@ -59,7 +59,7 @@ RUN    gem install rack          --clear-sources --no-document  -v '<2.0.0' \
     && gem list
 
 # install python-geo libs
-RUN   pip install --upgrade pip setuptools wheel virtualenv \
+RUN   pip install setuptools wheel virtualenv \
    && pip install geojson \
    && pip install fiona \
    && pip install jinja2 \
@@ -67,7 +67,8 @@ RUN   pip install --upgrade pip setuptools wheel virtualenv \
    && pip install psycopg2-binary \
    && pip install pycairo \
    && pip install shapely \
-   && pip install yq
+   && pip install yq \
+   && pip list
 
 
 WORKDIR /osm
@@ -94,7 +95,7 @@ RUN mkdir /tools \
     && ln -sf ${IMPOSM3VER} latest
 
 # install hugo
-ENV HUGO_VERSION 0.38
+ENV HUGO_VERSION 0.40.1
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
