@@ -17,8 +17,8 @@ readonly PG_CONNECT="postgis://"
 
  echo "============ Start import_admin ================"
 
-  /tools/latest/imposm3 import \
-   -mapping /osm/setup/imposm3_admin_mapping.yml  \
+  /tools/latest/imposm import \
+   -mapping /osm/setup/imposm_admin_mapping.yml  \
    -read $inputpbf \
    -write    \
    -optimize  \

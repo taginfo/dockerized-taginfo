@@ -85,14 +85,16 @@ RUN git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/tag
     # remove temporary config file for building
     && rm /osm/taginfo-config.json
 
+
+WORKDIR /tools
+
 ### install imposm3  ( need for setup )
-ENV IMPOSM3VER imposm3-0.4.0dev-20170519-3f00374-linux-x86-64
-RUN mkdir /tools \
-    && cd /tools \
-    && wget http://imposm.org/static/rel/${IMPOSM3VER}.tar.gz \
-    && tar zxvf ${IMPOSM3VER}.tar.gz \
-    && rm ${IMPOSM3VER}.tar.gz \
-    && ln -sf ${IMPOSM3VER} latest
+ENV IMPOSMVER 0.6.0-alpha.4
+RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}/imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
+    && tar zxvf imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
+    && rm imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
+    && ln -sf imposm-${IMPOSMVER}-linux-x86-64 latest \
+    && /tools/latest/imposm version
 
 # install hugo
 ENV HUGO_VERSION 0.40.1
@@ -102,8 +104,8 @@ RUN dpkg -i /hugo.deb \
 EXPOSE 1313
 
 ENV DOWNLOAD_GEOFABRIK_VERSION v2.2.3
-RUN cd /tools \
-    && wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
+RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
     && unzip download-geofabrik_linux_amd64.zip \
     && rm download-geofabrik_linux_amd64.zip
-    
+
+WORKDIR /osm
