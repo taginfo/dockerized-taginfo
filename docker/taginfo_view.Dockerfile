@@ -14,6 +14,9 @@ RUN set -ex \
     \
     && gem install bundler \
     && bundle config --global silence_root_warning 1s \
+    && gem install sqlite3 --clear-sources --no-document \
+    && gem cleanup \
+    && gem list \
     \
     # install apps
     && mkdir -p /osm/taginfo/ \

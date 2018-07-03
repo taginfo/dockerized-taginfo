@@ -21,6 +21,7 @@ RUN apt-get update \
        pbzip2 \
        ruby \
        ruby-dev \
+       ruby-sqlite3 \
        sqlite3 \
        # tools
        gdal-bin \
