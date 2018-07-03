@@ -1,13 +1,10 @@
-#FROM alpine:3.7
 FROM ruby:2.5-alpine3.7
-#FROM ruby:2.6-rc-alpine3.7
+#FROM ruby:2.6.0-preview2-alpine3.7
 
 RUN set -ex \
     \
     && apk add --no-cache --virtual .run-deps \
         bzip2 \
- #       ruby \
- #       ruby-dev \
         sqlite-dev \
     \
     && apk add --no-cache --virtual .build-deps \
@@ -15,14 +12,8 @@ RUN set -ex \
         ca-certificates \
         git \
     \
-    && gem install rack          --clear-sources --no-document  -v '<2.0.0' \
-    && gem install rack-contrib  --clear-sources --no-document  -v '<2.0.0' \
-    && gem install sinatra       --clear-sources --no-document  -v '<2.0.0' \
-    && gem install sinatra-r18n  --clear-sources --no-document \
-    && gem install json          --clear-sources --no-document \
-    && gem install sqlite3       --clear-sources --no-document \
-    && gem cleanup \
-    && gem list \
+    && gem install bundler \
+    && bundle config --global silence_root_warning 1s \
     \
     # install apps
     && mkdir -p /osm/taginfo/ \
@@ -35,9 +26,11 @@ RUN set -ex \
     # simple hack - modify /reports/similar_keys
     && sed -i 's/count_all_common >= 10000/count_all_common >= 10/g' /osm/taginfo/web/lib/api/v4/keys.rb \
     \
+    && cd /osm/taginfo && bundle install \
     # Remove build-deps
     && apk del  .build-deps \
     # remove some files - not needed for web view...
+    && rm -rf /osm/taginfo/.git \
     && rm -rf /osm/taginfo/bin \
     && rm -rf /osm/taginfo/examples \
     && rm -rf /osm/taginfo/sources \
