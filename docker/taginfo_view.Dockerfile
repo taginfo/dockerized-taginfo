@@ -1,8 +1,10 @@
 FROM ruby:2.6.0-preview2-alpine3.7
 
 # Set up a non-sudo user
-RUN  addgroup -S osm \
-  && adduser  -S osm osm
+RUN  addgroup -g 1000 -S osm \
+  && adduser  -u 1000 -G osm -S osm osm
+
+ENV RUBYOPT="--jit"
 
 RUN set -ex \
     \

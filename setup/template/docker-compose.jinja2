@@ -13,6 +13,7 @@ services:
   #               continent: "{{continent}}"
 
   taginfo-{{continent}}-{{item.iso}}:
+    user: ${CURRENT_UID}
     restart: always
     image: taginfo_view
     ports:

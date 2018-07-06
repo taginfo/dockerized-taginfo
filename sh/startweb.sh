@@ -18,4 +18,8 @@ echo "-------------------------------------------------------------"
 cat /etc/hosts | grep $HOSTNAME
 echo "---------------------------"
 
-ruby ./taginfo.rb 4567 -s Puma
+#RACK_ENV=production puma -w 2 --preload -p 4567
+#RUBYOPT=--jit 
+RACK_ENV=production puma -p 4567 --preload -t 0:8
+#ruby ./taginfo.rb 4567 -s Puma
+#ruby ./taginfo.rb 4567

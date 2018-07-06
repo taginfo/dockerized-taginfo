@@ -13,6 +13,7 @@ services:
   # for downloading geofabrik osm extract  
   taginfo_download:
     image: taginfo_job
+    user: ${CURRENT_UID}
     networks:
       - taginfo    
     volumes:
@@ -30,12 +31,13 @@ services:
   #
   taginfo-job-{{continent}}-{{item.iso}}:
     image: taginfo_job
+    user: ${CURRENT_UID}
     networks:
       - taginfo    
     volumes:
      - ./{{item.iso}}/data:/osm/data
      - ./{{item.iso}}/download:/osm/download
-     - ./{{item.iso}}/sources:/osm/sources
+     - ./{{item.iso}}/sources:/osm/sources:rw
      - ./{{item.iso}}:/osm/cfg
      - ../../import:/osm/import
      - ../../sh:/osm/sh

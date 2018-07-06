@@ -75,6 +75,10 @@ RUN gem install bundler \
 WORKDIR /osm
 ADD taginfo-config.json  /osm
 
+# Set up a non-sudo user
+RUN groupadd -r osm --gid=1000 && useradd -r -g osm --uid=1000 osm
+
+
 RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \
     # temporary patches
     && sed -i 's/100/10/g'                                           /osm/taginfo/sources/master/master.sql \
@@ -94,7 +98,17 @@ RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/
     # remove taginfo logo for a synbolic link
     && rm -f /osm/taginfo/web/public/img/logo/taginfo.png \
     # remove temporary config file for building
-    && rm /osm/taginfo-config.json
+    && rm /osm/taginfo-config.json \
+    \
+    && chown -R osm:osm /osm
+
+RUN mkdir -p /osm/import_admin && chown -R osm:osm /osm/import_admin && chmod 2777 /osm/import_admin
+VOLUME /osm/import_admin
+RUN mkdir -p /osm/import       && chown -R osm:osm /osm/import       && chmod 2777 /osm/import
+VOLUME /osm/import
+RUN mkdir -p /osm/service      && chown -R osm:osm /osm/service      && chmod 2777 /osm/service
+VOLUME /osm/service
+
 
 WORKDIR /tools
 
@@ -124,3 +138,4 @@ RUN curl -L https://github.com/kubernetes/kompose/releases/download/v${KOMPOSE_V
     && mv ./kompose /usr/local/bin/kompose
 
 WORKDIR /osm
+USER osm

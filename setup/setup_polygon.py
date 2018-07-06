@@ -129,9 +129,13 @@ def createisopoly(iso,id):
         if not os.path.exists(data_directory):
             os.makedirs(data_directory)
 
-        source_directory='/osm/source/'+CONTINENT+'/'+iso+'/source/'
-        if not os.path.exists(source_directory):
-            os.makedirs(source_directory)
+        sources_directory='/osm/service/'+CONTINENT+'/'+iso+'/sources/'
+        if not os.path.exists(sources_directory):
+            os.makedirs(sources_directory)
+
+        download_directory='/osm/service/'+CONTINENT+'/'+iso+'/download/'
+        if not os.path.exists(download_directory):
+            os.makedirs(download_directory)
 
         input_directory='/osm/service/'+CONTINENT+'/'+iso+'/input/'
         if not os.path.exists(input_directory):

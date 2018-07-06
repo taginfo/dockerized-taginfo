@@ -2,15 +2,26 @@
 
 all: refresh build
 
-test: build testdatainit init ca-zz-genservices ca-zz-test peakcheck
+test: inituid build testdatainit init ca-zz-genservices ca-zz-test peakcheck
 
 refresh:
 	docker pull abiosoft/caddy
-	docker pull ruby:2.5-alpine3.7
+	docker pull ruby:2.6.0-preview2-alpine3.7
 	docker pull jwilder/nginx-proxy
 	docker pull jwilder/whoami
 	docker pull mdillon/postgis:10
 	docker pull ubuntu:18.04
+
+inituid:
+	export CURRENT_UID=$$(id -u):$$(id -g)
+
+initdir:
+	sudo chmod -R a+rw ./import_admin
+	sudo chmod -R a+rw ./import	
+	sudo chmod -R a+rw ./dev_data
+	sudo chmod -R a+rw ./service
+	sudo chmod -R a+rw ./caddy
+
 
 build:
 	cd ./docker && docker build -t taginfo_job  -f taginfo_job.Dockerfile  . && cd ..
