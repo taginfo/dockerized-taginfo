@@ -75,8 +75,15 @@ RUN gem install bundler \
 WORKDIR /osm
 ADD taginfo-config.json  /osm
 
-# Set up a non-sudo user
-RUN groupadd -r osm --gid=1000 && useradd -r -g osm --uid=1000 osm
+
+# Set up a non-sudo user - same gid, uid as a host user
+ARG host_uid
+ENV HOST_UID=${host_uid}
+ARG host_gid
+ENV HOST_GID=${host_gid}
+RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
+     && groupadd -r    osm --gid=${HOST_GID} \
+     && useradd  -r -g osm --uid=${HOST_UID} osm
 
 
 RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \

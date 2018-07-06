@@ -2,7 +2,7 @@
 
 all: refresh build
 
-test: inituid build testdatainit init ca-zz-genservices ca-zz-test peakcheck
+test: inituid build testdatainit init ca-zz-genservices down ca-zz-test peakcheck
 
 refresh:
 	docker pull abiosoft/caddy
@@ -24,8 +24,8 @@ initdir:
 
 
 build:
-	cd ./docker && docker build -t taginfo_job  -f taginfo_job.Dockerfile  . && cd ..
-	cd ./docker && docker build -t taginfo_view -f taginfo_view.Dockerfile . && cd ..
+	cd ./docker && docker build --build-arg host_uid=$$(id -u) --build-arg host_gid=$$(id -g) -t taginfo_job  -f taginfo_job.Dockerfile  . && cd ..
+	cd ./docker && docker build --build-arg host_uid=$$(id -u) --build-arg host_gid=$$(id -g) -t taginfo_view -f taginfo_view.Dockerfile . && cd ..
 	docker images | grep taginfo
 
 dev:

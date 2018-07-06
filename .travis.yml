@@ -13,12 +13,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -v
   - docker -v
-  - docker pull ruby:2.5-alpine3.7
-  - docker pull mdillon/postgis:10
-  - docker pull ubuntu:18.04
   - docker images
   
 script:
   - docker-compose config
+  - export CURRENT_UID="$(id -u):$(id -g)"
+  - echo "CURRENT_UID=$CURRENT_UID"
   - make test
   

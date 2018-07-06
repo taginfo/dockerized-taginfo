@@ -1,8 +1,15 @@
 FROM ruby:2.6.0-preview2-alpine3.7
 
+ARG host_uid
+ENV HOST_UID=${host_uid}
+
+ARG host_gid
+ENV HOST_GID=${host_gid}
+
 # Set up a non-sudo user
-RUN  addgroup -g 1000 -S osm \
-  && adduser  -u 1000 -G osm -S osm osm
+RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
+  && addgroup -g ${HOST_GID} -S osm \
+  && adduser  -u ${HOST_UID} -G osm -S osm osm
 
 ENV RUBYOPT="--jit"
 
