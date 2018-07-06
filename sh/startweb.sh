@@ -4,6 +4,7 @@ ln -sf /osm/cfg/img/dbackground.png     /osm/taginfo/web/public/img/mapbg/dbackg
 ln -sf /osm/cfg/img/dflag.png           /osm/taginfo/web/public/img/logo/dflag.png
 ln -sf /osm/cfg/img/dlogo.png           /osm/taginfo/web/public/img/logo/taginfo.png  
 ln -sf /osm/cfg/taginfo-config.json     /osm/taginfo-config.json                     
+mkdir -p /osm/taginfo/var/log
 
 cd /osm/taginfo/web
 
@@ -16,4 +17,5 @@ echo "-------------------------------------------------------------"
 
 cat /etc/hosts | grep $HOSTNAME
 echo "---------------------------"
-./taginfo.rb 4567
+
+ruby ./taginfo.rb 4567 -s Puma

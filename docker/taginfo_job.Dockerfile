@@ -50,31 +50,47 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/
 
 # install python-geo libs
-RUN   pip install setuptools wheel virtualenv \
-   && pip install geojson \
-   && pip install fiona \
-   && pip install jinja2 \
-   && pip install mapnik \
-   && pip install psycopg2-binary \
-   && pip install pycairo \
-   && pip install shapely \
-   && pip install yq \
-   && pip list
+RUN    pip install setuptools wheel virtualenv \
+    && pip install geojson \
+    && pip install fiona \
+    && pip install jinja2 \
+    && pip install mapnik \
+    && pip install psycopg2-binary \
+    && pip install pycairo \
+    && pip install shapely \
+    && pip install yq \
+    && pip list
 
-# install & config (ruby) bundler 
+# no documentation for gems
+RUN mkdir -p /usr/local/etc \
+	&& { \
+		echo 'install: --no-document'; \
+		echo 'update: --no-document'; \
+	} >> /usr/local/etc/gemrc
+
+# install & config (ruby) bundler
 RUN gem install bundler \
     && bundle config --global silence_root_warning 1s
 
 WORKDIR /osm
 ADD taginfo-config.json  /osm
-RUN git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \
+
+RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \
+    # temporary patches
     && sed -i 's/100/10/g'                                           /osm/taginfo/sources/master/master.sql \
     && sed -i 's/(default 10000)/(default 10)/g'                     /osm/taginfo/web/lib/api/v4/keys.rb \
     && sed -i 's/min_count = 10000/min_count = 10/g'                 /osm/taginfo/web/lib/api/v4/keys.rb \
     && sed -i 's/count_all_common >= 10000/count_all_common >= 10/g' /osm/taginfo/web/lib/api/v4/keys.rb \
-    && cd /osm/taginfo          && git log > /osm/gitlog_taginfo.txt \
-    && cd /osm/taginfo          && bundle install \
-    && cd /osm/taginfo/tagstats && make \
+    && cd /osm/taginfo  \
+        # backup git status
+        && git log > /osm/gitlog_taginfo.txt \
+        # ruby gem install
+        && bundle install \
+        && gem cleanup \
+        && gem list \
+    # Build
+    && cd /osm/taginfo/tagstats \
+        && make \
     # remove taginfo logo for a synbolic link
     && rm -f /osm/taginfo/web/public/img/logo/taginfo.png \
     # remove temporary config file for building
