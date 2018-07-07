@@ -28,4 +28,4 @@ script:
 
 after_failure:
   - tree -pgu
-  - tree -pgu | greep root
+  - tree -pgu | grep root

@@ -17,6 +17,7 @@ inituid:
 	mkdir -p ./import_admin
 	mkdir -p ./import	
 	mkdir -p ./dev_data
+	mkdir -p ./dev_data/ca/ni/data
 	mkdir -p ./service
 	mkdir -p ./caddy	
 	mkdir -p ./hugo/taginfo
