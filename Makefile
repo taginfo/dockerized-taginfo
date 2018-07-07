@@ -2,7 +2,7 @@
 
 all: refresh build
 
-test: inituid build testdatainit init ca-zz-genservices down ca-zz-test peakcheck
+test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices down ca-zz-test peakcheck
 
 refresh:
 	docker pull abiosoft/caddy
@@ -74,6 +74,9 @@ naturalearth:
 
 init:
 	docker-compose run --rm -T taginfo_dev /osm/setup/init.sh
+
+travis_geofabrik_yml:
+	docker-compose run --rm -T taginfo_dev bash -c "cp /tools/geofabrik.yml /osm/import/geofabrik.yml && touch /osm/import/geofabrik.yml"
 
 
 

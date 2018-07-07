@@ -82,8 +82,8 @@ ENV HOST_UID=${host_uid}
 ARG host_gid
 ENV HOST_GID=${host_gid}
 RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
-     && groupadd -r    osm --gid=${HOST_GID} \
-     && useradd  -r -g osm --uid=${HOST_UID} osm
+     && groupadd -r           --gid=${HOST_GID} osm \
+     && useradd  -r -m -g osm --uid=${HOST_UID} osm
 
 
 RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \

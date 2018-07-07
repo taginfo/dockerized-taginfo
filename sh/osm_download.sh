@@ -12,7 +12,7 @@ if [ ! -f geofabrik.yml ]; then
     time /tools/download-geofabrik generate
 fi
 
-/tools/download-geofabrik download $GDNAME
+/tools/download-geofabrik -v --progress  download $GDNAME
 ls -la 
 
 echo "Download OK"
