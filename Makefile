@@ -14,6 +14,12 @@ refresh:
 
 inituid:
 	export CURRENT_UID=$$(id -u):$$(id -g)
+	mkdir -p ./import_admin
+	mkdir -p ./import	
+	mkdir -p ./dev_data
+	mkdir -p ./service
+	mkdir -p ./caddy	
+	mkdir -p ./hugo/taginfo
 
 initdir:
 	sudo chmod -R a+rw ./import_admin
