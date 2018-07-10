@@ -6,7 +6,7 @@ networks:
 
 services:
   db:
-    image: mdillon/postgis:10
+    image: mdillon/postgis:10-alpine
     volumes:
      - ./postgres_data:/var/lib/postgresql/data
     tmpfs:

@@ -18,6 +18,8 @@ echo "-------------------------------------------------------------"
 cat /etc/hosts | grep $HOSTNAME
 echo "---------------------------"
 
+ruby -r rbconfig -e "RbConfig::CONFIG['LIBS'].include?('jemalloc') ? puts('Ruby is compiled with jemalloc') : warn('JEMALLOC IS MISSING FROM RUBY')"
+
 #RACK_ENV=production puma -w 2 --preload -p 4567
 #RUBYOPT=--jit 
 RACK_ENV=production puma -p 4567 --preload -t 0:8

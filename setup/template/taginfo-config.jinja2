@@ -20,7 +20,9 @@
         // to all /api responses. Use "" to not set this header, disallowing
         // external services to use your API from a browser. Set to "*" to
         // allow anybody.
-        "access_control_allow_origin": "*"
+        "access_control_allow_origin": "*",
+        // Sections of the website that are enabled.
+        "sections": ["download", "taginfo"]
     },
     // For the geodistribution map. See the wiki documentation about these settings.
     "geodistribution": {
@@ -98,7 +100,7 @@
             // Tag combinations not appearing this often are not written to database.
             "min_tag_combination_count": 1,
             // Minimum number of tag occurances for creating a map
-            "min_count_for_map": 1,
+            "min_count_for_map": 10,
             // Minimum number of relations per type to make this
             // relation type "interesting", ie. to make it show
             // up as a relation type.

@@ -1,19 +1,25 @@
 .PHONY: all
 
+CURRENT_UID:=$(shell echo $$(id -u):$$(id -g))
+export CURRENT_UID
+
 all: refresh build
 
 test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices down ca-zz-test peakcheck
+
+
+status:
+	echo "CURRENT_UID=$$CURRENT_UID"
 
 refresh:
 	docker pull abiosoft/caddy
 	docker pull ruby:2.6.0-preview2-alpine3.7
 	docker pull jwilder/nginx-proxy
 	docker pull jwilder/whoami
-	docker pull mdillon/postgis:10
+	docker pull mdillon/postgis:10-alpine
 	docker pull ubuntu:18.04
 
 inituid:
-	export CURRENT_UID=$$(id -u):$$(id -g)
 	mkdir -p ./caddy
 	mkdir -p ./dev_data
 	mkdir -p ./dev_data/ca/ni/data
