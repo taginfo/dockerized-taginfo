@@ -43,7 +43,7 @@ build:
 	docker images | grep taginfo
 
 dev:
-	docker-compose run --rm taginfo_dev /bin/bash
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run --rm taginfo_dev /bin/bash
 
 dev_view:
 	docker run -it --rm taginfo_view sh
@@ -55,7 +55,7 @@ cleanold:
 	df -h | grep /dev
 
 down:
-	docker-compose down
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose down
 
 testdatainit:
 	mkdir -p ./ne
@@ -77,13 +77,13 @@ ca-zz-test:
 
 
 naturalearth:
-	docker-compose run --rm -T taginfo_dev /osm/setup/natural_earth_download.sh
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run --rm -T taginfo_dev /osm/setup/natural_earth_download.sh
 
 init:
-	docker-compose run --rm -T taginfo_dev /osm/setup/init.sh
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run --rm -T taginfo_dev /osm/setup/init.sh
 
 travis_geofabrik_yml:
-	docker-compose run --rm -T taginfo_dev bash -c "cp /tools/geofabrik.yml /osm/import/geofabrik.yml && touch /osm/import/geofabrik.yml"
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run --rm -T taginfo_dev bash -c "cp /tools/geofabrik.yml /osm/import/geofabrik.yml && touch /osm/import/geofabrik.yml"
 
 
 
@@ -126,7 +126,7 @@ runservices:
 
 
 genproxy:
-	docker-compose run  --rm -T taginfo_dev  /osm/setup/genhugo.sh
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run  --rm -T taginfo_dev  /osm/setup/genhugo.sh
 
 startproxy:
 	pushd  ./service/ca

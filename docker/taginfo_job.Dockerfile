@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 ### For the Taginfo JOB
 RUN apt-get update \
+    && apt-get upgrade  -y \
     && apt-get install  -y --no-install-recommends \
        # basic tools
        apt-utils \
@@ -9,6 +10,7 @@ RUN apt-get update \
        ca-certificates \
        curl \
        git \
+       gnupg2 \
        wget \
        # need for taginfo
        libbz2-dev \
@@ -94,17 +96,6 @@ RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/downloa
     && unzip download-geofabrik_linux_amd64.zip \
     && rm download-geofabrik_linux_amd64.zip
 
-#ENV KOMPOSE_VERSION 1.15.0
-#RUN curl -L https://github.com/kubernetes/kompose/releases/download/v${KOMPOSE_VERSION}/kompose-linux-amd64 -o kompose \
-#    && chmod +x kompose \
-#    && mv ./kompose /usr/local/bin/kompose
-
-
-RUN apt-get update \
-    && apt-get install  -y --no-install-recommends \
-    gnupg2 \
-    && rm -rf /var/lib/apt/lists/
-
 # Node + name-suggestion-index
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN git clone  --quiet --depth 1 https://github.com/osmlab/name-suggestion-index.git /osm/name-suggestion-index
@@ -112,8 +103,8 @@ RUN git clone  --quiet --depth 1 https://github.com/osmlab/name-suggestion-index
 
 # Julia
 ENV JULIA_MAJOR=0.6
-ENV JULIA_VERSION=0.6.3
-ENV JULIA_SHA256=36212ed8e1c864599e9f149d884d504eee15b57b96bf918cb5b9ac35a5ab6283
+ENV JULIA_VERSION=0.6.4
+ENV JULIA_SHA256=d20e6984bcf8c3692d853a9922e2cf1de19b91201cb9e396d9264c32cebedc46
 
 RUN mkdir /opt/julia-${JULIA_VERSION} && \
     cd /tmp && \
@@ -123,18 +114,9 @@ RUN mkdir /opt/julia-${JULIA_VERSION} && \
     rm /tmp/julia-${JULIA_VERSION}-linux-x86_64.tar.gz
 RUN ln -fs /opt/julia-${JULIA_VERSION}/bin/julia /usr/local/bin/julia
 
-#RUN julia --color=yes -e 'Pkg.init()' && \
-#    julia --color=yes -e 'Pkg.update()'
-#RUN julia --color=yes -e 'Pkg.add("LibPQ")'
-#RUN julia --color=yes -e 'Pkg.add("DataStreams")'
-#RUN julia --color=yes -e 'using LibPQ, DataStreams'
-
-
-
-
-
-
-
+RUN julia --color=yes -e 'Pkg.init()'   && \
+    julia --color=yes -e 'Pkg.update()' && \
+    julia --color=yes -e 'Pkg.add("SQLite") ; using SQLite'
 
 
 WORKDIR /osm
@@ -147,15 +129,6 @@ ENV HOST_GID=${host_gid}
 RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
      && groupadd -r           --gid=${HOST_GID} osm \
      && useradd  -r -m -g osm --uid=${HOST_UID} osm
-
-
-ENV TAGINFO_VER=v20180710-200000 
-#RUN    git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \
-#    # temporary patches
-#    && sed -i 's/100/10/g'                                           /osm/taginfo/sources/master/master.sql \
-#    && sed -i 's/(default 10000)/(default 10)/g'                     /osm/taginfo/web/lib/api/v4/keys.rb \
-#    && sed -i 's/min_count = 10000/min_count = 10/g'                 /osm/taginfo/web/lib/api/v4/keys.rb \
-#    && sed -i 's/count_all_common >= 10000/count_all_common >= 10/g' /osm/taginfo/web/lib/api/v4/keys.rb \
 
 RUN    git clone  --quiet --depth 1 --branch name_tabs https://github.com/ImreSamu/taginfo.git /osm/taginfo \
     && cd /osm/taginfo  \
@@ -175,10 +148,6 @@ RUN    git clone  --quiet --depth 1 --branch name_tabs https://github.com/ImreSa
     # Build
     && cd /osm/taginfo/tagstats \
         && make \
-#    # remove taginfo logo for a synbolic link
-#    && rm -f /osm/taginfo/web/public/img/logo/taginfo.png \
-#    # remove temporary config file for building
-#    && rm /osm/taginfo-config.json \
     \
     && chown -R osm:osm /osm
 
