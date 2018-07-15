@@ -5,7 +5,7 @@ export CURRENT_UID
 
 all: refresh build
 
-test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices down ca-zz-test peakcheck
+test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices down rmdebugimages ca-zz-test peakcheck
 
 
 status:
@@ -196,3 +196,13 @@ listoldtaginfo:
 rmtempdata:
 	rm -f ./service/*/*/input/*.osm.pbf
 	rm -f ./service/*/*/data/old/*
+
+
+rmdebugimages:
+	rm ./service/*/*/poly/osm.geojson
+	rm ./service/*/*/img/nebackground.geotif
+	rm ./service/*/*/img/nebackground.png
+	rm ./service/*/*/img/nebackground.png.aux.xml
+	rm ./service/*/*/img/tdbackground.png
+	rm ./service/*/*/img/dbackground0.png  
+

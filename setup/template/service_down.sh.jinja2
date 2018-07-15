@@ -1,6 +1,6 @@
 # generated : {{utcnow}}  // template : ./setup/service_down.sh.jinja2
 
-CURRENT_UID="$(id -u):$(id -g)" 
+export CURRENT_UID="$(id -u):$(id -g)" 
 
 {% for item in items %}
  docker-compose stop taginfo-{{continent}}-{{item.iso}}{% endfor %}

@@ -12,7 +12,7 @@ RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
   && adduser  -u ${HOST_UID} -G osm -S osm osm
 
 
-ENV TAGINFO_VER=v20180710-200000
+ENV TAGINFO_VER=v20180714-200000
 
 RUN set -ex \
     \

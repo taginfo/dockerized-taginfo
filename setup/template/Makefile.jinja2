@@ -1,5 +1,8 @@
 # generated : {{utcnow}}  // template : ./setup/template/Makefile.jinja2
 
+CURRENT_UID:=$(shell echo $$(id -u):$$(id -g))
+export CURRENT_UID
+
 down:
 	CURRENT_UID="$$(id -u):$$(id -g)"  docker-compose down
 
