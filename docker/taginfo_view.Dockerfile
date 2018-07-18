@@ -12,7 +12,7 @@ RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
   && adduser  -u ${HOST_UID} -G osm -S osm osm
 
 # Dummy version - for docker cache ..
-ENV ver_ImreSamu_taginfo=201807181600
+ENV ver_ImreSamu_taginfo=201807181602
 
 RUN set -ex \
     \

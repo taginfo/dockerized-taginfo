@@ -121,8 +121,12 @@ RUN mkdir /opt/julia-${JULIA_VERSION} && \
     rm /tmp/julia-${JULIA_VERSION}-linux-x86_64.tar.gz
 RUN ln -fs /opt/julia-${JULIA_VERSION}/bin/julia /usr/local/bin/julia
 USER osm
+
 # Install julia packages
-RUN julia -e 'Pkg.init();Pkg.update();Pkg.add("XLSX");Pkg.add("SQLite");using SQLite, DataFrames, XLSX;versioninfo()'
+RUN    julia -e 'Pkg.init();Pkg.update();Pkg.add("SQLite")' \
+    #  temporary fix for https://github.com/felipenoris/XLSX.jl/issues/40
+    && julia -e 'Pkg.clone("git://github.com/ImreSamu/XLSX.jl.git","XLSX"); Pkg.checkout("XLSX","fix_escape_ampersand_issue40")' \
+    && julia -e 'using SQLite, DataFrames, XLSX;versioninfo()'
 USER root
 
 
