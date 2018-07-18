@@ -11,8 +11,8 @@ RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
   && addgroup -g ${HOST_GID} -S osm \
   && adduser  -u ${HOST_UID} -G osm -S osm osm
 
-
-ENV TAGINFO_VER=v20180714-200000
+# Dummy version - for docker cache ..
+ENV ver_ImreSamu_taginfo=201807181600
 
 RUN set -ex \
     \
@@ -26,15 +26,7 @@ RUN set -ex \
     \
     # install apps
     && mkdir -p /osm/taginfo/ \
-    && git clone  --quiet --depth 1 -b name_tabs https://github.com/ImreSamu/taginfo.git /osm/taginfo \
-#    && git clone  --quiet --depth 1 https://github.com/taginfo/taginfo.git /osm/taginfo \
-#    \
-#    # simple hack - modify  /reports/frequently_used_keys_without_wiki_page settings
-#    && sed -i 's/(default 10000)/(default 10)/g'     /osm/taginfo/web/lib/api/v4/keys.rb \
-#    && sed -i 's/min_count = 10000/min_count = 10/g' /osm/taginfo/web/lib/api/v4/keys.rb \
-#    \
-#    # simple hack - modify /reports/similar_keys
-#    && sed -i 's/count_all_common >= 10000/count_all_common >= 10/g' /osm/taginfo/web/lib/api/v4/keys.rb \
+    && git clone  --quiet --depth 1 -b name_tabs_v2 https://github.com/ImreSamu/taginfo.git /osm/taginfo \
     \
     && chown -R osm:osm /osm \
     \

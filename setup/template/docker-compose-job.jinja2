@@ -44,10 +44,9 @@ services:
     environment:
      - AREA_ID={{item.iso}}
      - AREA_NAME="{{item.name_en}}"
-     - GDNAME={{item.gdname}}     
+     - GDNAME=${GDNAME:-{{item.gdname}}}   
      - CONTINENT={{continent}}
      - CONTINENT_LONG={{continent_long}}
-
 {% endfor %}
 
 # generated : {{utcnow}}  

@@ -68,7 +68,7 @@ testdatainit:
 	ls ./ne/* -la
 
 ca-zz-genservices:
-	./taginfo_genconfig.sh  central-america    zz  30000    "--"    "length(osm.iso)=2 or substr(osm.iso,1,2) in ('nl') "
+	./taginfo_genconfig.sh  central-america    zz  30000    "where iso in ('ni','nl-sx')"        "1=1 "
 
 ca-zz-test:
 	cd ./service/zz && ./service_create.sh 	&& cd ../..
@@ -108,6 +108,19 @@ ru-genservices:
 sa-genservices:
 	./taginfo_genconfig.sh  south-america      sa  26000  "--"                            "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl') "
 
+
+test-service:  init t-genservices down rmdebugimages
+
+t-genservices:
+	./taginfo_genconfig.sh  africa             af  10000  "where iso in ('ml','tz','ug','zm','zw','ne','ng')"  "1=1 "
+	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                              "1=1 "
+	./taginfo_genconfig.sh  asia               as  14000  "where iso in ('az','mn','lk')"   "1=1 "
+	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where iso in ('au','pg')"        "1=1 "
+	./taginfo_genconfig.sh  central-america    ca  18000  "where iso in ('ni','cu')"        "1=1 "
+	./taginfo_genconfig.sh  europe             eu  20000  "where iso in ('pt','hu','sk','sr','bg','ro','md','al','at','fr-cor','de-be','de-sn')"  "1=1 "
+	./taginfo_genconfig.sh  north-america      na  22000  "where iso in ('ca-ab','mx','us-ak','us-fl')"      "1=1 "
+	./taginfo_genconfig.sh  russia             ru  24000  "where iso in ('ru-kgd','ru-ros','ru-ast')"        "1=1 "
+	./taginfo_genconfig.sh  south-america      sa  26000  "where iso in ('co','ar','br')"                    "1=1 "
 
 
 runservices:
@@ -178,6 +191,18 @@ service-job:
 	cd ./service/ru && ./service_job.sh  && cd ../..
 	cd ./service/sa && ./service_job.sh  && cd ../..
 
+service-job-test:
+	cd ./service/af && ./service_job_test.sh  && cd ../..
+	cd ./service/ao && ./service_job_test.sh  && cd ../..
+	cd ./service/aq && ./service_job_test.sh  && cd ../..
+	cd ./service/as && ./service_job_test.sh  && cd ../..
+	cd ./service/ca && ./service_job_test.sh  && cd ../..
+	cd ./service/eu && ./service_job_test.sh  && cd ../..
+	cd ./service/na && ./service_job_test.sh  && cd ../..
+	cd ./service/ru && ./service_job_test.sh  && cd ../..
+	cd ./service/sa && ./service_job_test.sh  && cd ../..
+
+
 
 peakcheck:
 	cat ./service/*/*/sources/log/*.log | grep peak:  	   | cut -d':' -f3 | sort -h | uniq
@@ -204,5 +229,5 @@ rmdebugimages:
 	rm ./service/*/*/img/nebackground.png
 	rm ./service/*/*/img/nebackground.png.aux.xml
 	rm ./service/*/*/img/tdbackground.png
-	rm ./service/*/*/img/dbackground0.png  
+	rm ./service/*/*/img/dbackground0.png
 

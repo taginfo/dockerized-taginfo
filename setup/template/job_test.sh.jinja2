@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# generated : {{utcnow}}  // template : ./setup/template/job.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+#######################################
+##  Run testservices processing - with download (service_test_process.sh) - step by step 
+#######################################
+
+{% for item in items %}
+GDNAME="{{item.gdname}}" docker-compose  -f docker-compose-job.yml run --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/service_test_process.sh && docker-compose restart taginfo-{{continent}}-{{item.iso}} {% endfor %}
+
+# generated : {{utcnow}}

@@ -85,7 +85,7 @@ RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}
     && /tools/latest/imposm version
 
 # install hugo
-ENV HUGO_VERSION 0.43
+ENV HUGO_VERSION 0.44
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
@@ -96,9 +96,16 @@ RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/downloa
     && unzip download-geofabrik_linux_amd64.zip \
     && rm download-geofabrik_linux_amd64.zip
 
-# Node + name-suggestion-index
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN git clone  --quiet --depth 1 https://github.com/osmlab/name-suggestion-index.git /osm/name-suggestion-index
+WORKDIR /osm
+ADD taginfo-config.json  /osm
+# Set up a non-sudo user - same gid, uid as a host user
+ARG host_uid
+ENV HOST_UID=${host_uid}
+ARG host_gid
+ENV HOST_GID=${host_gid}
+RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
+     && groupadd -r           --gid=${HOST_GID} osm \
+     && useradd  -r -m -g osm --uid=${HOST_UID} osm
 
 
 # Julia
@@ -113,24 +120,15 @@ RUN mkdir /opt/julia-${JULIA_VERSION} && \
     tar xzf julia-${JULIA_VERSION}-linux-x86_64.tar.gz -C /opt/julia-${JULIA_VERSION} --strip-components=1 && \
     rm /tmp/julia-${JULIA_VERSION}-linux-x86_64.tar.gz
 RUN ln -fs /opt/julia-${JULIA_VERSION}/bin/julia /usr/local/bin/julia
+USER osm
+# Install julia packages
+RUN julia -e 'Pkg.init();Pkg.update();Pkg.add("XLSX");Pkg.add("SQLite");using SQLite, DataFrames, XLSX;versioninfo()'
+USER root
 
-RUN julia --color=yes -e 'Pkg.init()'   && \
-    julia --color=yes -e 'Pkg.update()' && \
-    julia --color=yes -e 'Pkg.add("SQLite") ; using SQLite'
 
-
-WORKDIR /osm
-ADD taginfo-config.json  /osm
-# Set up a non-sudo user - same gid, uid as a host user
-ARG host_uid
-ENV HOST_UID=${host_uid}
-ARG host_gid
-ENV HOST_GID=${host_gid}
-RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
-     && groupadd -r           --gid=${HOST_GID} osm \
-     && useradd  -r -m -g osm --uid=${HOST_UID} osm
-
-RUN    git clone  --quiet --depth 1 --branch name_tabs https://github.com/ImreSamu/taginfo.git /osm/taginfo \
+# Dummy version - for docker cache ..
+ENV ver_ImreSamu_taginfo=201807181602
+RUN    git clone  --quiet --depth 1 --branch name_tabs_v2 https://github.com/ImreSamu/taginfo.git /osm/taginfo \
     && cd /osm/taginfo  \
         # ruby gem install
         && gem install rack             --clear-sources --no-document \
@@ -157,7 +155,6 @@ RUN mkdir -p /osm/import       && chown -R osm:osm /osm/import       && chmod 27
 VOLUME /osm/import
 RUN mkdir -p /osm/service      && chown -R osm:osm /osm/service      && chmod 2777 /osm/service
 VOLUME /osm/service
-
 
 
 WORKDIR /osm

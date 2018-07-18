@@ -11,7 +11,9 @@ clean:
 
 {% for item in items %}
 taginfo-{{continent}}-{{item.iso}}:
+	# make GDNAME={{item.gdname}} taginfo-{{continent}}-{{item.iso}}
 	@echo " Start test  {{continent}}-{{item.iso}} :: {{item.name_en}}     ::     mapped local port after finishing   127.0.0.1:{{item.port_order}}"
+	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose up --no-start taginfo-{{continent}}-{{item.iso}}	
 	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose  -f docker-compose-job.yml  run     --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/startlocal.sh 
 	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose up taginfo-{{continent}}-{{item.iso}}
 {% endfor %}

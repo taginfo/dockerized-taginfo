@@ -1,5 +1,13 @@
-// generated code :  UTC= 2017-07-08:21:23
+// Example - just for the compile & build  ...
+
 {
+    "tnames":{
+        "lang1": "name",
+        "lang2": "name:en",
+        "lang3": "name:es",
+        "lang4": "name:fr",
+        "lang5": "name:de"
+    },    
     // You probably want to change all these.
     "instance": {
         // URL prefix for the site.
@@ -98,7 +106,7 @@
             // Tag combinations not appearing this often are not written to database.
             "min_tag_combination_count": 1,
             // Minimum number of tag occurances for creating a map
-            "min_count_for_map": 1,
+            "min_count_for_map": 10,
             // Minimum number of relations per type to make this
             // relation type "interesting", ie. to make it show
             // up as a relation type.

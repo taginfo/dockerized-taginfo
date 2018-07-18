@@ -46,6 +46,7 @@ FAQ:
 
 Customisation:
 * taginfo customised for smaller extracts - showing data problems on the long tails
+* you can modify the  GDNAME="..." value for smaller extracts (download-geofabrik-id)
 * ....
 
 License:
@@ -67,8 +68,7 @@ Be careful!
 * This is an experimental software, test on a new VPS 
 * Check the size of 'geofabrik source' ,  sometimes it is huge > 1 Gb !  ( like  continents )
 * This code expecting minimal docker and linux knowledge.
-
-| iso           |start command  | name_en        | name        |  geofabrik source |  external port |  comment |      
-|---------------|---------------|----------------|-------------|-------------------|----------------|----------|{% for item in items %}
-| {{item.iso}}` | make taginfo-{{continent}}-{{item.iso}}`  |  {{item.name_en}}  | {{item.name}} |  "{{item.gdname}}" | 127.0.0.1:{{item.port_order}}| {{item.comment}} | {% endfor %}  
-
+ 
+| iso           |start command           | name_en        | name        |  geofabrik source |  external port |  comment |      
+|---------------|------------------------|----------------|-------------|-------------------|----------------|----------|{% for item in items %}
+| {{item.iso}}` | make GDNAME={{item.gdname}} taginfo-{{continent}}-{{item.iso}}`  |  {{item.name_en}}  | {{item.name}} |  "{{item.gdname}}" | 127.0.0.1:{{item.port_order}}| {{item.comment}} | {% endfor %}  

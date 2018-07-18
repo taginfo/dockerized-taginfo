@@ -15,6 +15,6 @@ time docker-compose  -f docker-compose-job.yml  run  --rm taginfo_download  /osm
 #######################################
 
 {% for item in items %}
-docker-compose  -f docker-compose-job.yml run --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/service_process.sh && docker-compose restart taginfo-{{continent}}-{{item.iso}} {% endfor %}
+GDNAME="{{item.gdname}}" docker-compose  -f docker-compose-job.yml run --rm taginfo-job-{{continent}}-{{item.iso}} /osm/sh/service_process.sh && docker-compose restart taginfo-{{continent}}-{{item.iso}} {% endfor %}
 
 # generated : {{utcnow}}
