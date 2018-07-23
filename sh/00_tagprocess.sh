@@ -35,7 +35,7 @@ mv /osm/sources/taginfo-*.db    /osm/sources/*/taginfo-*.db     /osm/data
 mv /osm/sources/download/*                                      /osm/download
 
 # copy .xlsx files to the download directory  
-cp /osm/sources/*/*.xlsx                                        /osm/download
+cp /osm/sources/*.xlsx                                        /osm/download
 
 find /osm/sources/log -mtime +7 -delete
 

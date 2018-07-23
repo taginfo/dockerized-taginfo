@@ -224,7 +224,7 @@ rmtempdata:
 
 
 rmdebugimages:
-	rm ./service/*/*/poly/osm.geojson
+#	rm ./service/*/*/poly/osm.geojson
 	rm ./service/*/*/img/nebackground.geotif
 	rm ./service/*/*/img/nebackground.png
 	rm ./service/*/*/img/nebackground.png.aux.xml

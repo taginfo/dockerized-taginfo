@@ -32,9 +32,9 @@ elif [ -f "/osm/import/planet.osm.pbf" ]
 then
     inputpbf=/osm/import/planet.osm.pbf
     echo "Found: ${inputpbf}"
-else 
+else
     echo "NOT Found any OSM input file!!! ...  error"
-    exit 404            
+    exit 404
 fi
 
 echo "Backup input file osm fileinfo for audit"
@@ -42,14 +42,14 @@ osmium fileinfo ${inputpbf} > /osm/cfg/input/input_osm_fileinfo.txt
 
 echo "Start osmium extract"
 
-time osmium extract  ${inputpbf}    --overwrite -v -s simple  -p /osm/cfg/poly/osm.poly -o /osm/cfg/input/area.osm.pbf
-# time osmium extract  ${CONTINENT_LONG}.ltw.osm.pbf --overwrite -v -s simple  -p /osm/cfg/poly/osm.poly -o /osm/cfg/input/area.ltw.osm.pbf
-
+# with -- 'simple' strategy in one pass...
+time osmium extract ${inputpbf} \
+        --overwrite \
+        --verbose \
+        --strategy simple \
+        --polygon  /osm/cfg/poly/poly.osm.pbf \
+        --output   /osm/cfg/input/area.osm.pbf
 
 chmod 644 /osm/cfg/input/area.osm.pbf
 
 echo "End of osm_split.sh"
-
-
-
-

@@ -12,11 +12,16 @@ RUN apt-get update \
        git \
        gnupg2 \
        wget \
+       # for osmium -tool
+       clang-tidy \
+       cmake \
+       cppcheck \
+       libboost-dev \
+       libboost-program-options-dev \
        # need for taginfo
        libbz2-dev \
        libgd-dev \
        libicu-dev \
-       libosmium2-dev \
        libsparsehash-dev \
        libsqlite3-dev \
        m4 \
@@ -30,7 +35,6 @@ RUN apt-get update \
        imagemagick \
        jq \
        mc \
-       osmium-tool \
        sudo \
        unzip \
        #geos tools
@@ -85,7 +89,7 @@ RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}
     && /tools/latest/imposm version
 
 # install hugo
-ENV HUGO_VERSION 0.44
+ENV HUGO_VERSION 0.45
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
@@ -97,7 +101,6 @@ RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/downloa
     && rm download-geofabrik_linux_amd64.zip
 
 WORKDIR /osm
-ADD taginfo-config.json  /osm
 # Set up a non-sudo user - same gid, uid as a host user
 ARG host_uid
 ENV HOST_UID=${host_uid}
@@ -129,9 +132,22 @@ RUN    julia -e 'Pkg.init();Pkg.update();Pkg.add("SQLite")' \
     && julia -e 'using SQLite, DataFrames, XLSX;versioninfo()'
 USER root
 
+# install latest(master) libosmium, osmium-tool
+RUN    git clone --quiet --depth 1 https://github.com/mapbox/protozero.git \
+    && git clone --quiet --depth 1 https://github.com/osmcode/libosmium.git \
+    && git clone --quiet --depth 1 https://github.com/osmcode/osmium-tool.git \
+    && mkdir -p ./osmium-tool/build \
+    && cd ./osmium-tool/build \
+    && cmake -DCMAKE_BUILD_TYPE=Release .. \
+    && make -j 2 \
+    && ctest --output-on-failure \
+    && make install \
+    && osmium --version
 
 # Dummy version - for docker cache ..
-ENV ver_ImreSamu_taginfo=201807181602
+ENV ver_ImreSamu_taginfo=201807231510
+ADD taginfo-config.json  /osm
+# Install & compile Taginfo.
 RUN    git clone  --quiet --depth 1 --branch name_tabs_v2 https://github.com/ImreSamu/taginfo.git /osm/taginfo \
     && cd /osm/taginfo  \
         # ruby gem install
@@ -159,7 +175,6 @@ RUN mkdir -p /osm/import       && chown -R osm:osm /osm/import       && chmod 27
 VOLUME /osm/import
 RUN mkdir -p /osm/service      && chown -R osm:osm /osm/service      && chmod 2777 /osm/service
 VOLUME /osm/service
-
 
 WORKDIR /osm
 USER osm

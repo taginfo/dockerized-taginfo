@@ -128,7 +128,7 @@
     // For compiling tagstats.
     "tagstats": {
         // Extra compilerflags, for instance to find Libosmium.
-        "cxxflags": "-I/osmcode/libosmium/include",
+        "cxxflags": "-I../../libosmium/include  -I../../protozero/include",
         // Node location store. For really large OSM files (whole planet or large continent)
         // this should be "DenseMmapArray" (or "DenseMemArray" on OSX), otherwise "SparseMemArray".
         "geodistribution": "SparseMemArray",

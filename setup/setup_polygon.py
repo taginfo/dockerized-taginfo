@@ -33,15 +33,14 @@ def qiso():
         curiso = conn.cursor()
         try:
           curiso.execute(""" 
-              select iso, id  from xtaginfo order by iso
+              select iso, id, imposmid2shortid(id) as osmium_id from xtaginfo order by iso
           """)
   
           rows = curiso.fetchall()
 
           for row in rows:
                 print "processing: ", row[0] , row[1]
-                createisopoly(row[0],row[1] )
-                ## print "   ", row[1],"  ;; ", row[2]
+                createisopoly(row[0],row[1],row[2] )
 
         except:
           print "Postgresql Query could not be executed"
@@ -100,7 +99,7 @@ def write_multipolygon(f, wkt):
 
 
 
-def createisopoly(iso,id):
+def createisopoly(iso,id,osmium_id):
 
         cur = conn.cursor()
         try:
@@ -165,5 +164,10 @@ def createisopoly(iso,id):
 
         os.system(cmdexpr1+cmdexpr2 )
 
+        osm_poly_filename='/osm/service/'+CONTINENT+'/'+iso+'/poly/poly.osm.pbf'
+        osm_poly_cmd ='/osm/sh/osm_getpolygon.sh '+osm_poly_filename+'  '+osmium_id 
+
+        print( 'executing: '+ osm_poly_cmd)
+        os.system( osm_poly_cmd )
 
 qiso()
