@@ -114,14 +114,38 @@ test-service:  init t-genservices down rmdebugimages
 t-genservices:
 	./taginfo_genconfig.sh  africa             af  10000  "where iso in ('ml','tz','ug','zm','zw','ne','ng')"  "1=1 "
 	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                              "1=1 "
-	./taginfo_genconfig.sh  asia               as  14000  "where iso in ('az','mn','lk')"   "1=1 "
+	./taginfo_genconfig.sh  asia               as  14000  "where iso in ('az','mn','mm','lk')"   "1=1 "
 	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where iso in ('au','pg')"        "1=1 "
 	./taginfo_genconfig.sh  central-america    ca  18000  "where iso in ('ni','cu')"        "1=1 "
-	./taginfo_genconfig.sh  europe             eu  20000  "where iso in ('pt','hu','sk','sr','bg','ro','md','al','at','fr-cor','de-be','de-sn')"  "1=1 "
+	./taginfo_genconfig.sh  europe             eu  20000  "where iso in ('ee','lv','lt','pt','hu','sk','si','hr','sr','mt','rs','bg','ro','md','al','at','fr-cor','de-be','de-sn')"  "1=1 "
 	./taginfo_genconfig.sh  north-america      na  22000  "where iso in ('ca-ab','mx','us-ak','us-fl')"      "1=1 "
 	./taginfo_genconfig.sh  russia             ru  24000  "where iso in ('ru-kgd','ru-ros','ru-ast')"        "1=1 "
 	./taginfo_genconfig.sh  south-america      sa  26000  "where iso in ('co','ar','br')"                    "1=1 "
 
+
+
+sotm_services:
+	./taginfo_genconfig.sh  africa             af  10000  "where (iso not in('bv')) and ( length(iso)=2 or substr(iso,1,2) in ('fr','es')) " "1=1 "
+	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                            "1=1 "
+	./taginfo_genconfig.sh  asia               as  14000  "where (area_pct > 0.8) and (iso not in ('in','jp','ru','fr','nl')) and ( (length(iso)=2) or substr(iso,1,2) in ('in','jp','fr','nl','es','dk','us')) " "1=1 "
+	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','us') "      "1=1 "
+	./taginfo_genconfig.sh  central-america    ca  18000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us') " "1=1 "
+	./taginfo_genconfig.sh  europe             eu  20000  "where iso not in ('fr','de') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','de') or iso in ('it-32','it-88')) "  "1=1 "
+	./taginfo_genconfig.sh  north-america      na  22000  "where iso not in ('us','ca') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us','ca')) "  "1=1 "
+	./taginfo_genconfig.sh  russia             ru  24000  "where iso like 'ru-%' and length(iso)>2 "    "1=1 "
+	./taginfo_genconfig.sh  south-america      sa  26000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us') "  "1=1 "
+
+
+# af - 64
+# aq -  1
+# as -128
+# ao - 21
+# ca - 35
+# eu -190
+# na - 68
+# ru - 85
+# sa - 31
+# ============== ~ 625 *50  = 32Gb
 
 runservices:
 	./taginfo_run_service_refresh.sh  africa             af  10000

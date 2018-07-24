@@ -46,6 +46,10 @@ tables:
       name: iso3166_1alpha3
       type: string   
       
+    - key: default_language
+      name: default_language
+      type: string
+
     - key: wikipedia
       name: wikipedia
       type: string
