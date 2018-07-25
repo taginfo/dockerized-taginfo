@@ -172,7 +172,7 @@ def createiso_config(iso, mapscale, name , name_en):
     elif iso[:2] == 'pt':
             lang1="name"
             lang2="name:pt"
-            lang3="name:mwl"s
+            lang3="name:mwl"
             lang4="name:en"
             lang5="name:es"
 
