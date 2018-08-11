@@ -90,7 +90,7 @@ travis_geofabrik_yml:
 genservices:  af-genservices aq-genservices as-genservices ao-genservices ca-genservices eu-genservices na-genservices ru-genservices sa-genservices
 
 af-genservices:
-	./taginfo_genconfig.sh  africa             af  10000  "where iso not in('bv')"        "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+	./taginfo_genconfig.sh  africa             af  11000  "where iso not in('bv')"        "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
 aq-genservices:
 	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                            "1=1 "
 as-genservices:
@@ -112,7 +112,7 @@ sa-genservices:
 test-service:  init t-genservices down rmdebugimages
 
 t-genservices:
-	./taginfo_genconfig.sh  africa             af  10000  "where iso in ('ml','tz','ug','zm','zw','ne','ng')"  "1=1 "
+	./taginfo_genconfig.sh  africa             af  11000  "where iso in ('ml','tz','ug','zm','zw','ne','ng')"  "1=1 "
 	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                              "1=1 "
 	./taginfo_genconfig.sh  asia               as  14000  "where iso in ('az','mn','mm','lk')"   "1=1 "
 	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where iso in ('au','pg')"        "1=1 "
@@ -124,16 +124,17 @@ t-genservices:
 
 
 
+#  10010 port reserved for Docker : https://github.com/moby/moby/issues/37507
 sotm_services:
-	./taginfo_genconfig.sh  africa             af  10000  "where (iso not in('bv')) and ( length(iso)=2 or substr(iso,1,2) in ('fr','es')) " "1=1 "
+	./taginfo_genconfig.sh  africa             af  11000  "where (iso not in('bv')) and ( length(iso)=2 or substr(iso,1,2) in ('fr','es')) " "1=1 "
 	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                            "1=1 "
-	./taginfo_genconfig.sh  asia               as  14000  "where (area_pct > 0.8) and (iso not in ('in','jp','ru','fr','nl')) and ( (length(iso)=2) or substr(iso,1,2) in ('in','jp','fr','nl','es','dk','us')) " "1=1 "
-	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','us') "      "1=1 "
-	./taginfo_genconfig.sh  central-america    ca  18000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us') " "1=1 "
-	./taginfo_genconfig.sh  europe             eu  20000  "where iso not in ('fr','de') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','de') or iso in ('it-32','it-88')) "  "1=1 "
-	./taginfo_genconfig.sh  north-america      na  22000  "where iso not in ('us','ca') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us','ca')) "  "1=1 "
-	./taginfo_genconfig.sh  russia             ru  24000  "where iso like 'ru-%' and length(iso)>2 "    "1=1 "
-	./taginfo_genconfig.sh  south-america      sa  26000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us') "  "1=1 "
+	./taginfo_genconfig.sh  asia               as  13000  "where (area_pct > 0.8) and (iso not in ('in','jp','ru','fr','nl')) and ( (length(iso)=2) or substr(iso,1,2) in ('in','jp','fr','nl','es','dk','us')) " "1=1 "
+	./taginfo_genconfig.sh  australia-oceania  ao  14000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','us') "      "1=1 "
+	./taginfo_genconfig.sh  central-america    ca  15000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us') " "1=1 "
+	./taginfo_genconfig.sh  europe             eu  16000  "where iso not in ('fr','de') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','de') or iso in ('it-32','it-88')) "  "1=1 "
+	./taginfo_genconfig.sh  north-america      na  17000  "where iso not in ('us','ca') and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk','us','ca')) "  "1=1 "
+	./taginfo_genconfig.sh  russia             ru  18000  "where iso like 'ru-%' and length(iso)>2 "    "1=1 "
+	./taginfo_genconfig.sh  south-america      sa  19000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us') "  "1=1 "
 
 
 # af - 64
@@ -148,7 +149,7 @@ sotm_services:
 # ============== ~ 625 *50  = 32Gb
 
 runservices:
-	./taginfo_run_service_refresh.sh  africa             af  10000
+	./taginfo_run_service_refresh.sh  africa             af  11000
 	./taginfo_run_service_refresh.sh  antarctica         aq  12000
 	./taginfo_run_service_refresh.sh  asia               as  14000
 	./taginfo_run_service_refresh.sh  australia-oceania  ao  16000
