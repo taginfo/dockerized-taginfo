@@ -13,11 +13,11 @@ status:
 
 refresh:
 	docker pull abiosoft/caddy
-	docker pull ruby:2.6.0-preview2-alpine3.7
+	docker pull ruby:2.6.0-preview2-alpine3.8
 	docker pull jwilder/nginx-proxy
 	docker pull jwilder/whoami
-	docker pull mdillon/postgis:10-alpine
-	docker pull ubuntu:18.04
+	docker pull mdillon/postgis:11-alpine
+	docker pull ubuntu:18.10
 
 inituid:
 	mkdir -p ./caddy
@@ -249,7 +249,8 @@ rmtempdata:
 
 
 rmdebugimages:
-#	rm ./service/*/*/poly/osm.geojson
+	rm ./service/*/*/poly/osm.geojson
+	rm ./service/*/*/poly/osm.poly
 	rm ./service/*/*/img/nebackground.geotif
 	rm ./service/*/*/img/nebackground.png
 	rm ./service/*/*/img/nebackground.png.aux.xml

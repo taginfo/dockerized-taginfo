@@ -1,0 +1,8 @@
+# generated : {{utcnow}}  // template : ./setup/service_rm.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+{% for item in items %}
+ docker-compose rm -f taginfo-{{continent}}-{{item.iso}}{% endfor %}
+ 
+# generated : {{utcnow}}

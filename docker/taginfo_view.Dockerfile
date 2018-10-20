@@ -1,4 +1,4 @@
-FROM ruby:2.6.0-preview2-alpine3.7
+FROM ruby:2.6.0-preview2-alpine3.8
 
 ARG host_uid
 ENV HOST_UID=${host_uid}
@@ -12,7 +12,7 @@ RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
   && adduser  -u ${HOST_UID} -G osm -S osm osm
 
 # Dummy version - for docker cache ..
-ENV ver_ImreSamu_taginfo=201807231510
+ENV ver_ImreSamu_taginfo=201809252100
 RUN set -ex \
     \
     && apk add --no-cache --virtual .run-deps \
@@ -32,14 +32,15 @@ RUN set -ex \
     && cd /osm/taginfo \
         && gem install rack             --clear-sources --no-document \
         && gem install rack-contrib     --clear-sources --no-document \
-        && gem install specific_install --clear-sources --no-document \
-        && gem specific_install -l https://github.com/jkowens/sinatra.git -b fix-1443 \
+       # && gem install specific_install --clear-sources --no-document \
+        #&& gem specific_install -l https://github.com/jkowens/sinatra.git -b fix-1443 \
+        && gem install sinatra          --clear-sources --no-document \
         && gem install sinatra-r18n     --clear-sources --no-document \
         && gem install json             --clear-sources --no-document \
         && gem install sqlite3          --clear-sources --no-document \
         && gem install puma             --clear-sources --no-document \
         # gem clean
-        && gem uninstall specific_install \
+        # && gem uninstall specific_install \
         && gem cleanup \
         && gem list \
     # Remove build-deps
