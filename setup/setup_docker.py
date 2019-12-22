@@ -8,17 +8,13 @@ import yaml
 import psycopg2
 import datetime
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
-
 script_root = os.path.dirname(__file__)
 
 try:
   conn_string="dbname=osm user=osm "
   conn = psycopg2.connect(conn_string)
 except:
-  print "Connection to database failed"
+  print("Connection to database failed")
   sys.exit()
 
 CONTINENT       = os.environ.get('CONTINENT',  'xx')
@@ -44,7 +40,7 @@ def run_config_gen():
           """)
           rows = curiso.fetchall()
         except:
-          print "Postgresql Query could not be executed"
+          print("Postgresql Query could not be executed")
           sys.exit()
 
         items = []
@@ -100,9 +96,9 @@ def run_config_gen():
             gentemplate(items_tagservice, 'template/index.md.jinja2',              '/osm/service/'+ CONTINENT +'/' ,   'service_index.md'   )
 
         else:
-            print " Empy / bad  SQL query -  check !!!"
+            print(" Empy / bad  SQL query -  check !!!")
 
-        #print items
+        #print(items)
 
 
 def gentemplate(items, template_name,  out_file_dir, out_file_name ):
@@ -115,16 +111,15 @@ def gentemplate(items, template_name,  out_file_dir, out_file_name ):
         continent=CONTINENT,
         continent_long=CONTINENT_LONG,
         domain=DOMAIN,
-        utcnow=datetime.datetime.utcnow().strftime('%Y-%m-%d:%H:%M').decode("utf8"),
-
+        utcnow=datetime.datetime.utcnow().strftime('%Y-%m-%d:%H:%M')
     )
-    # print tagconf.encode('utf-8')
+    # print tagconf
     # dockerconfig_directory='/osm/service/'+ CONTINENT +'/'
     if not os.path.exists( out_file_dir  ):
          os.makedirs( out_file_dir )
 
     fconf = open(  out_file_dir + out_file_name , 'w')
-    fconf.write(tagconf.encode("utf8"))
+    fconf.write(tagconf)
     fconf.close()
 
 run_config_gen()

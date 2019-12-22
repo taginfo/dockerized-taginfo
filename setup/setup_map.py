@@ -2,13 +2,14 @@ import mapnik
 import cairo 
 import psycopg2
 import os
+import sys
 from shutil import copyfile
 
 try:
   conn_string="dbname=osm user=osm " 
   conn = psycopg2.connect(conn_string)
 except:
-  print "Connection to database failed"
+  print("Connection to database failed")
 
 
 CONTINENT = os.environ.get('CONTINENT', 'xx')
@@ -19,16 +20,16 @@ def run_background_map_gen():
         curiso = conn.cursor()
         try:
           curiso.execute(""" 
-              select iso, id, taginfo_scale , name , name_en  from xtaginfo order by iso
+              select iso, id, taginfo_scale , name , name_en  from xtaginfo order by iso;
           """)
   
           rows = curiso.fetchall()
         except:
-          print "Postgresql Query could not be executed"
-
+          print("Postgresql Query could not be executed - setup_map.py")
+          sys.exit(1)
 
         for row in rows:
-            print "Generating background map: ", row[0] , row[1], row[2][0] , row[2][1] , row[3]
+            print( "Generating background map: ", row[0] , row[1], row[2][0] , row[2][1] , row[3])
             createisomap(row[0],row[2],row[3],row[4] )
 
 
@@ -44,7 +45,7 @@ def createisomap(iso, mapscale, name , name_en ):
     map_miny   = float(mapscale[4])
     map_maxy   = float(mapscale[5])
 
-    print "mapdata:", map_width, map_height, map_maxx, map_maxy,map_minx,map_miny 
+    print("mapdata:", map_width, map_height, map_maxx, map_maxy,map_minx,map_miny )
 
 
     geojsonfile='/osm/service/'+CONTINENT+'/'+iso+'/poly/osm.geojson'
@@ -93,8 +94,10 @@ def createisomap(iso, mapscale, name , name_en ):
     
     img_directory='/osm/service/'+CONTINENT+'/'+iso+'/img/'
     if not os.path.exists(img_directory):
-         os.makedirs(img_directory)
+       os.makedirs(img_directory)
 
+    os.system("rm -f "+ img_directory + "*" )
+    
     mapnik.render_to_file(m,img_directory+'dbackground0.png', 'png')
 
 
@@ -102,7 +105,7 @@ def createisomap(iso, mapscale, name , name_en ):
     # NE1_HR_LC_SR_W_DR.tif
     gdalw2=' -of GTiff   /osm/ne/ne.tif {}  '.format( img_directory + 'nebackground.geotif' )
 
-    print "gdalw:" , gdalw1, gdalw2
+    print("gdalw:" , gdalw1, gdalw2 )
     
     os.system(gdalw1+gdalw2)
 

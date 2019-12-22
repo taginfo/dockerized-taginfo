@@ -1,4 +1,4 @@
-FROM ubuntu:18.10
+FROM ubuntu:19.10
 
 # Setup timezone
 RUN echo 'Etc/UTC' > /etc/timezone && \
@@ -59,29 +59,43 @@ RUN apt-get update \
        libxslt-dev \
        postgresql-client \
        # python tools
-       mapnik-utils \
-       python \
-       python-dev \
-       python-pip \
-       python-yaml \
+       python3 \
+       python3-dev \
+       python3-pip \
+       python3-yaml \
+       python3-mapnik \
     && rm -rf /var/lib/apt/lists/
 
 # install python-geo libs
-RUN    pip install setuptools wheel virtualenv \
-    && pip install geojson \
-    && pip install fiona \
-    && pip install jinja2 \
-    && pip install mapnik \
-    && pip install psycopg2-binary \
-    && pip install pycairo \
-    && pip install shapely \
-    && pip install yq \
-    && pip list
+# python3-pip \
+
+RUN    python3 -m pip install --no-cache-dir --upgrade pip \
+    && python3 -m pip install --no-cache-dir --upgrade setuptools wheel virtualenv \
+    && python3 -m pip install --no-cache-dir --upgrade geojson \
+    && python3 -m pip install --no-cache-dir --upgrade fiona \
+    && python3 -m pip install --no-cache-dir --upgrade jinja2 \
+    && python3 -m pip install --no-cache-dir --upgrade psycopg2-binary \
+    && python3 -m pip install --no-cache-dir --upgrade shapely \
+    && python3 -m pip install --no-cache-dir --upgrade yq \
+    && python3 -m pip list \
+    && rm -fr ~/.cache/pip*
+
+#    && python3 -m pip install --no-cache-dir --upgrade mapnik \
+#    && python3 -m pip install --no-cache-dir --upgrade pycairo \
 
 WORKDIR /tools
 
+#RUN apt-get update \
+#    && apt-get install  -y --no-install-recommends \
+#    python3-setuptools \
+#    && rm -rf /var/lib/apt/lists/
+#
+#RUN git clone --depth=1 --branch=v3.0.x https://github.com/mapnik/python-mapnik.git
+#RUN cd python-mapnik \
+#    && python3 setup.py install
+
 ### install imposm3  ( need for setup )
-ENV IMPOSMVER 0.6.0-alpha.4
+ENV IMPOSMVER 0.10.0
 RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}/imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
     && tar zxvf imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
     && rm imposm-${IMPOSMVER}-linux-x86-64.tar.gz \
@@ -89,16 +103,18 @@ RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}
     && /tools/latest/imposm version
 
 # install hugo
-ENV HUGO_VERSION 0.49.2
+ENV HUGO_VERSION 0.61.0
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
 #EXPOSE 1313
 
-ENV DOWNLOAD_GEOFABRIK_VERSION v2.3.0
-RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/download/${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_linux_amd64.zip \
-    && unzip download-geofabrik_linux_amd64.zip \
-    && rm download-geofabrik_linux_amd64.zip
+ENV DOWNLOAD_GEOFABRIK_VERSION 2.5.1-rc1
+RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/download/v${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz \
+    && tar zxvf download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz \
+    && rm       download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz
+
+#            https://github.com/julien-noblet/download-geofabrik/releases/download/v2.5.1-rc1/download-geofabrik_2.5.1-rc1_Linux_x86_64.tar.gz
 
 WORKDIR /osm
 # install latest(master) libosmium, osmium-tool
@@ -108,7 +124,7 @@ RUN    git clone --quiet --depth 1 https://github.com/mapbox/protozero.git \
     && mkdir -p ./osmium-tool/build \
     && cd ./osmium-tool/build \
     && cmake -DCMAKE_BUILD_TYPE=Release .. \
-    && make -j 2 \
+    && make -j$(nproc) \
     && ctest --output-on-failure \
     && make install \
     && osmium --version
@@ -125,10 +141,10 @@ RUN  echo "params: HOST_UID=${HOST_UID} ; HOST_GID=${HOST_GID} " \
 USER root
 
 
+ENV JULIA_MAJOR=1.3
+ENV JULIA_VERSION=1.3.0
+ENV JULIA_SHA256=9ec9e8076f65bef9ba1fb3c58037743c5abb3b53d845b827e44a37e7bcacffe8
 
-ENV JULIA_MAJOR=1.0
-ENV JULIA_VERSION=1.0.1
-ENV JULIA_SHA256=9ffbcf7f4a111e13415954caccdd1ce90b5c835cee9f62d6ac708f5b752c87dd
 ENV JULIA_DIR=/usr/local/julia
 ENV JULIA_PATH=${JULIA_DIR}
 RUN mkdir ${JULIA_DIR} && \
@@ -141,16 +157,23 @@ RUN ln -fs ${JULIA_DIR}/bin/julia /usr/local/bin/julia
 
 USER osm
 
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add CSV        ; precompile"); using CSV'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataFrames ; precompile"); using DataFrames'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataStreams; precompile"); using DataStreams'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add JSON       ; precompile"); using JSON'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add LibPQ      ; precompile"); using LibPQ'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add SQLite     ; precompile"); using SQLite'
-RUN julia -O3 -e 'using Pkg; Pkg.REPLMode.pkgstr("add XLSX       ; precompile"); using XLSX'
+RUN    julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add CSV        ;precompile");using CSV' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataFrames ;precompile");using DataFrames' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataStreams;precompile");using DataStreams' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add JSON       ;precompile");using JSON' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add LibPQ      ;precompile");using LibPQ' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add SQLite     ;precompile");using SQLite' \
+    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add XLSX       ;precompile");using XLSX'
+
 USER root
 
-
+#RUN    julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add CSV        ;precompile");using CSV' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataFrames ;precompile");using DataFrames' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataStreams;precompile");using DataStreams' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add JSON       ;precompile");using JSON' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add LibPQ      ;precompile");using LibPQ' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add SQLite     ;precompile");using SQLite' \
+#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add XLSX       ;precompile");using XLSX'
 
 # no documentation for gems
 RUN mkdir -p /usr/local/etc \
@@ -182,7 +205,7 @@ RUN    git clone  --quiet --depth 1 --branch name_tabs_v2 https://github.com/Imr
         # gem clean
         #&& gem uninstall specific_install \
         && gem cleanup \
-        && gem list 
+        && gem list
 
     # Build
 RUN cd /osm/taginfo/tagstats \
@@ -196,6 +219,9 @@ RUN mkdir -p /osm/import       && chown -R osm:osm /osm/import       && chmod 27
 VOLUME /osm/import
 RUN mkdir -p /osm/service      && chown -R osm:osm /osm/service      && chmod 2777 /osm/service
 VOLUME /osm/service
+
+ADD normalized_names.jl /osm/taginfo/sources/master
+ADD problematic_tags.jl /osm/taginfo/sources/master
 
 WORKDIR /osm
 USER osm

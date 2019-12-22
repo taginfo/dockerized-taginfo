@@ -13,7 +13,7 @@ try:
   conn_string="dbname=osm user=osm " 
   conn = psycopg2.connect(conn_string)
 except:
-  print "Connection to database failed"
+  print("Connection to database failed")
 
 CONTINENT = os.environ.get('CONTINENT', 'xx')
 DOMAIN    = os.environ.get('DOMAIN',    'dd')
@@ -30,11 +30,11 @@ def run_config_gen():
   
           rows = curiso.fetchall()
         except:
-          print "Postgresql Query could not be executed"
+          print("Postgresql Query could not be executed")
 
 
         for row in rows:
-            print "Generating taginfo-config: ", row[0] , row[1], row[2][0] , row[2][1], row[3]," ; ", row[4] 
+            print("Generating taginfo-config: ", row[0] , row[1], row[2][0] , row[2][1], row[3]," ; ", row[4]) 
             createiso_config(row[0],row[2],row[3],row[4] )
    
 
@@ -48,7 +48,7 @@ def createiso_config(iso, mapscale, name , name_en):
     map_miny   = float(mapscale[4])
     map_maxy   = float(mapscale[5])
 
-    print "mapdata:", map_width, map_height, map_maxx, map_maxy,map_minx,map_miny , name , name_en 
+    print("mapdata:", map_width, map_height, map_maxx, map_maxy,map_minx,map_miny , name , name_en )
 
 
     # set languages ..
@@ -555,7 +555,7 @@ def createiso_config(iso, mapscale, name , name_en):
     tagconf = template.render(
         continent=CONTINENT,
         domain=DOMAIN,
-        iso=iso.decode("utf8"),
+        iso=iso,
         map_width=map_width, 
         map_height=map_height, 
         map_maxx=map_maxx, 
@@ -567,11 +567,11 @@ def createiso_config(iso, mapscale, name , name_en):
         lang3=lang3,
         lang4=lang4,
         lang5=lang5,
-        name=name.decode("utf8"), 
-        name_en=name_en.decode("utf8"), 
-        utcnow=datetime.datetime.utcnow().strftime('%Y-%m-%d:%H:%M').decode("utf8"),
+        name=name, 
+        name_en=name_en, 
+        utcnow=datetime.datetime.utcnow().strftime('%Y-%m-%d:%H:%M'),
     )
-    # print tagconf
+    # print(tagconf)
 
     config_directory='/osm/service/'+CONTINENT+'/'+iso+'/'
     if not os.path.exists(config_directory):
@@ -579,7 +579,7 @@ def createiso_config(iso, mapscale, name , name_en):
 
 
     fconf = open( config_directory + 'taginfo-config.json', 'w')
-    fconf.write(tagconf.encode("utf8"))
+    fconf.write(tagconf)
     fconf.close()
 
     #  mapnik.render_to_file(m,'./export/'+iso+'.png', 'png')

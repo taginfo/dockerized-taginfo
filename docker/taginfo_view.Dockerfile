@@ -1,4 +1,4 @@
-FROM ruby:2.6.0-preview2-alpine3.8
+FROM ruby:2.7-rc-alpine
 
 ARG host_uid
 ENV HOST_UID=${host_uid}

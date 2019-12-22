@@ -46,6 +46,7 @@ docker-compose run \
                 --rm \
                 -T \
                 taginfo_dev  /osm/setup/r_admin.sh
+
 echo ":: generated services"
 cat ./service/$CONTINENT/service_create.sh
 

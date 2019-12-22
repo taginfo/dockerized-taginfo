@@ -18,7 +18,8 @@ try:
   conn_string="dbname=osm user=osm " 
   conn = psycopg2.connect(conn_string)
 except:
-  print "Connection to database failed"
+  print("Connection to database failed")
+  sys.exit(1)
 
 
 CONTINENT = os.environ.get('CONTINENT', 'xx')
@@ -33,23 +34,27 @@ def qiso():
         curiso = conn.cursor()
         try:
           curiso.execute(""" 
-              select iso, id, imposmid2shortid(id) as osmium_id from xtaginfo order by iso
+              select iso, id, imposmid2shortid(id) as osmium_id from xtaginfo order by iso;
           """)
-  
           rows = curiso.fetchall()
 
-          for row in rows:
-                print "processing: ", row[0] , row[1]
+        except:
+          print("Postgresql Query could not be executed - setup_polygon.py")
+          sys.exit(1)
+
+        for row in rows:
+                print("processing: ", row[0] , row[1])
                 createisopoly(row[0],row[1],row[2] )
 
-        except:
-          print "Postgresql Query could not be executed"
 
 
 
 def show(f,s):
-    f.write ( s.encode("utf8") )
-    f.write ( '\n'.encode("utf8") )
+    f.write ( s )
+    f.write ( '\n' )
+
+#    f.write ( s.encode("utf8") )
+#    f.write ( '\n'.encode("utf8") )
 
 def write_polygon(f, wkt, p):
 
@@ -114,7 +119,9 @@ def createisopoly(iso,id,osmium_id):
                         data_tuples.append(row)
 
         except:
-                print "Query could not be executed"
+                print("Query could not be executed")
+
+        print("createisopoly:",iso,id,osmium_id)
 
         results = data_tuples 
 

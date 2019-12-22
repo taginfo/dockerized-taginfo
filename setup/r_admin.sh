@@ -1,5 +1,9 @@
 #! /bin/bash
 
+set -o errexit
+set -o pipefail
+set -o nounset
+
 echo "check db connection"
 /osm/setup/pg_isready.sh
 
@@ -39,15 +43,18 @@ else
     --
     """ | psql -e > /osm/service/${CONTINENT}/available_iso.txt
 
-    python /osm/setup/setup_polygon.py
+    cat /osm/service/${CONTINENT}/available_iso.txt
+
+    echo "start setup_polygon.py"
+    python3 /osm/setup/setup_polygon.py
 fi
 
 echo "------start setup_map.py ------"
-python /osm/setup/setup_map.py
+python3 /osm/setup/setup_map.py
 echo "------start setup_config.py -----"
-python /osm/setup/setup_config.py
+python3 /osm/setup/setup_config.py
 echo "------start setup_docker.py ----- "
-python /osm/setup/setup_docker.py
+python3 /osm/setup/setup_docker.py
 
 echo "------chmod settings -----"
 find ./service/${CONTINENT}/* -type d -print0 | xargs -0 chmod 0755 # for directories
