@@ -41,7 +41,7 @@ RUN set -ex \
         && gem install puma             --clear-sources --no-document \
         # gem clean
         # && gem uninstall specific_install \
-        && gem cleanup \
+        && gem cleanup all \
         && gem list \
     # Remove build-deps
     && apk del  .build-deps \

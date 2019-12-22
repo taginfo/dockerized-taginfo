@@ -13,7 +13,7 @@ temposm=${1}.temp.osm.xml
 rm -f $temposm
 
 # first pass - remove subarea,label,admin_centre roles
-osmium getid /osm/import_admin/admin23456iso.osm.pbf -r -f xml ${osmium_id} | \
+osmium getid /osm/import_admin/admin23456iso.osm.pbf -r --remove-tags -f xml ${osmium_id} | \
   egrep -v -e '<member type=".*" ref=".*" role=("admin_centre"|"label"|"subarea")/>' > $temposm
 
 # second pass

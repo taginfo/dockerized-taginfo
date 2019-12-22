@@ -66,9 +66,6 @@ RUN apt-get update \
        python3-mapnik \
     && rm -rf /var/lib/apt/lists/
 
-# install python-geo libs
-# python3-pip \
-
 RUN    python3 -m pip install --no-cache-dir --upgrade pip \
     && python3 -m pip install --no-cache-dir --upgrade setuptools wheel virtualenv \
     && python3 -m pip install --no-cache-dir --upgrade geojson \
@@ -80,19 +77,7 @@ RUN    python3 -m pip install --no-cache-dir --upgrade pip \
     && python3 -m pip list \
     && rm -fr ~/.cache/pip*
 
-#    && python3 -m pip install --no-cache-dir --upgrade mapnik \
-#    && python3 -m pip install --no-cache-dir --upgrade pycairo \
-
 WORKDIR /tools
-
-#RUN apt-get update \
-#    && apt-get install  -y --no-install-recommends \
-#    python3-setuptools \
-#    && rm -rf /var/lib/apt/lists/
-#
-#RUN git clone --depth=1 --branch=v3.0.x https://github.com/mapnik/python-mapnik.git
-#RUN cd python-mapnik \
-#    && python3 setup.py install
 
 ### install imposm3  ( need for setup )
 ENV IMPOSMVER 0.10.0
@@ -113,8 +98,6 @@ ENV DOWNLOAD_GEOFABRIK_VERSION 2.5.1-rc1
 RUN    wget https://github.com/julien-noblet/download-geofabrik/releases/download/v${DOWNLOAD_GEOFABRIK_VERSION}/download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz \
     && tar zxvf download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz \
     && rm       download-geofabrik_${DOWNLOAD_GEOFABRIK_VERSION}_Linux_x86_64.tar.gz
-
-#            https://github.com/julien-noblet/download-geofabrik/releases/download/v2.5.1-rc1/download-geofabrik_2.5.1-rc1_Linux_x86_64.tar.gz
 
 WORKDIR /osm
 # install latest(master) libosmium, osmium-tool
@@ -167,14 +150,6 @@ RUN    julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add CSV        ;precompile");us
 
 USER root
 
-#RUN    julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add CSV        ;precompile");using CSV' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataFrames ;precompile");using DataFrames' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add DataStreams;precompile");using DataStreams' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add JSON       ;precompile");using JSON' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add LibPQ      ;precompile");using LibPQ' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add SQLite     ;precompile");using SQLite' \
-#    && julia -e 'using Pkg; Pkg.REPLMode.pkgstr("add XLSX       ;precompile");using XLSX'
-
 # no documentation for gems
 RUN mkdir -p /usr/local/etc \
 	&& { \
@@ -184,8 +159,8 @@ RUN mkdir -p /usr/local/etc \
 
 # install & config (ruby) bundler
 RUN gem install bundler \
-    && bundle config --global silence_root_warning 1s
-
+    && bundle config --global silence_root_warning 1s \
+    && gem cleanup all \
 # Dummy version - for docker cache ..
 ENV ver_ImreSamu_taginfo=201809252100
 ADD taginfo-config.json  /osm
@@ -204,7 +179,7 @@ RUN    git clone  --quiet --depth 1 --branch name_tabs_v2 https://github.com/Imr
         && gem install puma             --clear-sources --no-document \
         # gem clean
         #&& gem uninstall specific_install \
-        && gem cleanup \
+        && gem cleanup all \
         && gem list
 
     # Build

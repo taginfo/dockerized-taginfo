@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-#!/usr/bin/python2.7
-
 #description     :  
 #author          :  
 #date            :  
@@ -26,9 +24,6 @@ CONTINENT = os.environ.get('CONTINENT', 'xx')
 DOMAIN    = os.environ.get('DOMAIN',    'dd')
 
 
-
-
-
 def qiso():
 
         curiso = conn.cursor()
@@ -52,9 +47,6 @@ def qiso():
 def show(f,s):
     f.write ( s )
     f.write ( '\n' )
-
-#    f.write ( s.encode("utf8") )
-#    f.write ( '\n'.encode("utf8") )
 
 def write_polygon(f, wkt, p):
 
