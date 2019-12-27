@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.7.5 (21429 thorn-01.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="3" visible="true" version="6" changeset="78332579">
+
+  <member type="way" ref="46419267" role="outer"/>
+  <member type="way" ref="46419272" role="outer"/>
+  <member type="way" ref="46419271" role="outer"/>
+  <member type="way" ref="46419270" role="outer"/>
+  <member type="way" ref="46419269" role="outer"/>
+
+  <tag k="admin_level" v="4"/>
+  <tag k="boundary" v="administrative"/>
+  <tag k="ISO3166-2" v="ES-CN"/>
+
+  <tag k="name"    v="Canarias"/>
+  <tag k="name:en" v="Canary Islands"/>  
+  <tag k="type" v="boundary"/>
+
+  <tag k="wikidata" v="Q5813"/>
+  <tag k="wikipedia" v="es:Canarias"/>
+
+ </relation>
+</osm>

@@ -72,6 +72,13 @@ echo """
 """ | psql -e
 
 
+
+echo """
+    -- fix  Fr-metropolitan
+    update osm_admin set iso3166_2='fr-metropolitan' WHERE wikidata='Q212429' ;
+
+""" | psql -e
+
 echo """
     -- check duplicates
     select iso3166_1,count(*) as N

@@ -90,23 +90,23 @@ travis_geofabrik_yml:
 genservices:  af-genservices aq-genservices as-genservices ao-genservices ca-genservices eu-genservices na-genservices ru-genservices sa-genservices
 
 af-genservices:
-	./taginfo_genconfig.sh  africa             af  11000  "where iso not in('bv')"        "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+	./taginfo_genconfig.sh  africa             af  11000  "where (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk')) "  "1=1 "
 aq-genservices:
 	./taginfo_genconfig.sh  antarctica         aq  12000  "--"                            "1=1 "
 as-genservices:
-	./taginfo_genconfig.sh  asia               as  14000  "where (area_pct > 0.8) and (iso not in ('ru','fr','nl'))"  "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+	./taginfo_genconfig.sh  asia               as  14000  "where (area_pct > 0.8) and (iso not in ('ru','fr','nl')) and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk')) "  "1=1 "
 ao-genservices:
-	./taginfo_genconfig.sh  australia-oceania  ao  16000  "--"                            "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','us') "
+	./taginfo_genconfig.sh  australia-oceania  ao  16000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','us')"  "1=1 "
 ca-genservices:
-	./taginfo_genconfig.sh  central-america    ca  18000  "--"                            "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+	./taginfo_genconfig.sh  central-america    ca  18000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk')"  "1=1 "
 eu-genservices:
-	./taginfo_genconfig.sh  europe             eu  20000  "where iso not in ('fr','de')"  "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk') "
+	./taginfo_genconfig.sh  europe             eu  20000  "where (length(iso)=2 AND iso not in ('ru','fr')) or (iso in ('uk-sba','fr-metropolitan'))"  "1=1 "
 na-genservices:
-	./taginfo_genconfig.sh  north-america      na  22000  "where iso not in ('us','ca')"  "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl','es','dk','us','ca') "
+	./taginfo_genconfig.sh  north-america      na  22000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk') "   "1=1 "
 ru-genservices:
-	./taginfo_genconfig.sh  russia             ru  24000  "where iso like 'ru-%'"         "length(osm.iso)>2"
+	./taginfo_genconfig.sh  russia             ru  24000  "where iso in('ru')"                            "1=1 "
 sa-genservices:
-	./taginfo_genconfig.sh  south-america      sa  26000  "--"                            "length(osm.iso)=2 or substr(osm.iso,1,2) in ('fr','nl') "
+	./taginfo_genconfig.sh  south-america      sa  26000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us') "   "1=1 "
 
 
 test-service:  init t-genservices down rmdebugimages

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.7.5 (1449 thorn-01.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <relation id="4" visible="true" version="27" changeset="75174261">
+  <member type="node" ref="60170117" role="admin_centre"/>
+  <member type="way" ref="241899495" role="outer"/>
+  <member type="way" ref="241899478" role="outer"/>
+  <member type="way" ref="241899491" role="outer"/>
+  <member type="way" ref="241899482" role="outer"/>
+  <member type="way" ref="241899492" role="outer"/>
+  <member type="way" ref="241899468" role="outer"/>
+  <member type="way" ref="24700115" role="outer"/>
+  <member type="way" ref="241899488" role="outer"/>
+  <member type="way" ref="241715387" role="outer"/>
+  <member type="way" ref="241715392" role="outer"/>
+  <member type="way" ref="148013249" role="outer"/>
+  <member type="way" ref="23148545" role="outer"/>
+  <member type="way" ref="241899500" role="outer"/>
+  <member type="way" ref="203652846" role="outer"/>
+  <member type="way" ref="721275657" role="outer"/>
+  <member type="way" ref="721285773" role="outer"/>
+  <member type="way" ref="241715398" role="outer"/>
+  <member type="way" ref="203650401" role="inner"/>
+  <member type="way" ref="203650402" role="inner"/>
+  <member type="way" ref="206910009" role="inner"/>
+  <member type="way" ref="286355036" role="inner"/>
+  <member type="way" ref="302478659" role="inner"/>
+
+  <tag k="ISO3166-2" v="UK-SBA"/>
+
+  <tag k="admin_level" v="2"/>
+  <tag k="alt_name" v="Akrotiri and Dhekelia"/>
+
+  <tag k="boundary" v="administrative"/>
+  <tag k="default_language" v="en"/>
+
+  <tag k="is_in:country" v="United Kingdom"/>
+  <tag k="name" v="British Sovereign Base Areas"/>
+  <tag k="name:en" v="British Sovereign Base Areas"/>
+  <tag k="official_name" v="Sovereign Base Areas of Akrotiri and Dhekelia"/>
+  <tag k="official_name:en" v="Sovereign Base Areas of Akrotiri and Dhekelia"/>
+  <tag k="short_name:en" v="SBA"/>
+  <tag k="timezone" v="Asia/Nicosia"/>
+  <tag k="type" v="boundary"/>
+  <tag k="wikidata" v="Q37362"/>
+  <tag k="wikipedia" v="en:Akrotiri and Dhekelia"/>
+ </relation>
+</osm>

@@ -8,9 +8,12 @@ set -o nounset
 echo "START: /osm/setup/osmium_admin_filter.sh"
 /osm/setup/osmium_admin_filter.sh
 
+echo "START: /osm/setup/15_fix_admin_polygons.sh"
+/osm/setup/15_fix_admin_polygons.sh
+
 # Import OSM admin polygons
 echo "START: /osm/setup/20_import_db.sh"
-/osm/setup/20_import_db.sh /osm/import_admin/admin23456iso.osm.pbf
+/osm/setup/20_import_db.sh /osm/import_admin/admin23456iso_fixed.osm.pbf
 
 # Download Geofabrik Polygons (kml)
 echo "START: /osm/setup/geofabrik_polyimport.sh"

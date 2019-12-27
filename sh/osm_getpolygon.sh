@@ -22,4 +22,4 @@ osmium getid $temposm -r --overwrite --output=${output}  ${osmium_id}
 rm -f $temposm
 
 chmod 644 $1
-echo "End of osm_getpolygon.sh"
+echo "End of osm_getpolygon.sh $1 $2 "

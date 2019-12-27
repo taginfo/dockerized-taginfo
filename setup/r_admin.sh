@@ -39,11 +39,23 @@ else
 
     echo """
     --
-      select iso, name_en,area_pct,name,wikidata from osm_admin2_continent_all order by iso ;
+      select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id from osm_admin2_continent_all order by iso ;
     --
     """ | psql -e > /osm/service/${CONTINENT}/available_iso.txt
 
     cat /osm/service/${CONTINENT}/available_iso.txt
+
+
+    echo """
+    --
+      select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      :ISO_FILTER  AND  :ISO_SERVICE_FILTER  
+      order by iso ;
+    --
+    """ | psql  -vISO_FILTER="${ISO_FILTER}"  -vISO_SERVICE_FILTER="${ISO_SERVICE_FILTER}"  -e > /osm/service/${CONTINENT}/available_iso_selected.txt
+
+
 
     echo "start setup_polygon.py"
     python3 /osm/setup/setup_polygon.py

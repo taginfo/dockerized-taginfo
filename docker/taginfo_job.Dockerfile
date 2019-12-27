@@ -88,7 +88,7 @@ RUN    wget https://github.com/omniscale/imposm3/releases/download/v${IMPOSMVER}
     && /tools/latest/imposm version
 
 # install hugo
-ENV HUGO_VERSION 0.61.0
+ENV HUGO_VERSION 0.62.0
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb -O /hugo.deb
 RUN dpkg -i /hugo.deb \
     && rm /hugo.deb
