@@ -3,6 +3,7 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+OSMIUM_POOL_THREADS=$(nproc --ignore=4)
 
 ls -la /osm/import_admin/planet.osm.pbf
 
@@ -17,17 +18,22 @@ osmium cat --no-progress /osm/setup/fix/*.osm.xml -f xml | grep 'type="way"' | c
 echo "add relations from fixes"
 osmium cat --no-progress /osm/setup/fix/*.osm.xml -f xml | grep 'type="relation"' | cut -d'"' -f 4 | sed -e 's/^/r/' | sort  >> /osm/import_admin/planet_ids.txt || true
 
+echo "add extra osm ids"
+cat  /osm/setup/fix/extra_planet_ids.txt >> /osm/import_admin/planet_ids.txt
+
 ls -la /osm/import_admin/planet_ids.txt
+
 head   /osm/import_admin/planet_ids.txt
+tail   /osm/import_admin/planet_ids.txt
+
 rm -f  /osm/import_admin/admin23456iso*.osm.pbf
 
 echo "osmium getid ..."
-osmium getid /osm/import_admin/planet.osm.pbf \
-   --id-file /osm/import_admin/planet_ids.txt \
+time osmium getid /osm/import_admin/planet.osm.pbf \
    --add-referenced \
+   --id-file /osm/import_admin/planet_ids.txt \
    --overwrite \
    --progress \
-   --remove-tags \
    --verbose \
    --verbose-ids \
    --output-format osm.pbf,add_metadata=false \

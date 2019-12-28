@@ -23,12 +23,9 @@ mkdir -p /osm/service/${CONTINENT}/
 ##  Antarctica  -manual setup, extreme case ...
 if [ "$CONTINENT" = "aq" ]; then
     psql -a   -P pager=off   -f "/osm/setup/setup_xtaginfo_antarctica.sql"
-    mkdir -p /osm/service/${CONTINENT}/aq/imp/
-    mkdir -p /osm/service/${CONTINENT}/aq/data/
-    mkdir -p /osm/service/${CONTINENT}/aq/input/
-    mkdir -p /osm/service/${CONTINENT}/aq/joblog/
-    mkdir -p /osm/service/${CONTINENT}/aq/poly/
 
+    /osm/setup/add_gitkeep.sh ${CONTINENT} aq
+ 
     cp /osm/setup/poly/aq-osm.poly       /osm/service/${CONTINENT}/aq/poly/osm.poly 
     cp /osm/setup/poly/aq-osm.geojson    /osm/service/${CONTINENT}/aq/poly/osm.geojson
 

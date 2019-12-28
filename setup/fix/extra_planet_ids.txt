@@ -1,0 +1,7 @@
+ #
+ # Extra osm ids - to load to the database.
+ #
+
+r1403916  # France-Metropolitan - https://www.openstreetmap.org/relation/1403916
+r2514541  # North Cyprus
+r3263726  # Cyprus-Eu

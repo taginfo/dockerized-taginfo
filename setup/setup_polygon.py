@@ -169,4 +169,8 @@ def createisopoly(iso,id,osmium_id):
         print( 'executing: '+ osm_poly_cmd)
         os.system( osm_poly_cmd )
 
+        os_add_gitkeep_cmd = '/osm/setup/add_gitkeep.sh '+CONTINENT+' '+iso
+        print( 'executing: '+ os_add_gitkeep_cmd )
+        os.system( os_add_gitkeep_cmd )
+
 qiso()
