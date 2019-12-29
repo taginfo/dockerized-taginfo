@@ -1,0 +1,650 @@
+# generated : 2019-12-29:16:02  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+
+
+  #---------------------------------------------------------
+  # Service for : "ar" - "Argentina"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-ar:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ar/data:/osm/data
+     - ./ar/download:/osm/download
+     - ./ar/sources:/osm/sources:rw
+     - ./ar:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ar
+     - AREA_NAME="Argentina"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "bo" - "Bolivia"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-bo:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bo/data:/osm/data
+     - ./bo/download:/osm/download
+     - ./bo/sources:/osm/sources:rw
+     - ./bo:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bo
+     - AREA_NAME="Bolivia"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "br" - "Brazil"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-br:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./br/data:/osm/data
+     - ./br/download:/osm/download
+     - ./br/sources:/osm/sources:rw
+     - ./br:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=br
+     - AREA_NAME="Brazil"
+     - GDNAME=${GDNAME:-brazil}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "ck" - "Cook Islands"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-ck:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ck/data:/osm/data
+     - ./ck/download:/osm/download
+     - ./ck/sources:/osm/sources:rw
+     - ./ck:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ck
+     - AREA_NAME="Cook Islands"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "cl" - "Chile"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-cl:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cl/data:/osm/data
+     - ./cl/download:/osm/download
+     - ./cl/sources:/osm/sources:rw
+     - ./cl:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cl
+     - AREA_NAME="Chile"
+     - GDNAME=${GDNAME:-chile}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "co" - "Colombia"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-co:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./co/data:/osm/data
+     - ./co/download:/osm/download
+     - ./co/sources:/osm/sources:rw
+     - ./co:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=co
+     - AREA_NAME="Colombia"
+     - GDNAME=${GDNAME:-colombia}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "ec" - "Ecuador"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-ec:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ec/data:/osm/data
+     - ./ec/download:/osm/download
+     - ./ec/sources:/osm/sources:rw
+     - ./ec:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ec
+     - AREA_NAME="Ecuador"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "fk" - "Falkland Islands"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-fk:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fk/data:/osm/data
+     - ./fk/download:/osm/download
+     - ./fk/sources:/osm/sources:rw
+     - ./fk:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fk
+     - AREA_NAME="Falkland Islands"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-cp" - "Clipperton Island"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-fr-cp:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-cp/data:/osm/data
+     - ./fr-cp/download:/osm/download
+     - ./fr-cp/sources:/osm/sources:rw
+     - ./fr-cp:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-cp
+     - AREA_NAME="Clipperton Island"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-gf" - "French Guiana"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-fr-gf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-gf/data:/osm/data
+     - ./fr-gf/download:/osm/download
+     - ./fr-gf/sources:/osm/sources:rw
+     - ./fr-gf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-gf
+     - AREA_NAME="French Guiana"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-pf" - "French Polynesia"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-fr-pf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-pf/data:/osm/data
+     - ./fr-pf/download:/osm/download
+     - ./fr-pf/sources:/osm/sources:rw
+     - ./fr-pf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-pf
+     - AREA_NAME="French Polynesia"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "gs" - "South Georgia and the South Sandwich Islands"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-gs:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gs/data:/osm/data
+     - ./gs/download:/osm/download
+     - ./gs/sources:/osm/sources:rw
+     - ./gs:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gs
+     - AREA_NAME="South Georgia and the South Sandwich Islands"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "gy" - "Guyana"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-gy:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gy/data:/osm/data
+     - ./gy/download:/osm/download
+     - ./gy/sources:/osm/sources:rw
+     - ./gy:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gy
+     - AREA_NAME="Guyana"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "nl-aw" - "Aruba"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-nl-aw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nl-aw/data:/osm/data
+     - ./nl-aw/download:/osm/download
+     - ./nl-aw/sources:/osm/sources:rw
+     - ./nl-aw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nl-aw
+     - AREA_NAME="Aruba"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "nl-cw" - "Curacao"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-nl-cw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nl-cw/data:/osm/data
+     - ./nl-cw/download:/osm/download
+     - ./nl-cw/sources:/osm/sources:rw
+     - ./nl-cw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nl-cw
+     - AREA_NAME="Curacao"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "nu" - "Niue"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-nu:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nu/data:/osm/data
+     - ./nu/download:/osm/download
+     - ./nu/sources:/osm/sources:rw
+     - ./nu:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nu
+     - AREA_NAME="Niue"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "pe" - "Peru"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-pe:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./pe/data:/osm/data
+     - ./pe/download:/osm/download
+     - ./pe/sources:/osm/sources:rw
+     - ./pe:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=pe
+     - AREA_NAME="Peru"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "pn" - "Pitcairn Islands"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-pn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./pn/data:/osm/data
+     - ./pn/download:/osm/download
+     - ./pn/sources:/osm/sources:rw
+     - ./pn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=pn
+     - AREA_NAME="Pitcairn Islands"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "py" - "Paraguay"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-py:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./py/data:/osm/data
+     - ./py/download:/osm/download
+     - ./py/sources:/osm/sources:rw
+     - ./py:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=py
+     - AREA_NAME="Paraguay"
+     - GDNAME=${GDNAME:-paraguay}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "sr" - "Suriname"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-sr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sr/data:/osm/data
+     - ./sr/download:/osm/download
+     - ./sr/sources:/osm/sources:rw
+     - ./sr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sr
+     - AREA_NAME="Suriname"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "tk" - "Tokelau"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-tk:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tk/data:/osm/data
+     - ./tk/download:/osm/download
+     - ./tk/sources:/osm/sources:rw
+     - ./tk:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tk
+     - AREA_NAME="Tokelau"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "to" - "Tonga"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-to:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./to/data:/osm/data
+     - ./to/download:/osm/download
+     - ./to/sources:/osm/sources:rw
+     - ./to:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=to
+     - AREA_NAME="Tonga"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "us-as" - "American Samoa"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-us-as:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us-as/data:/osm/data
+     - ./us-as/download:/osm/download
+     - ./us-as/sources:/osm/sources:rw
+     - ./us-as:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us-as
+     - AREA_NAME="American Samoa"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "us-um" - "United States of America (Minor Outlying Islands);Kingman Reef"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-us-um:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us-um/data:/osm/data
+     - ./us-um/download:/osm/download
+     - ./us-um/sources:/osm/sources:rw
+     - ./us-um:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us-um
+     - AREA_NAME="United States of America (Minor Outlying Islands);Kingman Reef"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "uy" - "Uruguay"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-uy:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./uy/data:/osm/data
+     - ./uy/download:/osm/download
+     - ./uy/sources:/osm/sources:rw
+     - ./uy:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=uy
+     - AREA_NAME="Uruguay"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "ve" - "Venezuela"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-ve:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ve/data:/osm/data
+     - ./ve/download:/osm/download
+     - ./ve/sources:/osm/sources:rw
+     - ./ve:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ve
+     - AREA_NAME="Venezuela"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+  #---------------------------------------------------------
+  # Service for : "ws" - "Samoa"
+  #            continent: "sa"
+  #
+  taginfo-job-sa-ws:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ws/data:/osm/data
+     - ./ws/download:/osm/download
+     - ./ws/sources:/osm/sources:rw
+     - ./ws:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ws
+     - AREA_NAME="Samoa"
+     - GDNAME=${GDNAME:-south-america}   
+     - CONTINENT=sa
+     - CONTINENT_LONG=south-america
+
+
+# generated : 2019-12-29:16:02  

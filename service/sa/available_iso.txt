@@ -1,0 +1,285 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id from osm_admin2_continent_all order by iso ;
+  iso   |                     name_en                     |     area_pct     |                               name                               | wikidata  |   osm_id   
+--------+-------------------------------------------------+------------------+------------------------------------------------------------------+-----------+------------
+ ar     | Argentina                                       |                1 | Argentina                                                        | Q414      | r286393
+ ar-a   |                                                 |                1 | Salta                                                            | Q44803    | r2405230
+ ar-b   | Buenos Aires                                    |                1 | Buenos Aires                                                     | Q44754    | r1632167
+ ar-c   | Autonomous City of Buenos Aires                 |                1 | Ciudad Autónoma de Buenos Aires                                  | Q1486     | r3082668
+ ar-d   |                                                 |                1 | San Luis                                                         | Q44818    | r153538
+ ar-e   | Entre Ríos Province                             |                1 | Entre Ríos                                                       | Q44762    | r153551
+ ar-f   |                                                 |                1 | La Rioja                                                         | Q44796    | r153536
+ ar-g   |                                                 |                1 | Santiago del Estero                                              | Q44827    | r153544
+ ar-h   |                                                 |                1 | Chaco                                                            | Q44757    | r153554
+ ar-j   |                                                 |                1 | San Juan                                                         | Q44805    | r153539
+ ar-k   |                                                 |                1 | Catamarca                                                        | Q44756    | r153545
+ ar-l   |                                                 |                1 | La Pampa                                                         | Q44795    | r153541
+ ar-m   |                                                 |                1 | Mendoza                                                          | Q44797    | r153540
+ ar-n   |                                                 |                1 | Misiones                                                         | Q44798    | r153553
+ ar-p   |                                                 |                1 | Formosa                                                          | Q44761    | r2849847
+ ar-q   | Neuquén Province                                |                1 | Neuquén                                                          | Q44800    | r1606727
+ ar-r   | Río Negro Province                              |                1 | Río Negro                                                        | Q44802    | r153547
+ ar-s   |                                                 |                1 | Santa Fe                                                         | Q44823    | r153543
+ ar-t   |                                                 |                1 | Tucumán                                                          | Q44829    | r153558
+ ar-u   |                                                 |                1 | Chubut                                                           | Q45007    | r153548
+ ar-v   | Tierra del Fuego Province                       |                1 | Tierra del Fuego                                                 | Q44832    | r153550
+ ar-w   |                                                 |                1 | Corrientes                                                       | Q44758    | r153552
+ ar-x   | Córdoba                                         |                1 | Córdoba                                                          | Q44759    | r3592494
+ ar-y   |                                                 |                1 | Jujuy                                                            | Q44764    | r153556
+ ar-z   | Santa Cruz Province, Argentina                  |                1 | Santa Cruz                                                       | Q44821    | r153549
+ bo     | Bolivia                                         |                1 | Bolivia                                                          | Q750      | r252645
+ bo-b   |                                                 |                1 | El Beni                                                          | Q233169   | r405935
+ bo-c   |                                                 |                1 | Cochabamba                                                       | Q233917   | r393562
+ bo-h   |                                                 |                1 | Chuquisaca                                                       | Q235110   | r396197
+ bo-l   |                                                 |                1 | La Paz                                                           | Q272784   | r400473
+ bo-n   |                                                 |                1 | Pando                                                            | Q235362   | r3358584
+ bo-o   |                                                 |                1 | Oruro                                                            | Q1061368  | r395910
+ bo-p   |                                                 |                1 | Potosí                                                           | Q238079   | r4509552
+ bo-s   |                                                 |                1 | Santa Cruz                                                       | Q235106   | r3360565
+ bo-t   |                                                 |                1 | Tarija                                                           | Q233933   | r396198
+ br     | Brazil                                          |                1 | Brasil                                                           | Q155      | r59470
+ br-ac  | Acre                                            |                1 | Acre                                                             | Q40780    | r326266
+ br-al  | Alagoas                                         |                1 | Alagoas                                                          | Q40885    | r303781
+ br-am  | Amazonas                                        |                1 | Amazonas                                                         | Q40040    | r332476
+ br-ap  | Amapá                                           |                1 | Amapá                                                            | Q40130    | r331463
+ br-ba  | Bahia                                           |                1 | Bahia                                                            | Q40430    | r362413
+ br-ce  | Ceará                                           |                1 | Ceará                                                            | Q40123    | r302635
+ br-df  | Federal District                                |                1 | Distrito Federal                                                 | Q119158   | r421151
+ br-es  | Espírito Santo                                  |                1 | Espírito Santo                                                   | Q43233    | r54882
+ br-go  | Goiás                                           |                1 | Goiás                                                            | Q41587    | r334443
+ br-ma  | Maranhão                                        |                1 | Maranhão                                                         | Q42362    | r332924
+ br-mg  | Minas Gerais                                    |                1 | Minas Gerais                                                     | Q39109    | r315173
+ br-ms  | Mato Grosso do Sul                              |                1 | Mato Grosso do Sul                                               | Q43319    | r334051
+ br-mt  | Mato Grosso                                     |                1 | Mato Grosso                                                      | Q42824    | r333597
+ br-pa  | Pará                                            |                1 | Pará                                                             | Q39517    | r185579
+ br-pb  | Paraíba                                         |                1 | Paraíba                                                          | Q38088    | r301464
+ br-pe  | Pernambuco                                      |                1 | Pernambuco                                                       | Q40942    | r303702
+ br-pi  | Piauí                                           |                1 | Piauí                                                            | Q42722    | r302819
+ br-pr  | Paraná                                          |                1 | Paraná                                                           | Q15499    | r297640
+ br-rj  | Rio de Janeiro                                  |                1 | Rio de Janeiro                                                   | Q41428    | r57963
+ br-rn  | Rio Grande do Norte                             |                1 | Rio Grande do Norte                                              | Q43255    | r301079
+ br-ro  | Rondônia                                        |                1 | Rondônia                                                         | Q43235    | r325866
+ br-rr  | Roraima                                         |                1 | Roraima                                                          | Q42508    | r326287
+ br-rs  | Rio Grande do Sul                               |                1 | Rio Grande do Sul                                                | Q40030    | r242620
+ br-sc  | Santa Catarina                                  |                1 | Santa Catarina                                                   | Q41115    | r296584
+ br-se  | Sergipe                                         |                1 | Sergipe                                                          | Q43783    | r303940
+ br-sp  | São Paulo                                       |                1 | São Paulo                                                        | Q175      | r298204
+ br-to  | Tocantins                                       |                1 | Tocantins                                                        | Q43695    | r336819
+ ck     | Cook Islands                                    |                1 | Kūki 'Āirani                                                     | Q26988    | r2184233
+ cl     | Chile                                           |                1 | Chile                                                            | Q298      | r167454
+ cl-ai  |                                                 |                1 | Región Aysén del General Carlos Ibáñez del Campo                 | Q2181     | r305693
+ cl-an  |                                                 |                1 | Región de Antofagasta                                            | Q2118     | r240932
+ cl-ap  |                                                 |                1 | Región de Arica y Parinacota                                     | Q2109     | r238392
+ cl-ar  |                                                 |                1 | Región de la Araucanía                                           | Q2176     | r296378
+ cl-at  |                                                 |                1 | Región de Atacama                                                | Q2120     | r271889
+ cl-bi  |                                                 |                1 | Región del Biobío                                                | Q2170     | r252891
+ cl-co  |                                                 |                1 | Región de Coquimbo                                               | Q2121     | r231672
+ cl-li  |                                                 |                1 | Región del Libertador General Bernardo O'Higgins                 | Q2133     | r206487
+ cl-ll  |                                                 |                1 | Región de Los Lagos                                              | Q2178     | r274991
+ cl-lr  |                                                 |                1 | Región de Los Ríos                                               | Q2177     | r274988
+ cl-ma  | XII Region of Magallanes and Chilean Antarctica |                1 | Región de Magallanes y de la Antártica Chilena                   | Q2189     | r301542
+ cl-ml  |                                                 |                1 | Región del Maule                                                 | Q2166     | r239882
+ cl-nb  |                                                 |                1 | Región de Ñuble                                                  | Q24076693 | r7421025
+ cl-rm  |                                                 |                1 | Región Metropolitana de Santiago                                 | Q2131     | r198848
+ cl-ta  |                                                 |                1 | Región de Tarapacá                                               | Q2114     | r238393
+ cl-vs  |                                                 |                1 | Región de Valparaíso                                             | Q219458   | r198847
+ co     | Colombia                                        |                1 | Colombia                                                         | Q739      | r120027
+ co-ama | Amazonas                                        |                1 | Amazonas                                                         | Q44724    | r1303962
+ co-ant |                                                 |                1 | Antioquia                                                        | Q123304   | r1315120
+ co-ara |                                                 |                1 | Arauca                                                           | Q230223   | r1388045
+ co-atl |                                                 |                1 | Atlántico                                                        | Q230882   | r1315209
+ co-bol |                                                 |                1 | Bolívar                                                          | Q230597   | r1316581
+ co-boy |                                                 |                1 | Boyacá                                                           | Q121233   | r1390144
+ co-cal | Caldas                                          |                1 | Caldas                                                           | Q230607   | r396705
+ co-caq |                                                 |                1 | Caquetá                                                          | Q13985    | r1394843
+ co-cas |                                                 |                1 | Casanare                                                         | Q13984    | r1392025
+ co-cau |                                                 |                1 | Cauca                                                            | Q230602   | r1392085
+ co-ces |                                                 |                1 | Cesar                                                            | Q234916   | r1317223
+ co-cho |                                                 |                1 | Chocó                                                            | Q230584   | r1322131
+ co-cor |                                                 |                1 | Córdoba                                                          | Q234912   | r1321032
+ co-cun |                                                 |                1 | Cundinamarca                                                     | Q232564   | r1305533
+ co-dc  | Bogota Capital District                         |                1 | Distrito Capital                                                 | Q2841     | r1387968
+ co-gua |                                                 |                1 | Guainía                                                          | Q238645   | r1385038
+ co-guv |                                                 |                1 | Guaviare                                                         | Q272885   | r1380540
+ co-hui |                                                 |                1 | Huila                                                            | Q234920   | r1396291
+ co-lag |                                                 |                1 | La Guajira                                                       | Q272747   | r1321379
+ co-mag |                                                 |                1 | Magdalena                                                        | Q199910   | r1319097
+ co-met |                                                 |                1 | Meta                                                             | Q238629   | r1305166
+ co-nar |                                                 |                1 | Nariño                                                           | Q230217   | r1380130
+ co-nsa |                                                 |                1 | Norte de Santander                                               | Q233058   | r1324192
+ co-put |                                                 |                1 | Putumayo                                                         | Q232953   | r1375357
+ co-qui |                                                 |                1 | Quindío                                                          | Q13995    | r1331230
+ co-ris |                                                 |                1 | Risaralda                                                        | Q13993    | r1374221
+ co-san |                                                 |                1 | Santander                                                        | Q235166   | r1372374
+ co-sap |                                                 |                1 | Archipiélago de San Andrés, Providencia y Santa Catalina         | Q26855    | r2181889
+ co-suc |                                                 |                1 | Sucre                                                            | Q235188   | r1320759
+ co-tol |                                                 |                1 | Tolima                                                           | Q234501   | r1309495
+ co-vac |                                                 |                1 | Valle del Cauca                                                  | Q13990    | r1322825
+ co-vau |                                                 |                1 | Vaupés                                                           | Q234505   | r1359366
+ co-vid |                                                 |                1 | Vichada                                                          | Q268729   | r1357098
+ ec     | Ecuador                                         |                1 | Ecuador                                                          | Q736      | r108089
+ ec-a   |                                                 |                1 | Azuay                                                            | Q220451   | r107886
+ ec-b   |                                                 |                1 | Bolívar                                                          | Q261165   | r108899
+ ec-c   |                                                 |                1 | Carchi                                                           | Q321729   | r114048
+ ec-d   |                                                 |                1 | Orellana                                                         | Q499475   | r114245
+ ec-e   |                                                 |                1 | Esmeraldas                                                       | Q335526   | r113237
+ ec-f   |                                                 |                1 | Cañar                                                            | Q335471   | r108720
+ ec-g   |                                                 |                1 | Guayas                                                           | Q335464   | r109468
+ ec-h   |                                                 |                1 | Chimborazo                                                       | Q238492   | r108860
+ ec-i   |                                                 |                1 | Imbabura                                                         | Q321863   | r113982
+ ec-l   |                                                 |                1 | Loja                                                             | Q504238   | r108088
+ ec-m   |                                                 |                1 | Manabí                                                           | Q504666   | r112910
+ ec-n   |                                                 |                1 | Napo                                                             | Q211900   | r114276
+ ec-o   |                                                 |                1 | El Oro                                                           | Q466019   | r958681
+ ec-p   |                                                 |                1 | Pichincha                                                        | Q272586   | r113722
+ ec-r   |                                                 |                1 | Los Ríos                                                         | Q504260   | r109248
+ ec-s   |                                                 |                1 | Morona Santiago                                                  | Q549522   | r108521
+ ec-sd  |                                                 |                1 | Santo Domingo de los Tsáchilas                                   | Q1123208  | r113721
+ ec-se  | Santa Elena Province                            |                1 | Santa Elena                                                      | Q1124125  | r109441
+ ec-t   |                                                 |                1 | Tungurahua                                                       | Q504252   | r113442
+ ec-u   |                                                 |                1 | Sucumbíos                                                        | Q499456   | r114574
+ ec-w   | Galápagos                                       |                1 | Galápagos                                                        | Q475038   | r1628150
+ ec-x   |                                                 |                1 | Cotopaxi                                                         | Q241140   | r963072
+ ec-y   |                                                 |                1 | Pastaza                                                          | Q214814   | r113869
+ ec-z   |                                                 |                1 | Zamora Chinchipe                                                 | Q744670   | r108326
+ fj-e   |                                                 | 0.64698448760259 | Eastern                                                          | Q182169   | r4632580
+ fk     | Falkland Islands                                |                1 | Falkland Islands                                                 | Q9648     | r2185374
+ fr-cp  | Clipperton Island                               |                1 | Île de Clipperton                                                | Q161258   | r9823701
+ fr-cp  | Clipperton Island                               |                1 | Île de Clipperton                                                | Q161258   | r2573009
+ fr-gf  | French Guiana                                   |                1 | Guyane                                                           | Q3769     | r1260551
+ fr-pf  | French Polynesia                                |                1 | Polynésie Française                                              | Q30971    | r3412620
+ gs     | South Georgia and the South Sandwich Islands    |                1 | South Georgia and South Sandwich Islands                         | Q35086    | r1983628
+ gy     | Guyana                                          |                1 | Guyana                                                           | Q734      | r287083
+ gy-ba  |                                                 |                1 | Barima-Waini                                                     | Q537740   | r7105826
+ gy-cu  |                                                 |                1 | Cuyuni-Mazaruni                                                  | Q1146777  | r7108866
+ gy-de  |                                                 |                1 | Demerara-Mahaica                                                 | Q1185362  | r7105917
+ gy-eb  |                                                 |                1 | East Berbice-Corentyne                                           | Q1277758  | r7109048
+ gy-es  |                                                 |                1 | Essequibo Islands-West Demerara                                  | Q1368802  | r7105894
+ gy-ma  |                                                 |                1 | Mahaica-Berbice                                                  | Q1466671  | r7108958
+ gy-pm  |                                                 |                1 | Pomeroon-Supenaam                                                | Q680382   | r7105874
+ gy-pt  |                                                 |                1 | Potaro-Siparuni                                                  | Q1454035  | r7108941
+ gy-ud  |                                                 |                1 | Upper Demerara-Berbice                                           | Q1309042  | r7109155
+ gy-ut  |                                                 |                1 | Upper Takutu-Upper Essequibo                                     | Q1516381  | r7108944
+ nl-aw  | Aruba                                           |                1 | Aruba                                                            | Q21203    | r1231749
+ nl-cw  | Curacao                                         |                1 | Curaçao                                                          | Q25279    | r1216719
+ nu     | Niue                                            |                1 | Niuē                                                             | Q34020    | r1558556
+ nz-cit |                                                 |                1 | Chatham Islands                                                  | Q115459   | r2647558
+ pe     | Peru                                            |                1 | Perú                                                             | Q419      | r288247
+ pe-ama | Amazonas                                        |                1 | Amazonas                                                         | Q201162   | r1973462
+ pe-anc | Ancash                                          |                1 | Ancash                                                           | Q205089   | r1953170
+ pe-apu | Apurímac                                        |                1 | Apurímac                                                         | Q208185   | r1929522
+ pe-are | Arequipa                                        |                1 | Arequipa                                                         | Q205068   | r1879287
+ pe-aya | Ayacucho                                        |                1 | Ayacucho                                                         | Q205112   | r1930901
+ pe-caj | Cajamarca                                       |                1 | Cajamarca                                                        | Q205078   | r1896111
+ pe-cal |                                                 |                1 | Callao                                                           | Q105037   | r1944657
+ pe-cus | Cusco                                           |                1 | Cusco                                                            | Q205057   | r1923695
+ pe-huc | Huánuco                                         |                1 | Huánuco                                                          | Q215221   | r1954493
+ pe-huv | Huancavelica                                    |                1 | Huancavelica                                                     | Q505220   | r1933551
+ pe-ica | Ica                                             |                1 | Ica                                                              | Q208186   | r1899013
+ pe-jun | Junín                                           |                1 | Junín                                                            | Q207973   | r1948258
+ pe-lal | La Libertad                                     |                1 | La Libertad                                                      | Q205126   | r1967959
+ pe-lam | Lambayeque                                      |                1 | Lambayeque                                                       | Q210061   | r1969722
+ pe-lim | Lima                                            |                1 | Lima                                                             | Q211795   | r1944659
+ pe-lma |                                                 |                1 | Lima                                                             | Q579240   | r1944670
+ pe-lor | Loreto                                          |                1 | Loreto                                                           | Q200938   | r1994077
+ pe-mdd | Madre de Dios                                   |                1 | Madre de Dios                                                    | Q210896   | r1891287
+ pe-moq | Moquegua                                        |                1 | Moquegua                                                         | Q208182   | r1875889
+ pe-pas | Pasco                                           |                1 | Pasco                                                            | Q211208   | r1948452
+ pe-piu | Piura                                           |                1 | Departamento de Piura                                            | Q208183   | r1986151
+ pe-pun | Puno                                            |                1 | Puno                                                             | Q205104   | r1907899
+ pe-sam | San Martín                                      |                1 | San Martín                                                       | Q211793   | r1971661
+ pe-tac | Tacna                                           |                1 | Tacna                                                            | Q207413   | r1874307
+ pe-tum | Tumbes                                          |                1 | Tumbes                                                           | Q209597   | r1986974
+ pe-uca | Ucayali                                         |                1 | Ucayali                                                          | Q207424   | r1921996
+ pn     | Pitcairn Islands                                |                1 | Pitcairn Islands                                                 | Q35672    | r2185375
+ py     | Paraguay                                        |                1 | Paraguay                                                         | Q733      | r287077
+ py-1   |                                                 |                1 | Concepción                                                       | Q741009   | r389885
+ py-10  |                                                 |                1 | Alto Paraná                                                      | Q682654   | r389891
+ py-11  |                                                 |                1 | Central                                                          | Q372461   | r389892
+ py-12  |                                                 |                1 | Ñeembucú                                                         | Q755115   | r389895
+ py-13  |                                                 |                1 | Amambay                                                          | Q686586   | r389886
+ py-14  |                                                 |                1 | Canindeyú                                                        | Q279085   | r389888
+ py-15  |                                                 |                1 | Presidente Hayes                                                 | Q750551   | r389884
+ py-16  |                                                 |                1 | Alto Paraguay                                                    | Q682642   | r389882
+ py-19  | Boquerón                                        |                1 | Boquerón                                                         | Q741017   | r389883
+ py-2   |                                                 |                1 | San Pedro                                                        | Q526176   | r389887
+ py-3   |                                                 |                1 | Cordillera                                                       | Q755121   | r389889
+ py-4   |                                                 |                1 | Guairá                                                           | Q755116   | r389894
+ py-5   |                                                 |                1 | Caaguazú                                                         | Q880399   | r389890
+ py-6   |                                                 |                1 | Caazapá                                                          | Q881839   | r389897
+ py-7   |                                                 |                1 | Itapúa                                                           | Q222564   | r389898
+ py-8   |                                                 |                1 | Misiones                                                         | Q591194   | r389896
+ py-9   |                                                 |                1 | Paraguarí                                                        | Q240014   | r389893
+ py-asu |                                                 |                1 | Distrito Capital de Paraguay                                     | Q2933     | r3654543
+ sr     | Suriname                                        |                1 | Suriname                                                         | Q730      | r287082
+ sr-br  |                                                 |                1 | Brokopondo                                                       | Q847680   | r5740849
+ sr-cm  |                                                 |                1 | Commewijne                                                       | Q952510   | r5740850
+ sr-cr  |                                                 |                1 | Coronie                                                          | Q1130141  | r5740851
+ sr-ma  |                                                 |                1 | Marowijne                                                        | Q1140897  | r5740852
+ sr-ni  |                                                 |                1 | Nickerie                                                         | Q1147515  | r5740853
+ sr-pm  |                                                 |                1 | Paramaribo                                                       | Q1130134  | r5740855
+ sr-pr  |                                                 |                1 | Para                                                             | Q1140891  | r5740854
+ sr-sa  |                                                 |                1 | Saramacca                                                        | Q1351157  | r5740856
+ sr-si  |                                                 |                1 | Sipaliwini                                                       | Q1130138  | r5740857
+ sr-wa  |                                                 |                1 | Wanica                                                           | Q1147524  | r5740858
+ tk     | Tokelau                                         |                1 | Tokelau                                                          | Q36823    | r2186600
+ to     | Tonga                                           |                1 | Tonga                                                            | Q678      | r2186665
+ to-01  |                                                 |                1 | 'Eua                                                             | Q18472979 | r7247527
+ to-02  |                                                 |                1 | Ha'apai                                                          | Q612098   | r3772678
+ to-03  |                                                 |                1 | Niuas                                                            | Q1200954  | r3772679
+ to-04  |                                                 |                1 | Tongatapu                                                        | Q620452   | r3772680
+ to-05  |                                                 |                1 | Vava'u                                                           | Q859666   | r3772681
+ us-as  | American Samoa                                  |                1 | American Samoa                                                   | Q16641    | r2177187
+ us-um  |                                                 |                1 | United States of America (Minor Outlying Islands);Jarvis Island  |           | w42296558
+ us-um  |                                                 |                1 | United States of America (Minor Outlying Islands);Kingman Reef   |           | w296770514
+ us-um  |                                                 |                1 | United States of America (Minor Outlying Islands);Palmyra Atoll  |           | w163763449
+ us-um  |                                                 |                1 | United States of America (Minor Outlying Islands);Howland Island |           | w42296438
+ us-um  |                                                 |                1 | United States of America (Minor Outlying Islands);Baker Island   |           | w42296437
+ uy     | Uruguay                                         |                1 | Uruguay                                                          | Q77       | r287072
+ uy-ar  |                                                 |                1 | Artigas                                                          | Q16603    | r1617618
+ uy-ca  |                                                 |                1 | Canelones                                                        | Q16577    | r1625171
+ uy-cl  |                                                 |                1 | Cerro Largo                                                      | Q16575    | r1656175
+ uy-co  |                                                 |                1 | Colonia                                                          | Q16580    | r1650769
+ uy-du  |                                                 |                1 | Durazno                                                          | Q16591    | r1646018
+ uy-fd  |                                                 |                1 | Florida                                                          | Q16593    | r1635164
+ uy-fs  |                                                 |                1 | Flores                                                           | Q16578    | r1645684
+ uy-la  |                                                 |                1 | Lavalleja                                                        | Q460435   | r1635124
+ uy-ma  |                                                 |                1 | Maldonado                                                        | Q331196   | r1635117
+ uy-mo  |                                                 |                1 | Montevideo                                                       | Q16594    | r1634207
+ uy-pa  |                                                 |                1 | Paysandú                                                         | Q16576    | r1662387
+ uy-rn  |                                                 |                1 | Río Negro                                                        | Q16596    | r1662476
+ uy-ro  |                                                 |                1 | Rocha                                                            | Q16582    | r1653142
+ uy-rv  |                                                 |                1 | Rivera                                                           | Q16609    | r1627812
+ uy-sa  |                                                 |                1 | Salto                                                            | Q16595    | r1614733
+ uy-sj  |                                                 |                1 | San José                                                         | Q16579    | r1635189
+ uy-so  |                                                 |                1 | Soriano                                                          | Q16584    | r1646600
+ uy-ta  |                                                 |                1 | Tacuarembó                                                       | Q16587    | r1662265
+ uy-tt  |                                                 |                1 | Treinta y Tres                                                   | Q16610    | r1640982
+ ve     | Venezuela                                       |                1 | Venezuela                                                        | Q717      | r272644
+ ve-a   |                                                 |                1 | Distrito Capital                                                 | Q492791   | r2444378
+ ve-b   | Anzoategui State                                |                1 | Anzoátegui                                                       | Q190922   | r2267150
+ ve-c   | Apure State                                     |                1 | Apure                                                            | Q41146    | r3395162
+ ve-d   |                                                 |                1 | Aragua                                                           | Q190687   | r272746
+ ve-e   |                                                 |                1 | Barinas                                                          | Q43271    | r3763132
+ ve-f   | Bolivar State                                   |                1 | Bolívar                                                          | Q191164   | r2269155
+ ve-g   |                                                 |                1 | Carabobo                                                         | Q191186   | r272745
+ ve-h   |                                                 |                1 | Cojedes                                                          | Q205460   | r272662
+ ve-i   |                                                 |                1 | Falcón                                                           | Q202071   | r2269792
+ ve-j   | Guarico State                                   |                1 | Guárico                                                          | Q202075   | r272663
+ ve-k   |                                                 |                1 | Lara                                                             | Q205796   | r272744
+ ve-l   |                                                 |                1 | Mérida                                                           | Q165582   | r272635
+ ve-m   |                                                 |                1 | Miranda                                                          | Q191174   | r272673
+ ve-n   | Monagas State                                   |                1 | Monagas                                                          | Q205776   | r272670
+ ve-o   |                                                 |                1 | Nueva Esparta                                                    | Q204876   | r2269770
+ ve-p   | Portuguesa State                                |                1 | Portuguesa                                                       | Q205784   | r272661
+ ve-r   |                                                 |                1 | Sucre                                                            | Q205824   | r272671
+ ve-s   |                                                 |                1 | Táchira                                                          | Q41144    | r272633
+ ve-t   |                                                 |                1 | Trujillo                                                         | Q202068   | r272634
+ ve-u   |                                                 |                1 | Yaracuy                                                          | Q201121   | r272743
+ ve-v   |                                                 |                1 | Zulia                                                            | Q43269    | r272632
+ ve-w   | Federal Dependencies                            |                1 | Dependencias Federales                                           | Q130343   | r3399075
+ ve-x   |                                                 |                1 | Vargas                                                           | Q205843   | r2442703
+ ve-y   | Delta Amacuro State                             |                1 | Delta Amacuro                                                    | Q201137   | r272669
+ ve-z   | Amazonas State                                  |                1 | Amazonas                                                         | Q170453   | r2269815
+ ws     | Samoa                                           |                1 | Sāmoa                                                            | Q683      | r1872673
+(280 rows)
+

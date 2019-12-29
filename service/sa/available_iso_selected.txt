@@ -1,0 +1,40 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us')   AND  1=1   
+      order by iso ;
+  iso  |                   name_en                    | area_pct |                               name                               | wikidata |   osm_id   
+-------+----------------------------------------------+----------+------------------------------------------------------------------+----------+------------
+ ar    | Argentina                                    |        1 | Argentina                                                        | Q414     | r286393
+ bo    | Bolivia                                      |        1 | Bolivia                                                          | Q750     | r252645
+ br    | Brazil                                       |        1 | Brasil                                                           | Q155     | r59470
+ ck    | Cook Islands                                 |        1 | Kūki 'Āirani                                                     | Q26988   | r2184233
+ cl    | Chile                                        |        1 | Chile                                                            | Q298     | r167454
+ co    | Colombia                                     |        1 | Colombia                                                         | Q739     | r120027
+ ec    | Ecuador                                      |        1 | Ecuador                                                          | Q736     | r108089
+ fk    | Falkland Islands                             |        1 | Falkland Islands                                                 | Q9648    | r2185374
+ fr-cp | Clipperton Island                            |        1 | Île de Clipperton                                                | Q161258  | r9823701
+ fr-cp | Clipperton Island                            |        1 | Île de Clipperton                                                | Q161258  | r2573009
+ fr-gf | French Guiana                                |        1 | Guyane                                                           | Q3769    | r1260551
+ fr-pf | French Polynesia                             |        1 | Polynésie Française                                              | Q30971   | r3412620
+ gs    | South Georgia and the South Sandwich Islands |        1 | South Georgia and South Sandwich Islands                         | Q35086   | r1983628
+ gy    | Guyana                                       |        1 | Guyana                                                           | Q734     | r287083
+ nl-aw | Aruba                                        |        1 | Aruba                                                            | Q21203   | r1231749
+ nl-cw | Curacao                                      |        1 | Curaçao                                                          | Q25279   | r1216719
+ nu    | Niue                                         |        1 | Niuē                                                             | Q34020   | r1558556
+ pe    | Peru                                         |        1 | Perú                                                             | Q419     | r288247
+ pn    | Pitcairn Islands                             |        1 | Pitcairn Islands                                                 | Q35672   | r2185375
+ py    | Paraguay                                     |        1 | Paraguay                                                         | Q733     | r287077
+ sr    | Suriname                                     |        1 | Suriname                                                         | Q730     | r287082
+ tk    | Tokelau                                      |        1 | Tokelau                                                          | Q36823   | r2186600
+ to    | Tonga                                        |        1 | Tonga                                                            | Q678     | r2186665
+ us-as | American Samoa                               |        1 | American Samoa                                                   | Q16641   | r2177187
+ us-um |                                              |        1 | United States of America (Minor Outlying Islands);Jarvis Island  |          | w42296558
+ us-um |                                              |        1 | United States of America (Minor Outlying Islands);Kingman Reef   |          | w296770514
+ us-um |                                              |        1 | United States of America (Minor Outlying Islands);Howland Island |          | w42296438
+ us-um |                                              |        1 | United States of America (Minor Outlying Islands);Baker Island   |          | w42296437
+ us-um |                                              |        1 | United States of America (Minor Outlying Islands);Palmyra Atoll  |          | w163763449
+ uy    | Uruguay                                      |        1 | Uruguay                                                          | Q77      | r287072
+ ve    | Venezuela                                    |        1 | Venezuela                                                        | Q717     | r272644
+ ws    | Samoa                                        |        1 | Sāmoa                                                            | Q683     | r1872673
+(32 rows)
+

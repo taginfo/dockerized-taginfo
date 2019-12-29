@@ -1,0 +1,606 @@
+# generated : 2019-12-29:16:02  // template : ./setup/template/docker-compose.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  #---------------------------------------------------------
+  # Service for : "ar"-"Argentina" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-ar:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26001:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-ar.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26001
+    volumes:
+     - ./ar/data:/osm/data
+     - ./ar/download:/osm/download
+     - ./ar:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "bo"-"Bolivia" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-bo:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26002:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-bo.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26002
+    volumes:
+     - ./bo/data:/osm/data
+     - ./bo/download:/osm/download
+     - ./bo:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "br"-"Brazil" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-br:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26003:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-br.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26003
+    volumes:
+     - ./br/data:/osm/data
+     - ./br/download:/osm/download
+     - ./br:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ck"-"Cook Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-ck:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26004:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-ck.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26004
+    volumes:
+     - ./ck/data:/osm/data
+     - ./ck/download:/osm/download
+     - ./ck:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "cl"-"Chile" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-cl:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26005:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-cl.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26005
+    volumes:
+     - ./cl/data:/osm/data
+     - ./cl/download:/osm/download
+     - ./cl:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "co"-"Colombia" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-co:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26006:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-co.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26006
+    volumes:
+     - ./co/data:/osm/data
+     - ./co/download:/osm/download
+     - ./co:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ec"-"Ecuador" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-ec:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26007:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-ec.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26007
+    volumes:
+     - ./ec/data:/osm/data
+     - ./ec/download:/osm/download
+     - ./ec:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fk"-"Falkland Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-fk:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26008:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-fk.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26008
+    volumes:
+     - ./fk/data:/osm/data
+     - ./fk/download:/osm/download
+     - ./fk:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-cp"-"Clipperton Island" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-fr-cp:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26009:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-fr-cp.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26009
+    volumes:
+     - ./fr-cp/data:/osm/data
+     - ./fr-cp/download:/osm/download
+     - ./fr-cp:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-gf"-"French Guiana" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-fr-gf:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26011:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-fr-gf.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26011
+    volumes:
+     - ./fr-gf/data:/osm/data
+     - ./fr-gf/download:/osm/download
+     - ./fr-gf:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-pf"-"French Polynesia" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-fr-pf:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26012:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-fr-pf.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26012
+    volumes:
+     - ./fr-pf/data:/osm/data
+     - ./fr-pf/download:/osm/download
+     - ./fr-pf:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gs"-"South Georgia and the South Sandwich Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-gs:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26013:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-gs.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26013
+    volumes:
+     - ./gs/data:/osm/data
+     - ./gs/download:/osm/download
+     - ./gs:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gy"-"Guyana" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-gy:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26014:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-gy.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26014
+    volumes:
+     - ./gy/data:/osm/data
+     - ./gy/download:/osm/download
+     - ./gy:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nl-aw"-"Aruba" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-nl-aw:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26015:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-nl-aw.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26015
+    volumes:
+     - ./nl-aw/data:/osm/data
+     - ./nl-aw/download:/osm/download
+     - ./nl-aw:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nl-cw"-"Curacao" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-nl-cw:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26016:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-nl-cw.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26016
+    volumes:
+     - ./nl-cw/data:/osm/data
+     - ./nl-cw/download:/osm/download
+     - ./nl-cw:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nu"-"Niue" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-nu:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26017:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-nu.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26017
+    volumes:
+     - ./nu/data:/osm/data
+     - ./nu/download:/osm/download
+     - ./nu:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "pe"-"Peru" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-pe:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26018:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-pe.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26018
+    volumes:
+     - ./pe/data:/osm/data
+     - ./pe/download:/osm/download
+     - ./pe:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "pn"-"Pitcairn Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-pn:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26019:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-pn.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26019
+    volumes:
+     - ./pn/data:/osm/data
+     - ./pn/download:/osm/download
+     - ./pn:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "py"-"Paraguay" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-py:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26020:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-py.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26020
+    volumes:
+     - ./py/data:/osm/data
+     - ./py/download:/osm/download
+     - ./py:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "sr"-"Suriname" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-sr:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26021:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-sr.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26021
+    volumes:
+     - ./sr/data:/osm/data
+     - ./sr/download:/osm/download
+     - ./sr:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "tk"-"Tokelau" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-tk:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26022:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-tk.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26022
+    volumes:
+     - ./tk/data:/osm/data
+     - ./tk/download:/osm/download
+     - ./tk:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "to"-"Tonga" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-to:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26023:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-to.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26023
+    volumes:
+     - ./to/data:/osm/data
+     - ./to/download:/osm/download
+     - ./to:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "us-as"-"American Samoa" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-us-as:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26024:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-us-as.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26024
+    volumes:
+     - ./us-as/data:/osm/data
+     - ./us-as/download:/osm/download
+     - ./us-as:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "us-um"-"United States of America (Minor Outlying Islands);Kingman Reef" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-us-um:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26026:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-us-um.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26026
+    volumes:
+     - ./us-um/data:/osm/data
+     - ./us-um/download:/osm/download
+     - ./us-um:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "uy"-"Uruguay" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-uy:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26030:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-uy.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26030
+    volumes:
+     - ./uy/data:/osm/data
+     - ./uy/download:/osm/download
+     - ./uy:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ve"-"Venezuela" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-ve:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26031:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-ve.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26031
+    volumes:
+     - ./ve/data:/osm/data
+     - ./ve/download:/osm/download
+     - ./ve:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ws"-"Samoa" + taginfo-dev.opengeodata.hu
+  #               continent: "sa"
+
+  taginfo-sa-ws:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "26032:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=sa-ws.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=26032
+    volumes:
+     - ./ws/data:/osm/data
+     - ./ws/download:/osm/download
+     - ./ws:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+
+# generated : 2019-12-29:16:02  // template : /setup/docker-compose.jinja2
