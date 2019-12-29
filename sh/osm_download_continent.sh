@@ -24,7 +24,9 @@ fi
 if [ "$CONTINENT" = "ca" ]; then
   osmium_parameter=' '
 fi
-
+if [ "$CONTINENT" = "af" ]; then
+  osmium_parameter=' '
+fi
 
 osmium add-locations-to-ways \
     --progress \
