@@ -1,0 +1,55 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where (area_pct > 0.8) and (iso not in ('ru','fr','nl')) and (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk'))   AND  1=1   
+      order by iso ;
+ iso |            name_en             |     area_pct      |              name              | wikidata |  osm_id  
+-----+--------------------------------+-------------------+--------------------------------+----------+----------
+ ae  | United Arab Emirates           |                 1 | الإمارات العربية المتحدة       | Q878     | r307763
+ af  | Afghanistan                    |                 1 | افغانستان                      | Q889     | r303427
+ am  | Armenia                        |                 1 | Հայաստան                       | Q399     | r364066
+ az  | Azerbaijan                     |                 1 | Azərbaycan                     | Q227     | r364110
+ bd  | Bangladesh                     |                 1 | বাংলাদেশ                       | Q902     | r184640
+ bh  | Bahrain                        |                 1 | ‏البحرين‎                      | Q398     | r378734
+ bn  | Brunei                         |                 1 | Brunei                         | Q921     | r2103120
+ bt  | Bhutan                         |                 1 | འབྲུག་ཡུལ་                        | Q917     | r184629
+ cn  | China                          |                 1 | 中国                           | Q148     | r270056
+ ge  | Georgia                        |                 1 | საქართველო                     | Q230     | r28699
+ id  | Indonesia                      |                 1 | Indonesia                      | Q252     | r304751
+ il  | Israel                         |                 1 | ישראל                          | Q801     | r1473946
+ in  | India                          |                 1 | India                          | Q668     | r304716
+ io  | British Indian Ocean Territory |                 1 | British Indian Ocean Territory | Q43448   | r1993867
+ iq  | Iraq                           |                 1 | العراق                         | Q796     | r304934
+ ir  | Iran                           |                 1 | ایران                          | Q794     | r304938
+ jo  | Jordan                         |                 1 | الأردن                         | Q810     | r184818
+ jp  | Japan                          |                 1 | 日本                           | Q17      | r382313
+ kg  | Kyrgyzstan                     |                 1 | Кыргызстан                     | Q813     | r178009
+ kh  | Cambodia                       |                 1 | ព្រះរាជាណាចក្រ​កម្ពុជា             | Q424     | r49898
+ kp  | North Korea                    |                 1 | 조선민주주의인민공화국         | Q423     | r192734
+ kr  | South Korea                    |                 1 | 대한민국                       | Q884     | r307756
+ kw  | Kuwait                         |                 1 | ‏الكويت‎                       | Q817     | r305099
+ kz  | Kazakhstan                     |                 1 | Казахстан                      | Q232     | r214665
+ la  | Laos                           |                 1 | ປະເທດລາວ                       | Q819     | r49903
+ lb  | Lebanon                        |                 1 | لبنان                          | Q822     | r184843
+ lk  | Sri Lanka                      |                 1 | ශ්‍රී ලංකාව இலங்கை                | Q854     | r536807
+ mm  | Myanmar                        |                 1 | မြန်မာ                          | Q836     | r50371
+ mn  | Mongolia                       |                 1 | Монгол улс                     | Q711     | r161033
+ mv  | Maldives                       |                 1 | ދިވެހިރާއްޖެ                         | Q826     | r536773
+ my  | Malaysia                       |                 1 | Malaysia                       | Q833     | r2108121
+ np  | Nepal                          |                 1 | नेपाल                           | Q837     | r184633
+ om  | Oman                           |                 1 | عمان                           | Q842     | r305138
+ ph  | Philippines                    |                 1 | Philippines                    | Q928     | r443174
+ pk  | Pakistan                       |                 1 | پاکستان                        | Q843     | r307573
+ qa  | Qatar                          |                 1 | ‏قطر                           | Q846     | r305095
+ sa  | Saudi Arabia                   |                 1 | السعودية                       | Q851     | r307584
+ sg  | Singapore                      |                 1 | Singapore                      | Q334     | r536780
+ sy  | Syria                          |                 1 | سوريا                          | Q858     | r184840
+ th  | Thailand                       |                 1 | ประเทศไทย                      | Q869     | r2067731
+ tj  | Tajikistan                     |                 1 | Тоҷикистон                     | Q863     | r214626
+ tl  | East Timor                     |                 1 | Timór Lorosa'e                 | Q574     | r305142
+ tm  | Turkmenistan                   |                 1 | Türkmenistan                   | Q874     | r223026
+ tw  | Taiwan                         |                 1 | 臺灣                           | Q865     | r449220
+ uz  | Uzbekistan                     |                 1 | Oʻzbekiston                    | Q265     | r196240
+ vn  | Vietnam                        |                 1 | Việt Nam                       | Q881     | r49915
+ ye  | Yemen                          | 0.999879566420829 | اليمن                          | Q805     | r305092
+(47 rows)
+

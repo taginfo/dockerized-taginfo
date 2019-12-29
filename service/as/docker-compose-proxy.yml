@@ -1,0 +1,43 @@
+# generated : 2019-12-29:15:25  // template : ./setup/template/docker-compose-proxy.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    networks:
+      - taginfo
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    restart: always
+
+  whoami:
+    image: jwilder/whoami
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=whoami.taginfo-dev.opengeodata.hu
+
+  web:
+    image: abiosoft/caddy
+    volumes:
+      - ../../caddy:/srv
+    ports:
+      - "2015:2015"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=2015
+    restart: always
+
+
+# generated : 2019-12-29:15:25  

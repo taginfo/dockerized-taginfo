@@ -1,0 +1,140 @@
+// generated config :  UTC= 2019-12-29:15:25
+{
+    // tags - tab definitions  ( any osm keys ...  alt_name,old_name,name:.. )
+    "tnames":{
+        "lang1": "name",
+        "lang2": "name:en",
+        "lang3": "name:th",
+        "lang4": "name:nod",
+        "lang5": "name:mfa"
+    },
+    // You probably want to change all these.
+    "instance": {
+        // URL prefix for the site.
+        "url": "http://localhost:4567",
+        // Used in the title of all HTML pages.
+        "name": "as-th.taginfo-dev.opengeodata.hu OpenStreetMap Taginfo",
+        // Description of this taginfo instance. Will appear on the home page and about page.
+        "description": "This is a customized <b> as-th.taginfo-dev.opengeodata.hu instance </b>. ",
+        // Additional description that will only appear on the about page.
+        "about": "<p>This site is maintained by @taginfo .</p><p>There isn't just one taginfo site, there are several. The main site is at <a class='extlink' href='https://taginfo.openstreetmap.org/'>taginfo.openstreetmap.org</a>, but several <a class='extlink' href='https://wiki.openstreetmap.org/wiki/Taginfo/Sites'>other taginfo sites</a> are operated by different people.</p>",
+        // URL path to instance icon in the upper left.
+        "icon": "/img/logo/dflag.png",
+        // Contact name and email address.
+        "contact": " @taginfo ",
+        // Geographical area this taginfo instance covers.
+        "area": "ประเทศไทย / Thailand",
+        // Add CORS header Access-Control-Allow-Origin with the given value
+        // to all /api responses. Use "" to not set this header, disallowing
+        // external services to use your API from a browser. Set to "*" to
+        // allow anybody.
+        "access_control_allow_origin": "*",
+        // Sections of the website that are enabled.
+        "sections": ["download", "taginfo"]
+    },
+    // For the geodistribution map. See the wiki documentation about these settings.
+    "geodistribution": {
+        "left": 97.34,
+        "bottom": 5.61,
+        "right": 105.84,
+        "top": 20.61,
+        "width": 187,
+        "height": 330,
+        "scale_image": 1,
+        "scale_compare_image": 1,
+        "background_image": "/img/mapbg/dbackground.png",
+        "image_attribution": "Taginfo for :  ประเทศไทย / Thailand ; Background image based on Naturalearth."
+    },
+    "paths": {
+        // Directory where the database files for use by taginfo are kept.
+        "data_dir": "/osm/data",
+        // Directory for the compressed database files for download. If you
+        // change this, you might have also to change the "download" symbolic
+        // link in the "web/public" directory and/or add this path to your
+        // web server config.
+        "download_dir": "../../download"
+    },
+    // "XAPI" and "JOSM" buttons on key/tag pages
+    "xapi": {
+        // XAPI/JOSM buttons are disabled if more than this many results are expected
+        "max_results": 1000,
+        // URL prefix for the XAPI/JOSM links on the key and tag pages.
+        "url_prefix": "https://overpass-api.de/api/xapi_meta?"
+    },
+    // "overpass turbo" button on key/tag pages
+    "turbo": {
+        // if there are more objects than this with a key/tag, the normal Overpass Turbo
+        // will be called, if less the Wizard will be used with autorun and autozoom
+        "max_auto": 1000,
+        "url_prefix": "https://overpass-turbo.eu/?",
+        // set this to "global" or "in <area>" where <area> is a country name or other region found by Nominatim
+        "wizard_area": "in 'Thailand'"
+    },
+    // "Level0 Editor" button on key/tag pages
+    "level0": {
+        // disable Level0 Editor button if there are more than this many objects with a key/tag
+        "max_results": 50,
+        "overpass_url_prefix": "https://overpass-api.de/api/interpreter?",
+        "level0_url_prefix": "http://level0.osmz.ru/?"
+    },
+    "opensearch": {
+        // For the OpenSearchDescription. You have to change at least the shortname and the contact for your instance.
+        "shortname": "as-th.taginfo-dev.opengeodata.hu Taginfo Instance",
+        "contact": " github/taginfo/taginfo ",
+        "description": "Find metadata about OpenStreetMap ประเทศไทย / Thailand tags",
+        "tags": "osm openstreetmap ประเทศไทย Thailand th tag tags taginfo"
+    },
+    "sources": {
+        // These sources will be downloaded from https://taginfo.openstreetmap.org/download/
+        // Note that this will NOT work for the "db" source! Well, you can download it,
+        // but it will fail later, because the database is changed by the master.sql
+        // scripts.
+        "download": "languages projects wiki",
+        // These sources will be created from the actual sources.
+        "create": "db",
+        "db": {
+            // Path to binaries (like 'tagstats' and 'similarity').
+            "bindir": "/osm/taginfo/tagstats",
+            // The OSM planet file or extract where we read the OSM data from.
+            "planetfile": "/osm/cfg/input/area.osm.pbf"
+        },
+        // If you change any of the following you have to run the update
+        // twice for it to take effect.
+        "master": {
+            // Minimum number of occurances of a tag to make it
+            // potentially "interesting", ie. create tag combination
+            // statistics for it.
+            "min_count_tags": 1,
+            // Tag combinations not appearing this often are not written to database.
+            "min_tag_combination_count": 1,
+            // Minimum number of tag occurances for creating a map
+            "min_count_for_map": 10,
+            // Minimum number of relations per type to make this
+            // relation type "interesting", ie. to make it show
+            // up as a relation type.
+            "min_count_relations_per_type": 1,
+            // Tokenizer for sqlite full-text search. Complex or custom
+            // tokenizers, e.g., icu and unicode61, may be more suitable for
+            // some locales. You may need newer sqlite3 or to recompile
+            // sqlite3 to use those tokenizers.
+            // See http://www.sqlite.org/fts3.html#tokenizer for detail.
+            "tokenizer": "simple"
+        }
+    },
+    "logging": {
+        // directory for log files
+        "directory": "/osm/taginfo/var/log",
+        // SQL queries longer than this many seconds are logged
+        "min_duration": 2.0
+    },
+    // For compiling tagstats.
+    "tagstats": {
+        // Extra compilerflags, for instance to find Libosmium.
+        "cxxflags": "-I/osmcode/libosmium/include",
+        // Node location store. For really large OSM files (whole planet or large continent)
+        // this should be "DenseMmapArray" (or "DenseMemArray" on OSX), otherwise "SparseMemArray".
+        "geodistribution": "SparseMemArray",
+        // C++ type used for geodistribution
+        "geodistribution_int": "uint16_t"
+    }
+}

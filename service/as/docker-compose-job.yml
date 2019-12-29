@@ -1,0 +1,1110 @@
+# generated : 2019-12-29:15:25  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+
+
+  #---------------------------------------------------------
+  # Service for : "ae" - "United Arab Emirates"
+  #            continent: "as"
+  #
+  taginfo-job-as-ae:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ae/data:/osm/data
+     - ./ae/download:/osm/download
+     - ./ae/sources:/osm/sources:rw
+     - ./ae:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ae
+     - AREA_NAME="United Arab Emirates"
+     - GDNAME=${GDNAME:-gcc-states}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "af" - "Afghanistan"
+  #            continent: "as"
+  #
+  taginfo-job-as-af:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./af/data:/osm/data
+     - ./af/download:/osm/download
+     - ./af/sources:/osm/sources:rw
+     - ./af:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=af
+     - AREA_NAME="Afghanistan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "am" - "Armenia"
+  #            continent: "as"
+  #
+  taginfo-job-as-am:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./am/data:/osm/data
+     - ./am/download:/osm/download
+     - ./am/sources:/osm/sources:rw
+     - ./am:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=am
+     - AREA_NAME="Armenia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "az" - "Azerbaijan"
+  #            continent: "as"
+  #
+  taginfo-job-as-az:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./az/data:/osm/data
+     - ./az/download:/osm/download
+     - ./az/sources:/osm/sources:rw
+     - ./az:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=az
+     - AREA_NAME="Azerbaijan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "bd" - "Bangladesh"
+  #            continent: "as"
+  #
+  taginfo-job-as-bd:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bd/data:/osm/data
+     - ./bd/download:/osm/download
+     - ./bd/sources:/osm/sources:rw
+     - ./bd:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bd
+     - AREA_NAME="Bangladesh"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "bh" - "Bahrain"
+  #            continent: "as"
+  #
+  taginfo-job-as-bh:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bh/data:/osm/data
+     - ./bh/download:/osm/download
+     - ./bh/sources:/osm/sources:rw
+     - ./bh:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bh
+     - AREA_NAME="Bahrain"
+     - GDNAME=${GDNAME:-gcc-states}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "bn" - "Brunei"
+  #            continent: "as"
+  #
+  taginfo-job-as-bn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bn/data:/osm/data
+     - ./bn/download:/osm/download
+     - ./bn/sources:/osm/sources:rw
+     - ./bn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bn
+     - AREA_NAME="Brunei"
+     - GDNAME=${GDNAME:-malaysia-singapore-brunei}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "bt" - "Bhutan"
+  #            continent: "as"
+  #
+  taginfo-job-as-bt:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bt/data:/osm/data
+     - ./bt/download:/osm/download
+     - ./bt/sources:/osm/sources:rw
+     - ./bt:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bt
+     - AREA_NAME="Bhutan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "cn" - "China"
+  #            continent: "as"
+  #
+  taginfo-job-as-cn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cn/data:/osm/data
+     - ./cn/download:/osm/download
+     - ./cn/sources:/osm/sources:rw
+     - ./cn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cn
+     - AREA_NAME="China"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "ge" - "Georgia"
+  #            continent: "as"
+  #
+  taginfo-job-as-ge:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ge/data:/osm/data
+     - ./ge/download:/osm/download
+     - ./ge/sources:/osm/sources:rw
+     - ./ge:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ge
+     - AREA_NAME="Georgia"
+     - GDNAME=${GDNAME:-europe}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "id" - "Indonesia"
+  #            continent: "as"
+  #
+  taginfo-job-as-id:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./id/data:/osm/data
+     - ./id/download:/osm/download
+     - ./id/sources:/osm/sources:rw
+     - ./id:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=id
+     - AREA_NAME="Indonesia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "il" - "Israel"
+  #            continent: "as"
+  #
+  taginfo-job-as-il:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./il/data:/osm/data
+     - ./il/download:/osm/download
+     - ./il/sources:/osm/sources:rw
+     - ./il:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=il
+     - AREA_NAME="Israel"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "in" - "India"
+  #            continent: "as"
+  #
+  taginfo-job-as-in:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./in/data:/osm/data
+     - ./in/download:/osm/download
+     - ./in/sources:/osm/sources:rw
+     - ./in:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=in
+     - AREA_NAME="India"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "io" - "British Indian Ocean Territory"
+  #            continent: "as"
+  #
+  taginfo-job-as-io:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./io/data:/osm/data
+     - ./io/download:/osm/download
+     - ./io/sources:/osm/sources:rw
+     - ./io:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=io
+     - AREA_NAME="British Indian Ocean Territory"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "iq" - "Iraq"
+  #            continent: "as"
+  #
+  taginfo-job-as-iq:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./iq/data:/osm/data
+     - ./iq/download:/osm/download
+     - ./iq/sources:/osm/sources:rw
+     - ./iq:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=iq
+     - AREA_NAME="Iraq"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "ir" - "Iran"
+  #            continent: "as"
+  #
+  taginfo-job-as-ir:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ir/data:/osm/data
+     - ./ir/download:/osm/download
+     - ./ir/sources:/osm/sources:rw
+     - ./ir:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ir
+     - AREA_NAME="Iran"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "jo" - "Jordan"
+  #            continent: "as"
+  #
+  taginfo-job-as-jo:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./jo/data:/osm/data
+     - ./jo/download:/osm/download
+     - ./jo/sources:/osm/sources:rw
+     - ./jo:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=jo
+     - AREA_NAME="Jordan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "jp" - "Japan"
+  #            continent: "as"
+  #
+  taginfo-job-as-jp:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./jp/data:/osm/data
+     - ./jp/download:/osm/download
+     - ./jp/sources:/osm/sources:rw
+     - ./jp:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=jp
+     - AREA_NAME="Japan"
+     - GDNAME=${GDNAME:-japan}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kg" - "Kyrgyzstan"
+  #            continent: "as"
+  #
+  taginfo-job-as-kg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kg/data:/osm/data
+     - ./kg/download:/osm/download
+     - ./kg/sources:/osm/sources:rw
+     - ./kg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kg
+     - AREA_NAME="Kyrgyzstan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kh" - "Cambodia"
+  #            continent: "as"
+  #
+  taginfo-job-as-kh:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kh/data:/osm/data
+     - ./kh/download:/osm/download
+     - ./kh/sources:/osm/sources:rw
+     - ./kh:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kh
+     - AREA_NAME="Cambodia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kp" - "North Korea"
+  #            continent: "as"
+  #
+  taginfo-job-as-kp:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kp/data:/osm/data
+     - ./kp/download:/osm/download
+     - ./kp/sources:/osm/sources:rw
+     - ./kp:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kp
+     - AREA_NAME="North Korea"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kr" - "South Korea"
+  #            continent: "as"
+  #
+  taginfo-job-as-kr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kr/data:/osm/data
+     - ./kr/download:/osm/download
+     - ./kr/sources:/osm/sources:rw
+     - ./kr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kr
+     - AREA_NAME="South Korea"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kw" - "Kuwait"
+  #            continent: "as"
+  #
+  taginfo-job-as-kw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kw/data:/osm/data
+     - ./kw/download:/osm/download
+     - ./kw/sources:/osm/sources:rw
+     - ./kw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kw
+     - AREA_NAME="Kuwait"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "kz" - "Kazakhstan"
+  #            continent: "as"
+  #
+  taginfo-job-as-kz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kz/data:/osm/data
+     - ./kz/download:/osm/download
+     - ./kz/sources:/osm/sources:rw
+     - ./kz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kz
+     - AREA_NAME="Kazakhstan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "la" - "Laos"
+  #            continent: "as"
+  #
+  taginfo-job-as-la:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./la/data:/osm/data
+     - ./la/download:/osm/download
+     - ./la/sources:/osm/sources:rw
+     - ./la:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=la
+     - AREA_NAME="Laos"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "lb" - "Lebanon"
+  #            continent: "as"
+  #
+  taginfo-job-as-lb:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./lb/data:/osm/data
+     - ./lb/download:/osm/download
+     - ./lb/sources:/osm/sources:rw
+     - ./lb:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=lb
+     - AREA_NAME="Lebanon"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "lk" - "Sri Lanka"
+  #            continent: "as"
+  #
+  taginfo-job-as-lk:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./lk/data:/osm/data
+     - ./lk/download:/osm/download
+     - ./lk/sources:/osm/sources:rw
+     - ./lk:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=lk
+     - AREA_NAME="Sri Lanka"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "mm" - "Myanmar"
+  #            continent: "as"
+  #
+  taginfo-job-as-mm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mm/data:/osm/data
+     - ./mm/download:/osm/download
+     - ./mm/sources:/osm/sources:rw
+     - ./mm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mm
+     - AREA_NAME="Myanmar"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "mn" - "Mongolia"
+  #            continent: "as"
+  #
+  taginfo-job-as-mn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mn/data:/osm/data
+     - ./mn/download:/osm/download
+     - ./mn/sources:/osm/sources:rw
+     - ./mn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mn
+     - AREA_NAME="Mongolia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "mv" - "Maldives"
+  #            continent: "as"
+  #
+  taginfo-job-as-mv:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mv/data:/osm/data
+     - ./mv/download:/osm/download
+     - ./mv/sources:/osm/sources:rw
+     - ./mv:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mv
+     - AREA_NAME="Maldives"
+     - GDNAME=${GDNAME:-maldives}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "my" - "Malaysia"
+  #            continent: "as"
+  #
+  taginfo-job-as-my:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./my/data:/osm/data
+     - ./my/download:/osm/download
+     - ./my/sources:/osm/sources:rw
+     - ./my:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=my
+     - AREA_NAME="Malaysia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "np" - "Nepal"
+  #            continent: "as"
+  #
+  taginfo-job-as-np:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./np/data:/osm/data
+     - ./np/download:/osm/download
+     - ./np/sources:/osm/sources:rw
+     - ./np:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=np
+     - AREA_NAME="Nepal"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "om" - "Oman"
+  #            continent: "as"
+  #
+  taginfo-job-as-om:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./om/data:/osm/data
+     - ./om/download:/osm/download
+     - ./om/sources:/osm/sources:rw
+     - ./om:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=om
+     - AREA_NAME="Oman"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "ph" - "Philippines"
+  #            continent: "as"
+  #
+  taginfo-job-as-ph:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ph/data:/osm/data
+     - ./ph/download:/osm/download
+     - ./ph/sources:/osm/sources:rw
+     - ./ph:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ph
+     - AREA_NAME="Philippines"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "pk" - "Pakistan"
+  #            continent: "as"
+  #
+  taginfo-job-as-pk:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./pk/data:/osm/data
+     - ./pk/download:/osm/download
+     - ./pk/sources:/osm/sources:rw
+     - ./pk:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=pk
+     - AREA_NAME="Pakistan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "qa" - "Qatar"
+  #            continent: "as"
+  #
+  taginfo-job-as-qa:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./qa/data:/osm/data
+     - ./qa/download:/osm/download
+     - ./qa/sources:/osm/sources:rw
+     - ./qa:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=qa
+     - AREA_NAME="Qatar"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "sa" - "Saudi Arabia"
+  #            continent: "as"
+  #
+  taginfo-job-as-sa:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sa/data:/osm/data
+     - ./sa/download:/osm/download
+     - ./sa/sources:/osm/sources:rw
+     - ./sa:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sa
+     - AREA_NAME="Saudi Arabia"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "sg" - "Singapore"
+  #            continent: "as"
+  #
+  taginfo-job-as-sg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sg/data:/osm/data
+     - ./sg/download:/osm/download
+     - ./sg/sources:/osm/sources:rw
+     - ./sg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sg
+     - AREA_NAME="Singapore"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "sy" - "Syria"
+  #            continent: "as"
+  #
+  taginfo-job-as-sy:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sy/data:/osm/data
+     - ./sy/download:/osm/download
+     - ./sy/sources:/osm/sources:rw
+     - ./sy:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sy
+     - AREA_NAME="Syria"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "th" - "Thailand"
+  #            continent: "as"
+  #
+  taginfo-job-as-th:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./th/data:/osm/data
+     - ./th/download:/osm/download
+     - ./th/sources:/osm/sources:rw
+     - ./th:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=th
+     - AREA_NAME="Thailand"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "tj" - "Tajikistan"
+  #            continent: "as"
+  #
+  taginfo-job-as-tj:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tj/data:/osm/data
+     - ./tj/download:/osm/download
+     - ./tj/sources:/osm/sources:rw
+     - ./tj:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tj
+     - AREA_NAME="Tajikistan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "tl" - "East Timor"
+  #            continent: "as"
+  #
+  taginfo-job-as-tl:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tl/data:/osm/data
+     - ./tl/download:/osm/download
+     - ./tl/sources:/osm/sources:rw
+     - ./tl:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tl
+     - AREA_NAME="East Timor"
+     - GDNAME=${GDNAME:-indonesia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "tm" - "Turkmenistan"
+  #            continent: "as"
+  #
+  taginfo-job-as-tm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tm/data:/osm/data
+     - ./tm/download:/osm/download
+     - ./tm/sources:/osm/sources:rw
+     - ./tm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tm
+     - AREA_NAME="Turkmenistan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "tw" - "Taiwan"
+  #            continent: "as"
+  #
+  taginfo-job-as-tw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tw/data:/osm/data
+     - ./tw/download:/osm/download
+     - ./tw/sources:/osm/sources:rw
+     - ./tw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tw
+     - AREA_NAME="Taiwan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "uz" - "Uzbekistan"
+  #            continent: "as"
+  #
+  taginfo-job-as-uz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./uz/data:/osm/data
+     - ./uz/download:/osm/download
+     - ./uz/sources:/osm/sources:rw
+     - ./uz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=uz
+     - AREA_NAME="Uzbekistan"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "vn" - "Vietnam"
+  #            continent: "as"
+  #
+  taginfo-job-as-vn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./vn/data:/osm/data
+     - ./vn/download:/osm/download
+     - ./vn/sources:/osm/sources:rw
+     - ./vn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=vn
+     - AREA_NAME="Vietnam"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+  #---------------------------------------------------------
+  # Service for : "ye" - "Yemen"
+  #            continent: "as"
+  #
+  taginfo-job-as-ye:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ye/data:/osm/data
+     - ./ye/download:/osm/download
+     - ./ye/sources:/osm/sources:rw
+     - ./ye:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ye
+     - AREA_NAME="Yemen"
+     - GDNAME=${GDNAME:-asia}   
+     - CONTINENT=as
+     - CONTINENT_LONG=asia
+
+
+# generated : 2019-12-29:15:25  
