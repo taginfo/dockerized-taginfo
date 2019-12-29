@@ -4,7 +4,7 @@ services:
   - docker
 
 env:
-  - DOCKER_COMPOSE_VERSION=1.21.2
+  - DOCKER_COMPOSE_VERSION=1.25.0
 
 before_install:
   - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

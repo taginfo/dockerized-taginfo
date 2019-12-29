@@ -1,9 +1,12 @@
 .PHONY: all
 
+# Build using Bash script semantics.
+SHELL := /bin/bash
+
 CURRENT_UID:=$(shell echo $$(id -u):$$(id -g))
 export CURRENT_UID
 
-all: refresh build
+all: drefresh build
 
 test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices down rmdebugimages ca-zz-test peakcheck
 
@@ -11,13 +14,13 @@ test: inituid build travis_geofabrik_yml testdatainit init ca-zz-genservices dow
 status:
 	echo "CURRENT_UID=$$CURRENT_UID"
 
-refresh:
+drefresh:
 	docker pull abiosoft/caddy
-	docker pull ruby:2.6.0-preview2-alpine3.8
+	docker pull ruby:2.7-alpine
 	docker pull jwilder/nginx-proxy
 	docker pull jwilder/whoami
 	docker pull mdillon/postgis:11-alpine
-	docker pull ubuntu:18.10
+	docker pull ubuntu:20.04
 
 inituid:
 	mkdir -p ./caddy
@@ -136,18 +139,6 @@ sotm_services:
 	./taginfo_genconfig.sh  russia             ru  18000  "where iso like 'ru-%' and length(iso)>2 "    "1=1 "
 	./taginfo_genconfig.sh  south-america      sa  19000  "where length(iso)=2 or substr(iso,1,2) in ('fr','nl','us') "  "1=1 "
 
-
-# af - 64
-# aq -  1
-# as -128
-# ao - 21
-# ca - 35
-# eu -190
-# na - 68
-# ru - 85
-# sa - 31
-# ============== ~ 625 *50  = 32Gb
-
 runservices:
 	./taginfo_run_service_refresh.sh  africa             af  11000
 	./taginfo_run_service_refresh.sh  antarctica         aq  12000
@@ -167,9 +158,10 @@ genproxy:
 	CURRENT_UID="$$(id -u):$$(id -g)" docker-compose run  --rm -T taginfo_dev  /osm/setup/genhugo.sh
 
 startproxy:
-	pushd  ./service/ca
-	docker-compose  -f docker-compose-proxy.yml  up -d
-	popd
+	cd ./service/ca && docker-compose  -f docker-compose-proxy.yml  up -d && cd ../..
+
+stopproxy:
+	cd ./service/ca && docker-compose  -f docker-compose-proxy.yml  down && cd ../..
 
 
 service-create:
@@ -255,13 +247,16 @@ rmworkdata:
 	rm -vf ./service/*/*/sources/*.xlsx
 
 tar-service:
+	rm -f taginfo_servicedata.tar.gz
 	tar -zcvf taginfo_servicedata.tar.gz ./service/
+	gzip -l taginfo_servicedata.tar.gz
 
 untar-service:
-	echo "uncompress to ./service_new  ; please rename to ./service manually"
+	echo "start uncompress to ./service_new"
 	mkdir -p ./service_new 
 	rm -vf ./service_new/*
 	tar -xzvf taginfo_servicedata.tar.gz -C service_new/
+	echo "uncompressed to ./service_new  ; please rename to ./service manually"
 
 rmdebugimages:
 	rm ./service/*/*/poly/osm.geojson
