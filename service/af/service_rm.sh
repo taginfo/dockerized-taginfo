@@ -1,0 +1,72 @@
+# generated : 2019-12-29:15:08  // template : ./setup/service_rm.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+
+ docker-compose rm -f taginfo-af-ao
+ docker-compose rm -f taginfo-af-bf
+ docker-compose rm -f taginfo-af-bi
+ docker-compose rm -f taginfo-af-bj
+ docker-compose rm -f taginfo-af-bv
+ docker-compose rm -f taginfo-af-bw
+ docker-compose rm -f taginfo-af-cd
+ docker-compose rm -f taginfo-af-cf
+ docker-compose rm -f taginfo-af-cg
+ docker-compose rm -f taginfo-af-ci
+ docker-compose rm -f taginfo-af-cm
+ docker-compose rm -f taginfo-af-cv
+ docker-compose rm -f taginfo-af-dj
+ docker-compose rm -f taginfo-af-dz
+ docker-compose rm -f taginfo-af-eg
+ docker-compose rm -f taginfo-af-er
+ docker-compose rm -f taginfo-af-es-ce
+ docker-compose rm -f taginfo-af-es-cn
+ docker-compose rm -f taginfo-af-es-gc
+ docker-compose rm -f taginfo-af-es-ml
+ docker-compose rm -f taginfo-af-es-tf
+ docker-compose rm -f taginfo-af-et
+ docker-compose rm -f taginfo-af-fr-may
+ docker-compose rm -f taginfo-af-fr-yt
+ docker-compose rm -f taginfo-af-ga
+ docker-compose rm -f taginfo-af-gh
+ docker-compose rm -f taginfo-af-gm
+ docker-compose rm -f taginfo-af-gn
+ docker-compose rm -f taginfo-af-gq
+ docker-compose rm -f taginfo-af-gw
+ docker-compose rm -f taginfo-af-ke
+ docker-compose rm -f taginfo-af-km
+ docker-compose rm -f taginfo-af-lr
+ docker-compose rm -f taginfo-af-ls
+ docker-compose rm -f taginfo-af-ly
+ docker-compose rm -f taginfo-af-ma
+ docker-compose rm -f taginfo-af-mg
+ docker-compose rm -f taginfo-af-ml
+ docker-compose rm -f taginfo-af-mr
+ docker-compose rm -f taginfo-af-mu
+ docker-compose rm -f taginfo-af-mw
+ docker-compose rm -f taginfo-af-mz
+ docker-compose rm -f taginfo-af-na
+ docker-compose rm -f taginfo-af-ne
+ docker-compose rm -f taginfo-af-ng
+ docker-compose rm -f taginfo-af-re
+ docker-compose rm -f taginfo-af-rw
+ docker-compose rm -f taginfo-af-sc
+ docker-compose rm -f taginfo-af-sd
+ docker-compose rm -f taginfo-af-sh
+ docker-compose rm -f taginfo-af-sl
+ docker-compose rm -f taginfo-af-sn
+ docker-compose rm -f taginfo-af-so
+ docker-compose rm -f taginfo-af-ss
+ docker-compose rm -f taginfo-af-st
+ docker-compose rm -f taginfo-af-sz
+ docker-compose rm -f taginfo-af-td
+ docker-compose rm -f taginfo-af-tg
+ docker-compose rm -f taginfo-af-tn
+ docker-compose rm -f taginfo-af-tz
+ docker-compose rm -f taginfo-af-ug
+ docker-compose rm -f taginfo-af-yt
+ docker-compose rm -f taginfo-af-za
+ docker-compose rm -f taginfo-af-zm
+ docker-compose rm -f taginfo-af-zw
+ 
+# generated : 2019-12-29:15:08

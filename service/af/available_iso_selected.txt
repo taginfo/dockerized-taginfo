@@ -1,0 +1,73 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where (length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk'))   AND  1=1   
+      order by iso ;
+  iso   |                   name_en                    |     area_pct      |                        name                        | wikidata |  osm_id  
+--------+----------------------------------------------+-------------------+----------------------------------------------------+----------+----------
+ ao     | Angola                                       |                 1 | Angola                                             | Q916     | r195267
+ bf     | Burkina Faso                                 |                 1 | Burkina Faso                                       | Q965     | r192783
+ bi     | Burundi                                      |                 1 | Burundi                                            | Q967     | r195269
+ bj     | Benin                                        |                 1 | Bénin                                              | Q962     | r192784
+ bv     | Bouvet Island                                |                 1 | Bouvetøya                                          | Q23408   | r2425963
+ bw     | Botswana                                     |                 1 | Botswana                                           | Q963     | r1889339
+ cd     | Democratic Republic of the Congo             |                 1 | République démocratique du Congo                   | Q974     | r192795
+ cf     | Central African Republic                     |                 1 | Ködörösêse tî Bêafrîka - République Centrafricaine | Q929     | r192790
+ cg     | Congo-Brazzaville                            |                 1 | Congo                                              | Q971     | r192794
+ ci     | Côte d'Ivoire                                |                 1 | Côte d’Ivoire                                      | Q1008    | r192779
+ cm     | Cameroon                                     |                 1 | Cameroun                                           | Q1009    | r192830
+ cv     | Cape Verde                                   |                 1 | Cabo Verde                                         | Q1011    | r535774
+ dj     | Djibouti                                     |                 1 | Djibouti جيبوتي                                    | Q977     | r192801
+ dz     | Algeria                                      |                 1 | الجزائر                                            | Q262     | r192756
+ eg     | Egypt                                        | 0.999997365056025 | مصر                                                | Q79      | r1473947
+ er     | Eritrea                                      |                 1 | ኤርትራ إرتريا                                        | Q986     | r296961
+ es-ce  |                                              |                 1 | Ceuta                                              | Q5823    | r1154756
+ es-cn  | Canary Islands                               |                 1 | Canarias                                           | Q5813    | r3
+ es-gc  |                                              |                 1 | Las Palmas                                         | Q95080   | r349031
+ es-ml  |                                              |                 1 | Melilla                                            | Q5831    | r1154757
+ es-tf  |                                              |                 1 | Santa Cruz de Tenerife                             | Q99976   | r349014
+ et     | Ethiopia                                     |                 1 | ኢትዮጵያ                                              | Q115     | r192800
+ fr-may | Mayotte                                      |                 1 | Mayotte                                            | Q17063   | r1363069
+ fr-yt  |                                              |                 1 | Mayotte                                            | Q17063   | r3388394
+ ga     | Gabon                                        |                 1 | Gabon                                              | Q1000    | r192793
+ gh     | Ghana                                        |                 1 | Ghana                                              | Q117     | r192781
+ gm     | The Gambia                                   |                 1 | Gambia                                             | Q1005    | r192774
+ gn     | Guinea                                       |                 1 | Guinée                                             | Q1006    | r192778
+ gq     | Equatorial Guinea                            |                 1 | Guinea Ecuatorial                                  | Q983     | r192791
+ gw     | Guinea-Bissau                                |                 1 | Guiné-Bissau                                       | Q1007    | r192776
+ ke     | Kenya                                        |                 1 | Kenya                                              | Q114     | r192798
+ km     | Comoros                                      |                 1 | Comores Komori جزر القمر                           | Q970     | r535790
+ lr     | Liberia                                      |                 1 | Liberia                                            | Q1014    | r192780
+ ls     | Lesotho                                      |                 1 | Lesotho                                            | Q1013    | r2093234
+ ly     | Libya                                        |                 1 | ليبيا                                              | Q1016    | r192758
+ ma     | Morocco                                      |                 1 | Maroc ⵍⵎⵖⵔⵉⴱ المغرب                                | Q1028    | r3630439
+ mg     | Madagascar                                   |                 1 | Madagasikara                                       | Q1019    | r447325
+ ml     | Mali                                         |                 1 | Mali                                               | Q912     | r192785
+ mr     | Mauritania                                   |                 1 | موريتانيا                                          | Q1025    | r192763
+ mu     | Mauritius                                    |                 1 | Mauritius                                          | Q1027    | r535828
+ mw     | Malawi                                       |                 1 | Malawi                                             | Q1020    | r195290
+ mz     | Mozambique                                   |                 1 | Moçambique                                         | Q1029    | r195273
+ na     | Namibia                                      |                 1 | Namibia                                            | Q1030    | r195266
+ ne     | Niger                                        |                 1 | Niger                                              | Q1032    | r192786
+ ng     | Nigeria                                      |                 1 | Nigeria                                            | Q1033    | r192787
+ re     | Réunion                                      |                 1 | La Réunion                                         | Q17070   | r1785276
+ rw     | Rwanda                                       |                 1 | Rwanda                                             | Q1037    | r171496
+ sc     | Seychelles                                   |                 1 | Sesel                                              | Q1042    | r536765
+ sd     | Sudan                                        |                 1 | السودان                                            | Q1049    | r192789
+ sh     | Saint Helena, Ascension and Tristan da Cunha |                 1 | Saint Helena, Ascension and Tristan da Cunha       | Q192184  | r1964272
+ sl     | Sierra Leone                                 |                 1 | Sierra Leone                                       | Q1044    | r192777
+ sn     | Senegal                                      |                 1 | Sénégal                                            | Q1041    | r192775
+ so     | Somalia                                      |                 1 | Soomaaliya الصومال                                 | Q1045    | r192799
+ ss     | South Sudan                                  |                 1 | South Sudan                                        | Q958     | r1656678
+ st     | São Tomé and Príncipe                        |                 1 | São Tomé e Príncipe                                | Q1039    | r535880
+ sz     | Eswatini                                     |                 1 | eSwatini                                           | Q1050    | r88210
+ td     | Chad                                         |                 1 | Tchad تشاد                                         | Q657     | r2361304
+ tg     | Togo                                         |                 1 | Togo                                               | Q945     | r192782
+ tn     | Tunisia                                      | 0.993482760826835 | تونس                                               | Q948     | r192757
+ tz     | Tanzania                                     |                 1 | Tanzania                                           | Q924     | r195270
+ ug     | Uganda                                       |                 1 | Uganda                                             | Q1036    | r192796
+ yt     | Mayotte                                      |                 1 | Mayotte                                            | Q17063   | r1259885
+ za     | South Africa                                 |                 1 | South Africa                                       | Q258     | r87565
+ zm     | Zambia                                       |                 1 | Zambia                                             | Q953     | r195271
+ zw     | Zimbabwe                                     |                 1 | Zimbabwe                                           | Q954     | r195272
+(65 rows)
+

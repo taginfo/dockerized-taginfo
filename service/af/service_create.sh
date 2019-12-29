@@ -1,0 +1,72 @@
+# generated : 2019-12-29:15:08  // template : ./setup/service_create.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+
+ docker-compose up --no-start taginfo-af-ao
+ docker-compose up --no-start taginfo-af-bf
+ docker-compose up --no-start taginfo-af-bi
+ docker-compose up --no-start taginfo-af-bj
+ docker-compose up --no-start taginfo-af-bv
+ docker-compose up --no-start taginfo-af-bw
+ docker-compose up --no-start taginfo-af-cd
+ docker-compose up --no-start taginfo-af-cf
+ docker-compose up --no-start taginfo-af-cg
+ docker-compose up --no-start taginfo-af-ci
+ docker-compose up --no-start taginfo-af-cm
+ docker-compose up --no-start taginfo-af-cv
+ docker-compose up --no-start taginfo-af-dj
+ docker-compose up --no-start taginfo-af-dz
+ docker-compose up --no-start taginfo-af-eg
+ docker-compose up --no-start taginfo-af-er
+ docker-compose up --no-start taginfo-af-es-ce
+ docker-compose up --no-start taginfo-af-es-cn
+ docker-compose up --no-start taginfo-af-es-gc
+ docker-compose up --no-start taginfo-af-es-ml
+ docker-compose up --no-start taginfo-af-es-tf
+ docker-compose up --no-start taginfo-af-et
+ docker-compose up --no-start taginfo-af-fr-may
+ docker-compose up --no-start taginfo-af-fr-yt
+ docker-compose up --no-start taginfo-af-ga
+ docker-compose up --no-start taginfo-af-gh
+ docker-compose up --no-start taginfo-af-gm
+ docker-compose up --no-start taginfo-af-gn
+ docker-compose up --no-start taginfo-af-gq
+ docker-compose up --no-start taginfo-af-gw
+ docker-compose up --no-start taginfo-af-ke
+ docker-compose up --no-start taginfo-af-km
+ docker-compose up --no-start taginfo-af-lr
+ docker-compose up --no-start taginfo-af-ls
+ docker-compose up --no-start taginfo-af-ly
+ docker-compose up --no-start taginfo-af-ma
+ docker-compose up --no-start taginfo-af-mg
+ docker-compose up --no-start taginfo-af-ml
+ docker-compose up --no-start taginfo-af-mr
+ docker-compose up --no-start taginfo-af-mu
+ docker-compose up --no-start taginfo-af-mw
+ docker-compose up --no-start taginfo-af-mz
+ docker-compose up --no-start taginfo-af-na
+ docker-compose up --no-start taginfo-af-ne
+ docker-compose up --no-start taginfo-af-ng
+ docker-compose up --no-start taginfo-af-re
+ docker-compose up --no-start taginfo-af-rw
+ docker-compose up --no-start taginfo-af-sc
+ docker-compose up --no-start taginfo-af-sd
+ docker-compose up --no-start taginfo-af-sh
+ docker-compose up --no-start taginfo-af-sl
+ docker-compose up --no-start taginfo-af-sn
+ docker-compose up --no-start taginfo-af-so
+ docker-compose up --no-start taginfo-af-ss
+ docker-compose up --no-start taginfo-af-st
+ docker-compose up --no-start taginfo-af-sz
+ docker-compose up --no-start taginfo-af-td
+ docker-compose up --no-start taginfo-af-tg
+ docker-compose up --no-start taginfo-af-tn
+ docker-compose up --no-start taginfo-af-tz
+ docker-compose up --no-start taginfo-af-ug
+ docker-compose up --no-start taginfo-af-yt
+ docker-compose up --no-start taginfo-af-za
+ docker-compose up --no-start taginfo-af-zm
+ docker-compose up --no-start taginfo-af-zw
+ 
+# generated : 2019-12-29:15:08

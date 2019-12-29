@@ -1,0 +1,1524 @@
+# generated : 2019-12-29:15:08  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+
+
+  #---------------------------------------------------------
+  # Service for : "ao" - "Angola"
+  #            continent: "af"
+  #
+  taginfo-job-af-ao:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ao/data:/osm/data
+     - ./ao/download:/osm/download
+     - ./ao/sources:/osm/sources:rw
+     - ./ao:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ao
+     - AREA_NAME="Angola"
+     - GDNAME=${GDNAME:-angola}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "bf" - "Burkina Faso"
+  #            continent: "af"
+  #
+  taginfo-job-af-bf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bf/data:/osm/data
+     - ./bf/download:/osm/download
+     - ./bf/sources:/osm/sources:rw
+     - ./bf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bf
+     - AREA_NAME="Burkina Faso"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "bi" - "Burundi"
+  #            continent: "af"
+  #
+  taginfo-job-af-bi:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bi/data:/osm/data
+     - ./bi/download:/osm/download
+     - ./bi/sources:/osm/sources:rw
+     - ./bi:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bi
+     - AREA_NAME="Burundi"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "bj" - "Benin"
+  #            continent: "af"
+  #
+  taginfo-job-af-bj:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bj/data:/osm/data
+     - ./bj/download:/osm/download
+     - ./bj/sources:/osm/sources:rw
+     - ./bj:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bj
+     - AREA_NAME="Benin"
+     - GDNAME=${GDNAME:-benin}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "bv" - "Bouvet Island"
+  #            continent: "af"
+  #
+  taginfo-job-af-bv:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bv/data:/osm/data
+     - ./bv/download:/osm/download
+     - ./bv/sources:/osm/sources:rw
+     - ./bv:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bv
+     - AREA_NAME="Bouvet Island"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "bw" - "Botswana"
+  #            continent: "af"
+  #
+  taginfo-job-af-bw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bw/data:/osm/data
+     - ./bw/download:/osm/download
+     - ./bw/sources:/osm/sources:rw
+     - ./bw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bw
+     - AREA_NAME="Botswana"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "cd" - "Democratic Republic of the Congo"
+  #            continent: "af"
+  #
+  taginfo-job-af-cd:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cd/data:/osm/data
+     - ./cd/download:/osm/download
+     - ./cd/sources:/osm/sources:rw
+     - ./cd:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cd
+     - AREA_NAME="Democratic Republic of the Congo"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "cf" - "Central African Republic"
+  #            continent: "af"
+  #
+  taginfo-job-af-cf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cf/data:/osm/data
+     - ./cf/download:/osm/download
+     - ./cf/sources:/osm/sources:rw
+     - ./cf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cf
+     - AREA_NAME="Central African Republic"
+     - GDNAME=${GDNAME:-central-african-republic}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "cg" - "Congo-Brazzaville"
+  #            continent: "af"
+  #
+  taginfo-job-af-cg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cg/data:/osm/data
+     - ./cg/download:/osm/download
+     - ./cg/sources:/osm/sources:rw
+     - ./cg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cg
+     - AREA_NAME="Congo-Brazzaville"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ci" - "Côte d'Ivoire"
+  #            continent: "af"
+  #
+  taginfo-job-af-ci:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ci/data:/osm/data
+     - ./ci/download:/osm/download
+     - ./ci/sources:/osm/sources:rw
+     - ./ci:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ci
+     - AREA_NAME="Côte d'Ivoire"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "cm" - "Cameroon"
+  #            continent: "af"
+  #
+  taginfo-job-af-cm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cm/data:/osm/data
+     - ./cm/download:/osm/download
+     - ./cm/sources:/osm/sources:rw
+     - ./cm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cm
+     - AREA_NAME="Cameroon"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "cv" - "Cape Verde"
+  #            continent: "af"
+  #
+  taginfo-job-af-cv:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cv/data:/osm/data
+     - ./cv/download:/osm/download
+     - ./cv/sources:/osm/sources:rw
+     - ./cv:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cv
+     - AREA_NAME="Cape Verde"
+     - GDNAME=${GDNAME:-cape-verde}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "dj" - "Djibouti"
+  #            continent: "af"
+  #
+  taginfo-job-af-dj:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./dj/data:/osm/data
+     - ./dj/download:/osm/download
+     - ./dj/sources:/osm/sources:rw
+     - ./dj:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=dj
+     - AREA_NAME="Djibouti"
+     - GDNAME=${GDNAME:-djibouti}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "dz" - "Algeria"
+  #            continent: "af"
+  #
+  taginfo-job-af-dz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./dz/data:/osm/data
+     - ./dz/download:/osm/download
+     - ./dz/sources:/osm/sources:rw
+     - ./dz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=dz
+     - AREA_NAME="Algeria"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "eg" - "Egypt"
+  #            continent: "af"
+  #
+  taginfo-job-af-eg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./eg/data:/osm/data
+     - ./eg/download:/osm/download
+     - ./eg/sources:/osm/sources:rw
+     - ./eg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=eg
+     - AREA_NAME="Egypt"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "er" - "Eritrea"
+  #            continent: "af"
+  #
+  taginfo-job-af-er:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./er/data:/osm/data
+     - ./er/download:/osm/download
+     - ./er/sources:/osm/sources:rw
+     - ./er:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=er
+     - AREA_NAME="Eritrea"
+     - GDNAME=${GDNAME:-eritrea}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "es-ce" - "Ceuta"
+  #            continent: "af"
+  #
+  taginfo-job-af-es-ce:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./es-ce/data:/osm/data
+     - ./es-ce/download:/osm/download
+     - ./es-ce/sources:/osm/sources:rw
+     - ./es-ce:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=es-ce
+     - AREA_NAME="Ceuta"
+     - GDNAME=${GDNAME:-spain}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "es-cn" - "Canary Islands"
+  #            continent: "af"
+  #
+  taginfo-job-af-es-cn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./es-cn/data:/osm/data
+     - ./es-cn/download:/osm/download
+     - ./es-cn/sources:/osm/sources:rw
+     - ./es-cn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=es-cn
+     - AREA_NAME="Canary Islands"
+     - GDNAME=${GDNAME:-canary-islands}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "es-gc" - "Las Palmas"
+  #            continent: "af"
+  #
+  taginfo-job-af-es-gc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./es-gc/data:/osm/data
+     - ./es-gc/download:/osm/download
+     - ./es-gc/sources:/osm/sources:rw
+     - ./es-gc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=es-gc
+     - AREA_NAME="Las Palmas"
+     - GDNAME=${GDNAME:-canary-islands}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "es-ml" - "Melilla"
+  #            continent: "af"
+  #
+  taginfo-job-af-es-ml:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./es-ml/data:/osm/data
+     - ./es-ml/download:/osm/download
+     - ./es-ml/sources:/osm/sources:rw
+     - ./es-ml:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=es-ml
+     - AREA_NAME="Melilla"
+     - GDNAME=${GDNAME:-spain}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "es-tf" - "Santa Cruz de Tenerife"
+  #            continent: "af"
+  #
+  taginfo-job-af-es-tf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./es-tf/data:/osm/data
+     - ./es-tf/download:/osm/download
+     - ./es-tf/sources:/osm/sources:rw
+     - ./es-tf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=es-tf
+     - AREA_NAME="Santa Cruz de Tenerife"
+     - GDNAME=${GDNAME:-canary-islands}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "et" - "Ethiopia"
+  #            continent: "af"
+  #
+  taginfo-job-af-et:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./et/data:/osm/data
+     - ./et/download:/osm/download
+     - ./et/sources:/osm/sources:rw
+     - ./et:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=et
+     - AREA_NAME="Ethiopia"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "fr-may" - "Mayotte"
+  #            continent: "af"
+  #
+  taginfo-job-af-fr-may:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-may/data:/osm/data
+     - ./fr-may/download:/osm/download
+     - ./fr-may/sources:/osm/sources:rw
+     - ./fr-may:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-may
+     - AREA_NAME="Mayotte"
+     - GDNAME=${GDNAME:-mayotte}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "fr-yt" - "Mayotte"
+  #            continent: "af"
+  #
+  taginfo-job-af-fr-yt:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-yt/data:/osm/data
+     - ./fr-yt/download:/osm/download
+     - ./fr-yt/sources:/osm/sources:rw
+     - ./fr-yt:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-yt
+     - AREA_NAME="Mayotte"
+     - GDNAME=${GDNAME:-mayotte}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ga" - "Gabon"
+  #            continent: "af"
+  #
+  taginfo-job-af-ga:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ga/data:/osm/data
+     - ./ga/download:/osm/download
+     - ./ga/sources:/osm/sources:rw
+     - ./ga:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ga
+     - AREA_NAME="Gabon"
+     - GDNAME=${GDNAME:-gabon}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "gh" - "Ghana"
+  #            continent: "af"
+  #
+  taginfo-job-af-gh:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gh/data:/osm/data
+     - ./gh/download:/osm/download
+     - ./gh/sources:/osm/sources:rw
+     - ./gh:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gh
+     - AREA_NAME="Ghana"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "gm" - "The Gambia"
+  #            continent: "af"
+  #
+  taginfo-job-af-gm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gm/data:/osm/data
+     - ./gm/download:/osm/download
+     - ./gm/sources:/osm/sources:rw
+     - ./gm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gm
+     - AREA_NAME="The Gambia"
+     - GDNAME=${GDNAME:-senegal-and-gambia}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "gn" - "Guinea"
+  #            continent: "af"
+  #
+  taginfo-job-af-gn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gn/data:/osm/data
+     - ./gn/download:/osm/download
+     - ./gn/sources:/osm/sources:rw
+     - ./gn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gn
+     - AREA_NAME="Guinea"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "gq" - "Equatorial Guinea"
+  #            continent: "af"
+  #
+  taginfo-job-af-gq:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gq/data:/osm/data
+     - ./gq/download:/osm/download
+     - ./gq/sources:/osm/sources:rw
+     - ./gq:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gq
+     - AREA_NAME="Equatorial Guinea"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "gw" - "Guinea-Bissau"
+  #            continent: "af"
+  #
+  taginfo-job-af-gw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gw/data:/osm/data
+     - ./gw/download:/osm/download
+     - ./gw/sources:/osm/sources:rw
+     - ./gw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gw
+     - AREA_NAME="Guinea-Bissau"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ke" - "Kenya"
+  #            continent: "af"
+  #
+  taginfo-job-af-ke:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ke/data:/osm/data
+     - ./ke/download:/osm/download
+     - ./ke/sources:/osm/sources:rw
+     - ./ke:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ke
+     - AREA_NAME="Kenya"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "km" - "Comoros"
+  #            continent: "af"
+  #
+  taginfo-job-af-km:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./km/data:/osm/data
+     - ./km/download:/osm/download
+     - ./km/sources:/osm/sources:rw
+     - ./km:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=km
+     - AREA_NAME="Comoros"
+     - GDNAME=${GDNAME:-comores}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "lr" - "Liberia"
+  #            continent: "af"
+  #
+  taginfo-job-af-lr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./lr/data:/osm/data
+     - ./lr/download:/osm/download
+     - ./lr/sources:/osm/sources:rw
+     - ./lr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=lr
+     - AREA_NAME="Liberia"
+     - GDNAME=${GDNAME:-liberia}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ls" - "Lesotho"
+  #            continent: "af"
+  #
+  taginfo-job-af-ls:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ls/data:/osm/data
+     - ./ls/download:/osm/download
+     - ./ls/sources:/osm/sources:rw
+     - ./ls:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ls
+     - AREA_NAME="Lesotho"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ly" - "Libya"
+  #            continent: "af"
+  #
+  taginfo-job-af-ly:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ly/data:/osm/data
+     - ./ly/download:/osm/download
+     - ./ly/sources:/osm/sources:rw
+     - ./ly:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ly
+     - AREA_NAME="Libya"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ma" - "Morocco"
+  #            continent: "af"
+  #
+  taginfo-job-af-ma:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ma/data:/osm/data
+     - ./ma/download:/osm/download
+     - ./ma/sources:/osm/sources:rw
+     - ./ma:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ma
+     - AREA_NAME="Morocco"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "mg" - "Madagascar"
+  #            continent: "af"
+  #
+  taginfo-job-af-mg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mg/data:/osm/data
+     - ./mg/download:/osm/download
+     - ./mg/sources:/osm/sources:rw
+     - ./mg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mg
+     - AREA_NAME="Madagascar"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ml" - "Mali"
+  #            continent: "af"
+  #
+  taginfo-job-af-ml:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ml/data:/osm/data
+     - ./ml/download:/osm/download
+     - ./ml/sources:/osm/sources:rw
+     - ./ml:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ml
+     - AREA_NAME="Mali"
+     - GDNAME=${GDNAME:-mali}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "mr" - "Mauritania"
+  #            continent: "af"
+  #
+  taginfo-job-af-mr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mr/data:/osm/data
+     - ./mr/download:/osm/download
+     - ./mr/sources:/osm/sources:rw
+     - ./mr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mr
+     - AREA_NAME="Mauritania"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "mu" - "Mauritius"
+  #            continent: "af"
+  #
+  taginfo-job-af-mu:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mu/data:/osm/data
+     - ./mu/download:/osm/download
+     - ./mu/sources:/osm/sources:rw
+     - ./mu:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mu
+     - AREA_NAME="Mauritius"
+     - GDNAME=${GDNAME:-mauritius}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "mw" - "Malawi"
+  #            continent: "af"
+  #
+  taginfo-job-af-mw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mw/data:/osm/data
+     - ./mw/download:/osm/download
+     - ./mw/sources:/osm/sources:rw
+     - ./mw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mw
+     - AREA_NAME="Malawi"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "mz" - "Mozambique"
+  #            continent: "af"
+  #
+  taginfo-job-af-mz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mz/data:/osm/data
+     - ./mz/download:/osm/download
+     - ./mz/sources:/osm/sources:rw
+     - ./mz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mz
+     - AREA_NAME="Mozambique"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "na" - "Namibia"
+  #            continent: "af"
+  #
+  taginfo-job-af-na:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./na/data:/osm/data
+     - ./na/download:/osm/download
+     - ./na/sources:/osm/sources:rw
+     - ./na:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=na
+     - AREA_NAME="Namibia"
+     - GDNAME=${GDNAME:-namibia}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ne" - "Niger"
+  #            continent: "af"
+  #
+  taginfo-job-af-ne:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ne/data:/osm/data
+     - ./ne/download:/osm/download
+     - ./ne/sources:/osm/sources:rw
+     - ./ne:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ne
+     - AREA_NAME="Niger"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ng" - "Nigeria"
+  #            continent: "af"
+  #
+  taginfo-job-af-ng:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ng/data:/osm/data
+     - ./ng/download:/osm/download
+     - ./ng/sources:/osm/sources:rw
+     - ./ng:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ng
+     - AREA_NAME="Nigeria"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "re" - "Réunion"
+  #            continent: "af"
+  #
+  taginfo-job-af-re:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./re/data:/osm/data
+     - ./re/download:/osm/download
+     - ./re/sources:/osm/sources:rw
+     - ./re:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=re
+     - AREA_NAME="Réunion"
+     - GDNAME=${GDNAME:-reunion}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "rw" - "Rwanda"
+  #            continent: "af"
+  #
+  taginfo-job-af-rw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./rw/data:/osm/data
+     - ./rw/download:/osm/download
+     - ./rw/sources:/osm/sources:rw
+     - ./rw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=rw
+     - AREA_NAME="Rwanda"
+     - GDNAME=${GDNAME:-rwanda}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sc" - "Seychelles"
+  #            continent: "af"
+  #
+  taginfo-job-af-sc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sc/data:/osm/data
+     - ./sc/download:/osm/download
+     - ./sc/sources:/osm/sources:rw
+     - ./sc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sc
+     - AREA_NAME="Seychelles"
+     - GDNAME=${GDNAME:-seychelles}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sd" - "Sudan"
+  #            continent: "af"
+  #
+  taginfo-job-af-sd:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sd/data:/osm/data
+     - ./sd/download:/osm/download
+     - ./sd/sources:/osm/sources:rw
+     - ./sd:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sd
+     - AREA_NAME="Sudan"
+     - GDNAME=${GDNAME:-sudan}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sh" - "Saint Helena, Ascension and Tristan da Cunha"
+  #            continent: "af"
+  #
+  taginfo-job-af-sh:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sh/data:/osm/data
+     - ./sh/download:/osm/download
+     - ./sh/sources:/osm/sources:rw
+     - ./sh:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sh
+     - AREA_NAME="Saint Helena, Ascension and Tristan da Cunha"
+     - GDNAME=${GDNAME:-saint-helena-ascension-and-tristan-da-cunha}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sl" - "Sierra Leone"
+  #            continent: "af"
+  #
+  taginfo-job-af-sl:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sl/data:/osm/data
+     - ./sl/download:/osm/download
+     - ./sl/sources:/osm/sources:rw
+     - ./sl:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sl
+     - AREA_NAME="Sierra Leone"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sn" - "Senegal"
+  #            continent: "af"
+  #
+  taginfo-job-af-sn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sn/data:/osm/data
+     - ./sn/download:/osm/download
+     - ./sn/sources:/osm/sources:rw
+     - ./sn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sn
+     - AREA_NAME="Senegal"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "so" - "Somalia"
+  #            continent: "af"
+  #
+  taginfo-job-af-so:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./so/data:/osm/data
+     - ./so/download:/osm/download
+     - ./so/sources:/osm/sources:rw
+     - ./so:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=so
+     - AREA_NAME="Somalia"
+     - GDNAME=${GDNAME:-somalia}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ss" - "South Sudan"
+  #            continent: "af"
+  #
+  taginfo-job-af-ss:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ss/data:/osm/data
+     - ./ss/download:/osm/download
+     - ./ss/sources:/osm/sources:rw
+     - ./ss:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ss
+     - AREA_NAME="South Sudan"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "st" - "São Tomé and Príncipe"
+  #            continent: "af"
+  #
+  taginfo-job-af-st:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./st/data:/osm/data
+     - ./st/download:/osm/download
+     - ./st/sources:/osm/sources:rw
+     - ./st:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=st
+     - AREA_NAME="São Tomé and Príncipe"
+     - GDNAME=${GDNAME:-sao-tome-and-principe}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "sz" - "Eswatini"
+  #            continent: "af"
+  #
+  taginfo-job-af-sz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sz/data:/osm/data
+     - ./sz/download:/osm/download
+     - ./sz/sources:/osm/sources:rw
+     - ./sz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sz
+     - AREA_NAME="Eswatini"
+     - GDNAME=${GDNAME:-swaziland}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "td" - "Chad"
+  #            continent: "af"
+  #
+  taginfo-job-af-td:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./td/data:/osm/data
+     - ./td/download:/osm/download
+     - ./td/sources:/osm/sources:rw
+     - ./td:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=td
+     - AREA_NAME="Chad"
+     - GDNAME=${GDNAME:-chad}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "tg" - "Togo"
+  #            continent: "af"
+  #
+  taginfo-job-af-tg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tg/data:/osm/data
+     - ./tg/download:/osm/download
+     - ./tg/sources:/osm/sources:rw
+     - ./tg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tg
+     - AREA_NAME="Togo"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "tn" - "Tunisia"
+  #            continent: "af"
+  #
+  taginfo-job-af-tn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tn/data:/osm/data
+     - ./tn/download:/osm/download
+     - ./tn/sources:/osm/sources:rw
+     - ./tn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tn
+     - AREA_NAME="Tunisia"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "tz" - "Tanzania"
+  #            continent: "af"
+  #
+  taginfo-job-af-tz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tz/data:/osm/data
+     - ./tz/download:/osm/download
+     - ./tz/sources:/osm/sources:rw
+     - ./tz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tz
+     - AREA_NAME="Tanzania"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "ug" - "Uganda"
+  #            continent: "af"
+  #
+  taginfo-job-af-ug:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ug/data:/osm/data
+     - ./ug/download:/osm/download
+     - ./ug/sources:/osm/sources:rw
+     - ./ug:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ug
+     - AREA_NAME="Uganda"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "yt" - "Mayotte"
+  #            continent: "af"
+  #
+  taginfo-job-af-yt:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./yt/data:/osm/data
+     - ./yt/download:/osm/download
+     - ./yt/sources:/osm/sources:rw
+     - ./yt:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=yt
+     - AREA_NAME="Mayotte"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "za" - "South Africa"
+  #            continent: "af"
+  #
+  taginfo-job-af-za:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./za/data:/osm/data
+     - ./za/download:/osm/download
+     - ./za/sources:/osm/sources:rw
+     - ./za:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=za
+     - AREA_NAME="South Africa"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "zm" - "Zambia"
+  #            continent: "af"
+  #
+  taginfo-job-af-zm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./zm/data:/osm/data
+     - ./zm/download:/osm/download
+     - ./zm/sources:/osm/sources:rw
+     - ./zm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=zm
+     - AREA_NAME="Zambia"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+  #---------------------------------------------------------
+  # Service for : "zw" - "Zimbabwe"
+  #            continent: "af"
+  #
+  taginfo-job-af-zw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./zw/data:/osm/data
+     - ./zw/download:/osm/download
+     - ./zw/sources:/osm/sources:rw
+     - ./zw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=zw
+     - AREA_NAME="Zimbabwe"
+     - GDNAME=${GDNAME:-africa}   
+     - CONTINENT=af
+     - CONTINENT_LONG=africa
+
+
+# generated : 2019-12-29:15:08  
