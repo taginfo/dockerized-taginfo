@@ -1,0 +1,52 @@
+# generated : 2019-12-29:15:53  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=ru
+     - CONTINENT_LONG=russia
+
+
+
+  #---------------------------------------------------------
+  # Service for : "ru" - "Russia"
+  #            continent: "ru"
+  #
+  taginfo-job-ru-ru:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ru/data:/osm/data
+     - ./ru/download:/osm/download
+     - ./ru/sources:/osm/sources:rw
+     - ./ru:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ru
+     - AREA_NAME="Russia"
+     - GDNAME=${GDNAME:-russia}   
+     - CONTINENT=ru
+     - CONTINENT_LONG=russia
+
+
+# generated : 2019-12-29:15:53  

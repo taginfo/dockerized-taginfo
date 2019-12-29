@@ -1,0 +1,94 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id from osm_admin2_continent_all order by iso ;
+  iso   |                 name_en                 |     area_pct      |                   name                   | wikidata  |  osm_id  
+--------+-----------------------------------------+-------------------+------------------------------------------+-----------+----------
+ lv-110 |                                         | 0.353451197356074 | Zilupes novads                           | Q3274762  | r1806955
+ ru     | Russia                                  | 0.999938886743588 | Россия                                   | Q159      | r60189
+ ru-ad  | Republic of Adygea                      |                 1 | Адыгея                                   | Q3734     | r253256
+ ru-al  | Altai Republic                          |                 1 | Республика Алтай                         | Q5971     | r145194
+ ru-alt | Altai Krai                              |                 1 | Алтайский край                           | Q5942     | r144764
+ ru-amu | Amur Oblast                             |                 1 | Амурская область                         | Q6886     | r147166
+ ru-ark | Arkhangelsk Oblast                      | 0.999664159491295 | Архангельская область                    | Q1875     | r140337
+ ru-ast | Astrakhan Oblast                        |                 1 | Астраханская область                     | Q3941     | r112819
+ ru-ba  | Bashkortostan                           |                 1 | Башкортостан                             | Q5710     | r77677
+ ru-bel | Belgorod Oblast                         |                 1 | Белгородская область                     | Q3329     | r83184
+ ru-bry | Bryansk Oblast                          |                 1 | Брянская область                         | Q2810     | r81997
+ ru-bu  | Buryatia                                |                 1 | Республика Бурятия                       | Q6809     | r145729
+ ru-ce  | Chechen Republic                        |                 1 | Чечня                                    | Q5187     | r109877
+ ru-che | Chelyabinsk Oblast                      |                 1 | Челябинская область                      | Q5714     | r77687
+ ru-chu | Chukotka Autonomous Okrug               | 0.999096147286996 | Чукотский автономный округ               | Q7984     | r151231
+ ru-cr  | Republic of Crimea                      |                 1 | Республика Крым                          | Q15966495 | r3795586
+ ru-cu  | Chuvashia                               |                 1 | Чувашия                                  | Q5466     | r80513
+ ru-da  | Republic of Dagestan                    |                 1 | Республика Дагестан                      | Q5118     | r109876
+ ru-in  | Ingushetia                              |                 1 | Ингушетия                                | Q5219     | r253252
+ ru-irk | Irkutsk Oblast                          |                 1 | Иркутская область                        | Q6585     | r145454
+ ru-iva | Ivanovo Oblast                          |                 1 | Ивановская область                       | Q2654     | r85617
+ ru-kam | Kamchatka Krai                          |                 1 | Камчатский край                          | Q7948     | r151233
+ ru-kb  | Kabardino-Balkaria                      |                 1 | Кабардино-Балкария                       | Q5267     | r109879
+ ru-kc  | Karachay-Cherkessia                     |                 1 | Карачаево-Черкесия                       | Q5328     | r109878
+ ru-kda | Krasnodar Krai                          |                 1 | Краснодарский край                       | Q3680     | r108082
+ ru-kem | Kemerovo Oblast                         |                 1 | Кемеровская область                      | Q6076     | r144763
+ ru-kgd | Kaliningrad                             | 0.999686558451155 | Калининградская область                  | Q1749     | r103906
+ ru-kgn | Kurgan Oblast                           |                 1 | Курганская область                       | Q5741     | r140290
+ ru-kha | Khabarovsk Krai                         |                 1 | Хабаровский край                         | Q7788     | r151223
+ ru-khm | Khanty-Mansiysk Autonomous Okrug – Ugra |                 1 | Ханты-Мансийский автономный округ — Югра | Q6320     | r140296
+ ru-kir | Kirov Oblast                            |                 1 | Кировская область                        | Q5387     | r115100
+ ru-kk  | Republic of Khakassia                   |                 1 | Республика Хакасия                       | Q6543     | r190911
+ ru-kl  | Republic of Kalmykia                    |                 1 | Республика Калмыкия                      | Q3953     | r108083
+ ru-klu | Kaluga Oblast                           |                 1 | Калужская область                        | Q2842     | r81995
+ ru-ko  | Komi Republic                           |                 1 | Республика Коми                          | Q2073     | r115136
+ ru-kos | Kostroma Oblast                         |                 1 | Костромская область                      | Q2596     | r85963
+ ru-kr  | Republic of Karelia                     |                 1 | Республика Карелия                       | Q1914     | r393980
+ ru-krs | Kursk Oblast                            |                 1 | Курская область                          | Q3178     | r72223
+ ru-kya | Krasnoyarsk Krai                        |                 1 | Красноярский край                        | Q6563     | r190090
+ ru-len | Leningrad oblast                        |                 1 | Ленинградская область                    | Q2191     | r176095
+ ru-lip | Lipetsk Oblast                          |                 1 | Липецкая область                         | Q3510     | r72169
+ ru-mag | Magadan Oblast                          |                 1 | Магаданская область                      | Q7971     | r151228
+ ru-me  | Mari El                                 |                 1 | Марий Эл                                 | Q5446     | r115114
+ ru-mo  | Republic of Mordovia                    |                 1 | Мордовия                                 | Q5340     | r72196
+ ru-mos | Moscow Oblast                           |                 1 | Московская область                       | Q1697     | r51490
+ ru-mow | Moscow                                  |                 1 | Москва                                   | Q649      | r102269
+ ru-mur | Murmansk Oblast                         |                 1 | Мурманская область                       | Q1759     | r2099216
+ ru-nen | Nenets Autonomous Okrug                 |                 1 | Ненецкий автономный округ                | Q2164     | r274048
+ ru-ngr | Novgorod Oblast                         |                 1 | Новгородская область                     | Q2240     | r89331
+ ru-niz | Nizhny Novgorod Oblast                  |                 1 | Нижегородская область                    | Q2246     | r72195
+ ru-nvs | Novosibirsk Oblast                      |                 1 | Новосибирская область                    | Q5851     | r140294
+ ru-oms | Omsk Oblast                             |                 1 | Омская область                           | Q5835     | r140292
+ ru-ore | Orenburg Oblast                         |                 1 | Оренбургская область                     | Q5338     | r77669
+ ru-orl | Oryol Oblast                            |                 1 | Орловская область                        | Q3129     | r72224
+ ru-per | Perm Krai                               |                 1 | Пермский край                            | Q5400     | r115135
+ ru-pnz | Penza Oblast                            |                 1 | Пензенская область                       | Q5545     | r72182
+ ru-pri | Primorsky Krai                          |                 1 | Приморский край                          | Q4341     | r151225
+ ru-psk | Pskov Oblast                            |                 1 | Псковская область                        | Q2218     | r155262
+ ru-ros | Rostov Oblast                           |                 1 | Ростовская область                       | Q3573     | r85606
+ ru-rya | Ryazan Oblast                           |                 1 | Рязанская область                        | Q2753     | r71950
+ ru-sa  | Sakha Republic                          |                 1 | Республика Саха (Якутия)                 | Q6605     | r151234
+ ru-sak | Sakhalin Oblast                         |                 1 | Сахалинская область                      | Q7797     | r394235
+ ru-sam | Samara Oblast                           |                 1 | Самарская область                        | Q1727     | r72194
+ ru-sar | Saratov Oblast                          |                 1 | Саратовская область                      | Q5334     | r72193
+ ru-se  | Republic of North Ossetia-Alania        |                 1 | Северная Осетия — Алания                 | Q5237     | r110032
+ ru-sev | Sevastopol                              |                 1 | Севастополь                              | Q17436425 | r3788485
+ ru-smo | Smolensk Oblast                         |                 1 | Смоленская область                       | Q2347     | r81996
+ ru-spe | Saint Petersburg                        |                 1 | Санкт-Петербург                          | Q656      | r337422
+ ru-sta | Stavropol Krai                          |                 1 | Ставропольский край                      | Q5207     | r108081
+ ru-sve | Sverdlovsk Oblast                       |                 1 | Свердловская область                     | Q5462     | r79379
+ ru-ta  | Tatarstan                               |                 1 | Татарстан                                | Q5481     | r79374
+ ru-tam | Tambov Oblast                           |                 1 | Тамбовская область                       | Q3550     | r72180
+ ru-tom | Tomsk Oblast                            |                 1 | Томская область                          | Q5884     | r140295
+ ru-tul | Tula Oblast                             |                 1 | Тульская область                         | Q2792     | r81993
+ ru-tve | Tver Oblast                             |                 1 | Тверская область                         | Q2292     | r2095259
+ ru-ty  | Tuva Republic                           |                 1 | Республика Тыва                          | Q960      | r145195
+ ru-tyu | Tyumen Oblast                           |                 1 | Тюменская область                        | Q5824     | r140291
+ ru-ud  | Udmurtia                                |                 1 | Удмуртия                                 | Q5422     | r115134
+ ru-uly | Ulyanovsk Oblast                        |                 1 | Ульяновская область                      | Q5634     | r72192
+ ru-vgg | Volgograd Oblast                        |                 1 | Волгоградская область                    | Q3819     | r77665
+ ru-vla | Vladimir Oblast                         |                 1 | Владимирская область                     | Q2702     | r72197
+ ru-vlg | Vologda Oblast                          |                 1 | Вологодская область                      | Q2015     | r115106
+ ru-vor | Voronezh Oblast                         |                 1 | Воронежская область                      | Q3447     | r72181
+ ru-yan | Yamalo-Nenets Autonomous Okrug          |                 1 | Ямало-Ненецкий автономный округ          | Q6407     | r191706
+ ru-yar | Yaroslavl Oblast                        |                 1 | Ярославская область                      | Q2448     | r81994
+ ru-yev | Jewish Autonomous Oblast                |                 1 | Еврейская автономная область             | Q7730     | r147167
+ ru-zab | Zabaykalsky Krai                        |                 1 | Забайкальский край                       | Q6838     | r145730
+ ua-40  | Sevastopol                              |                 1 | Севастополь                              | Q4456205  | r1574364
+ ua-43  | Autonomous Republic of Crimea           |                 1 | Автономна Республіка Крим                | Q756294   | r72639
+(89 rows)
+

@@ -1,0 +1,9 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where iso in('ru')  AND  1=1   
+      order by iso ;
+ iso | name_en |     area_pct      |  name  | wikidata | osm_id 
+-----+---------+-------------------+--------+----------+--------
+ ru  | Russia  | 0.999938886743588 | Россия | Q159     | r60189
+(1 row)
+
