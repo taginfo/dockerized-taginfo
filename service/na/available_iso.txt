@@ -1,0 +1,109 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id from osm_admin2_continent_all order by iso ;
+  iso   |          name_en          |     area_pct      |                               name                               | wikidata |   osm_id   
+--------+---------------------------+-------------------+------------------------------------------------------------------+----------+------------
+ bm     | Bermuda                   |                 1 | Bermuda                                                          | Q23635   | r1993208
+ ca     | Canada                    |                 1 | Canada                                                           | Q16      | r1428125
+ ca-ab  | Alberta                   |                 1 | Alberta                                                          | Q1951    | r391186
+ ca-bc  | British Columbia          |                 1 | British Columbia                                                 | Q1974    | r390867
+ ca-mb  | Manitoba                  |                 1 | Manitoba                                                         | Q1948    | r390841
+ ca-nb  | New Brunswick             |                 1 | New Brunswick                                                    | Q1965    | r68942
+ ca-nl  | Newfoundland and Labrador |                 1 | Newfoundland and Labrador                                        | Q2003    | r391196
+ ca-ns  | Nova Scotia               |                 1 | Nova Scotia                                                      | Q1952    | r390558
+ ca-nt  | Northwest Territories     |                 1 | Northwest Territories                                            | Q2007    | r391220
+ ca-nu  | Nunavut                   |                 1 | Nunavut                                                          | Q2023    | r390840
+ ca-on  | Ontario                   |                 1 | Ontario                                                          | Q1904    | r68841
+ ca-pe  | Prince Edward Island      |                 1 | Prince Edward Island                                             | Q1979    | r391115
+ ca-qc  | Quebec                    |                 1 | Québec                                                           | Q176     | r61549
+ ca-sk  | Saskatchewan              |                 1 | Saskatchewan                                                     | Q1989    | r391178
+ ca-yt  | Yukon                     |                 1 | Yukon                                                            | Q2009    | r391455
+ fr-pm  | Saint Pierre and Miquelon |                 1 | Saint-Pierre-et-Miquelon                                         | Q34617   | r3406826
+ gl     | Greenland                 |                 1 | Kalaallit Nunaat                                                 | Q223     | r2184073
+ mx     | Mexico                    | 0.998725707939839 | México                                                           | Q96      | r114686
+ mx-agu | Aguascalientes            |                 1 | Aguascalientes                                                   | Q79952   | r2610002
+ mx-bcn | Baja California           |                 1 | Baja California                                                  | Q58731   | r2589601
+ mx-bcs |                           |                 1 | Baja California Sur                                              | Q46508   | r2589611
+ mx-cam | Campeche                  |                 1 | Campeche                                                         | Q80908   | r2568834
+ mx-chh | Chihuahua                 |                 1 | Chihuahua                                                        | Q655     | r1673425
+ mx-chp | Chiapas                   | 0.999882118186806 | Chiapas                                                          | Q60123   | r2556679
+ mx-cmx | Mexico City               |                 1 | Ciudad de México                                                 | Q1489    | r1376330
+ mx-coa | Coahuila                  |                 1 | Coahuila de Zaragoza                                             | Q53079   | r1661524
+ mx-col | Colima                    | 0.996668080698455 | Colima                                                           | Q61309   | r2340912
+ mx-dur | Durango                   |                 1 | Durango                                                          | Q79918   | r2399740
+ mx-gro | Guerrero                  |                 1 | Guerrero                                                         | Q60158   | r2439316
+ mx-gua | Guanajuato                |                 1 | Guanajuato                                                       | Q46475   | r2340909
+ mx-hid | Hidalgo                   |                 1 | Hidalgo                                                          | Q80903   | r1376490
+ mx-jal | Jalisco                   |                 1 | Jalisco                                                          | Q13160   | r2340910
+ mx-mex | Mexico                    |                 1 | Estado de México                                                 | Q82112   | r1376489
+ mx-mic | Michoacán                 |                 1 | Michoacán de Ocampo                                              | Q79861   | r2340636
+ mx-mor | Morelos                   |                 1 | Morelos                                                          | Q66117   | r1376332
+ mx-nay | Nayarit                   |                 1 | Nayarit                                                          | Q79920   | r7695827
+ mx-nle | Nuevo León                |                 1 | Nuevo León                                                       | Q15282   | r1661523
+ mx-oax | Oaxaca                    |                 1 | Oaxaca                                                           | Q34110   | r2529822
+ mx-pue | Puebla                    |                 1 | Puebla                                                           | Q79923   | r1376491
+ mx-que | Querétaro                 |                 1 | Querétaro                                                        | Q79754   | r2340903
+ mx-roo | Quintana Roo              |  0.99967842397743 | Quintana Roo                                                     | Q80245   | r2614434
+ mx-sin | Sinaloa                   |                 1 | Sinaloa                                                          | Q80252   | r2455086
+ mx-slp | San Luis Potosi           |                 1 | San Luis Potosí                                                  | Q78980   | r4086617
+ mx-son | Sonora                    |                 1 | Sonora                                                           | Q46422   | r1673426
+ mx-tab | Tabasco                   |                 1 | Tabasco                                                          | Q80914   | r2556680
+ mx-tam | Tamaulipas                |                 1 | Tamaulipas                                                       | Q80007   | r2415518
+ mx-tla | Tlaxcala                  |                 1 | Tlaxcala                                                         | Q82681   | r1375274
+ mx-ver | Veracruz                  |                 1 | Veracruz de Ignacio de la Llave                                  | Q60130   | r2415761
+ mx-yuc | Yucatán                   |                 1 | Yucatán                                                          | Q60176   | r2614435
+ mx-zac | Zacatecas                 |                 1 | Zacatecas                                                        | Q80269   | r2399704
+ us     | United States             | 0.996226029284944 | United States                                                    | Q30      | r10
+ us-ak  | Alaska                    | 0.988460746934258 | Alaska                                                           | Q797     | r1116270
+ us-al  | Alabama                   |                 1 | Alabama                                                          | Q173     | r161950
+ us-ar  | Arkansas                  |                 1 | Arkansas                                                         | Q1612    | r161646
+ us-az  | Arizona                   |                 1 | Arizona                                                          | Q816     | r162018
+ us-ca  | California                |                 1 | California                                                       | Q99      | r165475
+ us-co  | Colorado                  |                 1 | Colorado                                                         | Q1261    | r161961
+ us-ct  | Connecticut               |                 1 | Connecticut                                                      | Q779     | r165794
+ us-dc  | Washington, D.C.          |                 1 | District of Columbia                                             | Q3551781 | r162069
+ us-de  | Delaware                  |                 1 | Delaware                                                         | Q1393    | r162110
+ us-fl  | Florida                   |                 1 | Florida                                                          | Q812     | r162050
+ us-ga  | Georgia                   |                 1 | Georgia                                                          | Q1428    | r161957
+ us-hi  | Hawaii                    |                 1 | Hawaii                                                           | Q782     | r166563
+ us-ia  | Iowa                      |                 1 | Iowa                                                             | Q1546    | r161650
+ us-id  | Idaho                     |                 1 | Idaho                                                            | Q1221    | r162116
+ us-il  | Illinois                  |                 1 | Illinois                                                         | Q1204    | r122586
+ us-in  | Indiana                   |                 1 | Indiana                                                          | Q1415    | r161816
+ us-ks  | Kansas                    |                 1 | Kansas                                                           | Q1558    | r161644
+ us-ky  | Kentucky                  |                 1 | Kentucky                                                         | Q1603    | r161655
+ us-la  | Louisiana                 |                 1 | Louisiana                                                        | Q1588    | r224922
+ us-ma  | Massachusetts             |                 1 | Massachusetts                                                    | Q771     | r61315
+ us-md  | Maryland                  |                 1 | Maryland                                                         | Q1391    | r162112
+ us-me  | Maine                     |                 1 | Maine                                                            | Q724     | r63512
+ us-mi  | Michigan                  |                 1 | Michigan                                                         | Q1166    | r165789
+ us-mn  | Minnesota                 |                 1 | Minnesota                                                        | Q1527    | r165471
+ us-mo  | Missouri                  |                 1 | Missouri                                                         | Q1581    | r161638
+ us-ms  | Mississippi               |                 1 | Mississippi                                                      | Q1494    | r161943
+ us-mt  | Montana                   |                 1 | Montana                                                          | Q1212    | r162115
+ us-nc  | North Carolina            |                 1 | North Carolina                                                   | Q1454    | r224045
+ us-nd  | North Dakota              |                 1 | North Dakota                                                     | Q1207    | r161653
+ us-ne  | Nebraska                  |                 1 | Nebraska                                                         | Q1553    | r161648
+ us-nh  | New Hampshire             |                 1 | New Hampshire                                                    | Q759     | r67213
+ us-nj  | New Jersey                |                 1 | New Jersey                                                       | Q1408    | r224951
+ us-nm  | New Mexico                |                 1 | New Mexico                                                       | Q1522    | r162014
+ us-nv  | Nevada                    |                 1 | Nevada                                                           | Q1227    | r165473
+ us-ny  | New York                  |                 1 | New York                                                         | Q1384    | r61320
+ us-oh  | Ohio                      |                 1 | Ohio                                                             | Q1397    | r162061
+ us-ok  | Oklahoma                  |                 1 | Oklahoma                                                         | Q1649    | r161645
+ us-or  | Oregon                    |                 1 | Oregon                                                           | Q824     | r165476
+ us-pa  | Pennsylvania              |                 1 | Pennsylvania                                                     | Q1400    | r162109
+ us-ri  | Rhode Island              |                 1 | Rhode Island                                                     | Q1387    | r392915
+ us-sc  | South Carolina            |                 1 | South Carolina                                                   | Q1456    | r224040
+ us-sd  | South Dakota              |                 1 | South Dakota                                                     | Q1211    | r161652
+ us-tn  | Tennessee                 |                 1 | Tennessee                                                        | Q1509    | r161838
+ us-tx  | Texas                     |                 1 | Texas                                                            | Q1439    | r114690
+ us-um  |                           |                 1 | United States of America (Minor Outlying Islands);Johnston Atoll |          | w298809966
+ us-um  |                           |                 1 | United States of America (Minor Outlying Islands);Midway Atoll   |          | w42120358
+ us-ut  | Utah                      |                 1 | Utah                                                             | Q829     | r161993
+ us-va  | Virginia                  |                 1 | Virginia                                                         | Q1370    | r224042
+ us-vt  | Vermont                   |                 1 | Vermont                                                          | Q16551   | r60759
+ us-wa  | Washington                |                 1 | Washington                                                       | Q1223    | r165479
+ us-wi  | Wisconsin                 |                 1 | Wisconsin                                                        | Q1537    | r165466
+ us-wv  | West Virginia             |                 1 | West Virginia                                                    | Q1371    | r162068
+ us-wy  | Wyoming                   |                 1 | Wyoming                                                          | Q1214    | r161991
+(104 rows)
+

@@ -1,0 +1,167 @@
+# generated : 2019-12-29:15:51  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+
+
+  #---------------------------------------------------------
+  # Service for : "bm" - "Bermuda"
+  #            continent: "na"
+  #
+  taginfo-job-na-bm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bm/data:/osm/data
+     - ./bm/download:/osm/download
+     - ./bm/sources:/osm/sources:rw
+     - ./bm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bm
+     - AREA_NAME="Bermuda"
+     - GDNAME=${GDNAME:-north-america}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+  #---------------------------------------------------------
+  # Service for : "ca" - "Canada"
+  #            continent: "na"
+  #
+  taginfo-job-na-ca:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ca/data:/osm/data
+     - ./ca/download:/osm/download
+     - ./ca/sources:/osm/sources:rw
+     - ./ca:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ca
+     - AREA_NAME="Canada"
+     - GDNAME=${GDNAME:-north-america}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-pm" - "Saint Pierre and Miquelon"
+  #            continent: "na"
+  #
+  taginfo-job-na-fr-pm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-pm/data:/osm/data
+     - ./fr-pm/download:/osm/download
+     - ./fr-pm/sources:/osm/sources:rw
+     - ./fr-pm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-pm
+     - AREA_NAME="Saint Pierre and Miquelon"
+     - GDNAME=${GDNAME:-canada}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+  #---------------------------------------------------------
+  # Service for : "gl" - "Greenland"
+  #            continent: "na"
+  #
+  taginfo-job-na-gl:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gl/data:/osm/data
+     - ./gl/download:/osm/download
+     - ./gl/sources:/osm/sources:rw
+     - ./gl:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gl
+     - AREA_NAME="Greenland"
+     - GDNAME=${GDNAME:-greenland}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+  #---------------------------------------------------------
+  # Service for : "mx" - "Mexico"
+  #            continent: "na"
+  #
+  taginfo-job-na-mx:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mx/data:/osm/data
+     - ./mx/download:/osm/download
+     - ./mx/sources:/osm/sources:rw
+     - ./mx:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mx
+     - AREA_NAME="Mexico"
+     - GDNAME=${GDNAME:-north-america}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+  #---------------------------------------------------------
+  # Service for : "us" - "United States"
+  #            continent: "na"
+  #
+  taginfo-job-na-us:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us/data:/osm/data
+     - ./us/download:/osm/download
+     - ./us/sources:/osm/sources:rw
+     - ./us:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us
+     - AREA_NAME="United States"
+     - GDNAME=${GDNAME:-north-america}   
+     - CONTINENT=na
+     - CONTINENT_LONG=north-america
+
+
+# generated : 2019-12-29:15:51  

@@ -1,0 +1,144 @@
+# generated : 2019-12-29:15:51  // template : ./setup/template/docker-compose.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  #---------------------------------------------------------
+  # Service for : "bm"-"Bermuda" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-bm:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22001:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-bm.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22001
+    volumes:
+     - ./bm/data:/osm/data
+     - ./bm/download:/osm/download
+     - ./bm:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ca"-"Canada" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-ca:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22002:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-ca.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22002
+    volumes:
+     - ./ca/data:/osm/data
+     - ./ca/download:/osm/download
+     - ./ca:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-pm"-"Saint Pierre and Miquelon" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-fr-pm:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22003:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-fr-pm.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22003
+    volumes:
+     - ./fr-pm/data:/osm/data
+     - ./fr-pm/download:/osm/download
+     - ./fr-pm:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gl"-"Greenland" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-gl:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22004:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-gl.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22004
+    volumes:
+     - ./gl/data:/osm/data
+     - ./gl/download:/osm/download
+     - ./gl:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "mx"-"Mexico" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-mx:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22005:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-mx.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22005
+    volumes:
+     - ./mx/data:/osm/data
+     - ./mx/download:/osm/download
+     - ./mx:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "us"-"United States" + taginfo-dev.opengeodata.hu
+  #               continent: "na"
+
+  taginfo-na-us:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "22006:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=na-us.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=22006
+    volumes:
+     - ./us/data:/osm/data
+     - ./us/download:/osm/download
+     - ./us:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+
+# generated : 2019-12-29:15:51  // template : /setup/docker-compose.jinja2

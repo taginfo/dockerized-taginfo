@@ -1,0 +1,14 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk')   AND  1=1   
+      order by iso ;
+  iso  |          name_en          |     area_pct      |           name           | wikidata |  osm_id  
+-------+---------------------------+-------------------+--------------------------+----------+----------
+ bm    | Bermuda                   |                 1 | Bermuda                  | Q23635   | r1993208
+ ca    | Canada                    |                 1 | Canada                   | Q16      | r1428125
+ fr-pm | Saint Pierre and Miquelon |                 1 | Saint-Pierre-et-Miquelon | Q34617   | r3406826
+ gl    | Greenland                 |                 1 | Kalaallit Nunaat         | Q223     | r2184073
+ mx    | Mexico                    | 0.998725707939839 | México                   | Q96      | r114686
+ us    | United States             | 0.996226029284944 | United States            | Q30      | r10
+(6 rows)
+
