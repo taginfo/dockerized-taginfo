@@ -1,0 +1,34 @@
+# generated : 2019-12-29:15:14  // template : ./setup/template/docker-compose.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  #---------------------------------------------------------
+  # Service for : "aq"-"Antarctica" + taginfo-dev.opengeodata.hu
+  #               continent: "aq"
+
+  taginfo-aq-aq:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "12001:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=aq-aq.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=12001
+    volumes:
+     - ./aq/data:/osm/data
+     - ./aq/download:/osm/download
+     - ./aq:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+
+# generated : 2019-12-29:15:14  // template : /setup/docker-compose.jinja2

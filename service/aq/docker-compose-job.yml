@@ -1,0 +1,52 @@
+# generated : 2019-12-29:15:14  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=aq
+     - CONTINENT_LONG=antarctica
+
+
+
+  #---------------------------------------------------------
+  # Service for : "aq" - "Antarctica"
+  #            continent: "aq"
+  #
+  taginfo-job-aq-aq:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./aq/data:/osm/data
+     - ./aq/download:/osm/download
+     - ./aq/sources:/osm/sources:rw
+     - ./aq:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=aq
+     - AREA_NAME="Antarctica"
+     - GDNAME=${GDNAME:-antarctica}   
+     - CONTINENT=aq
+     - CONTINENT_LONG=antarctica
+
+
+# generated : 2019-12-29:15:14  
