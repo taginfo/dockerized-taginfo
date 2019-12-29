@@ -1,0 +1,716 @@
+# generated : 2019-12-29:14:52  // template : ./setup/template/docker-compose.jinja2
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  #---------------------------------------------------------
+  # Service for : "ag"-"Antigua and Barbuda" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ag:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18001:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ag.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18001
+    volumes:
+     - ./ag/data:/osm/data
+     - ./ag/download:/osm/download
+     - ./ag:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ai"-"Anguilla" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ai:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18002:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ai.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18002
+    volumes:
+     - ./ai/data:/osm/data
+     - ./ai/download:/osm/download
+     - ./ai:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "bb"-"Barbados" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-bb:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18003:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-bb.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18003
+    volumes:
+     - ./bb/data:/osm/data
+     - ./bb/download:/osm/download
+     - ./bb:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "bq"-"Caribbean Netherlands" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-bq:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18004:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-bq.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18004
+    volumes:
+     - ./bq/data:/osm/data
+     - ./bq/download:/osm/download
+     - ./bq:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "bs"-"The Bahamas" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-bs:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18005:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-bs.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18005
+    volumes:
+     - ./bs/data:/osm/data
+     - ./bs/download:/osm/download
+     - ./bs:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "bz"-"Belize" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-bz:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18006:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-bz.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18006
+    volumes:
+     - ./bz/data:/osm/data
+     - ./bz/download:/osm/download
+     - ./bz:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "cr"-"Costa Rica" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-cr:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18007:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-cr.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18007
+    volumes:
+     - ./cr/data:/osm/data
+     - ./cr/download:/osm/download
+     - ./cr:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "cu"-"Cuba" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-cu:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18008:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-cu.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18008
+    volumes:
+     - ./cu/data:/osm/data
+     - ./cu/download:/osm/download
+     - ./cu:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "dm"-"Dominica" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-dm:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18009:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-dm.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18009
+    volumes:
+     - ./dm/data:/osm/data
+     - ./dm/download:/osm/download
+     - ./dm:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "do"-"Dominican Republic" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-do:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18010:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-do.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18010
+    volumes:
+     - ./do/data:/osm/data
+     - ./do/download:/osm/download
+     - ./do:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-bl"-"Saint Barthélemy" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-fr-bl:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18011:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-fr-bl.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18011
+    volumes:
+     - ./fr-bl/data:/osm/data
+     - ./fr-bl/download:/osm/download
+     - ./fr-bl:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-mf"-"Saint Martin (France)" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-fr-mf:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18012:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-fr-mf.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18012
+    volumes:
+     - ./fr-mf/data:/osm/data
+     - ./fr-mf/download:/osm/download
+     - ./fr-mf:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "fr-mq"-"Martinique" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-fr-mq:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18013:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-fr-mq.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18013
+    volumes:
+     - ./fr-mq/data:/osm/data
+     - ./fr-mq/download:/osm/download
+     - ./fr-mq:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gd"-"Grenada" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-gd:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18014:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-gd.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18014
+    volumes:
+     - ./gd/data:/osm/data
+     - ./gd/download:/osm/download
+     - ./gd:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gp"-"Guadeloupe" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-gp:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18015:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-gp.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18015
+    volumes:
+     - ./gp/data:/osm/data
+     - ./gp/download:/osm/download
+     - ./gp:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "gt"-"Guatemala" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-gt:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18016:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-gt.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18016
+    volumes:
+     - ./gt/data:/osm/data
+     - ./gt/download:/osm/download
+     - ./gt:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "hn"-"Honduras" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-hn:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18017:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-hn.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18017
+    volumes:
+     - ./hn/data:/osm/data
+     - ./hn/download:/osm/download
+     - ./hn:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ht"-"Haiti" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ht:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18018:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ht.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18018
+    volumes:
+     - ./ht/data:/osm/data
+     - ./ht/download:/osm/download
+     - ./ht:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "jm"-"Jamaica" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-jm:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18019:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-jm.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18019
+    volumes:
+     - ./jm/data:/osm/data
+     - ./jm/download:/osm/download
+     - ./jm:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "kn"-"Saint Kitts and Nevis" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-kn:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18020:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-kn.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18020
+    volumes:
+     - ./kn/data:/osm/data
+     - ./kn/download:/osm/download
+     - ./kn:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ky"-"Cayman Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ky:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18021:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ky.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18021
+    volumes:
+     - ./ky/data:/osm/data
+     - ./ky/download:/osm/download
+     - ./ky:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "lc"-"Saint Lucia" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-lc:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18022:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-lc.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18022
+    volumes:
+     - ./lc/data:/osm/data
+     - ./lc/download:/osm/download
+     - ./lc:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ms"-"Montserrat" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ms:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18023:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ms.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18023
+    volumes:
+     - ./ms/data:/osm/data
+     - ./ms/download:/osm/download
+     - ./ms:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "ni"-"Nicaragua" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-ni:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18024:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-ni.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18024
+    volumes:
+     - ./ni/data:/osm/data
+     - ./ni/download:/osm/download
+     - ./ni:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nl-aw"-"Aruba" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-nl-aw:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18025:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-nl-aw.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18025
+    volumes:
+     - ./nl-aw/data:/osm/data
+     - ./nl-aw/download:/osm/download
+     - ./nl-aw:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nl-cw"-"Curacao" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-nl-cw:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18026:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-nl-cw.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18026
+    volumes:
+     - ./nl-cw/data:/osm/data
+     - ./nl-cw/download:/osm/download
+     - ./nl-cw:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "nl-sx"-"Sint Maarten (Netherlands)" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-nl-sx:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18027:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-nl-sx.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18027
+    volumes:
+     - ./nl-sx/data:/osm/data
+     - ./nl-sx/download:/osm/download
+     - ./nl-sx:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "sv"-"El Salvador" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-sv:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18028:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-sv.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18028
+    volumes:
+     - ./sv/data:/osm/data
+     - ./sv/download:/osm/download
+     - ./sv:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "tc"-"Turks and Caicos Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-tc:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18029:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-tc.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18029
+    volumes:
+     - ./tc/data:/osm/data
+     - ./tc/download:/osm/download
+     - ./tc:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "tt"-"Trinidad and Tobago" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-tt:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18030:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-tt.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18030
+    volumes:
+     - ./tt/data:/osm/data
+     - ./tt/download:/osm/download
+     - ./tt:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "vc"-"Saint Vincent and the Grenadines" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-vc:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18031:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-vc.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18031
+    volumes:
+     - ./vc/data:/osm/data
+     - ./vc/download:/osm/download
+     - ./vc:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+  #---------------------------------------------------------
+  # Service for : "vg"-"British Virgin Islands" + taginfo-dev.opengeodata.hu
+  #               continent: "ca"
+
+  taginfo-ca-vg:
+    user: ${CURRENT_UID}
+    restart: always
+    image: taginfo_view
+    ports:
+      - "18032:4567"
+    networks:
+      - taginfo
+    environment:
+      - VIRTUAL_HOST=ca-vg.taginfo-dev.opengeodata.hu
+      - VIRTUAL_PORT=4567
+      - MAPPED_PORT=18032
+    volumes:
+     - ./vg/data:/osm/data
+     - ./vg/download:/osm/download
+     - ./vg:/osm/cfg
+     - ../../sh:/osm/sh:ro
+
+
+# generated : 2019-12-29:14:52  // template : /setup/docker-compose.jinja2

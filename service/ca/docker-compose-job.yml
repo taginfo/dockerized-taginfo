@@ -1,0 +1,765 @@
+# generated : 2019-12-29:14:52  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+
+
+  #---------------------------------------------------------
+  # Service for : "ag" - "Antigua and Barbuda"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ag:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ag/data:/osm/data
+     - ./ag/download:/osm/download
+     - ./ag/sources:/osm/sources:rw
+     - ./ag:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ag
+     - AREA_NAME="Antigua and Barbuda"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "ai" - "Anguilla"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ai:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ai/data:/osm/data
+     - ./ai/download:/osm/download
+     - ./ai/sources:/osm/sources:rw
+     - ./ai:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ai
+     - AREA_NAME="Anguilla"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "bb" - "Barbados"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-bb:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bb/data:/osm/data
+     - ./bb/download:/osm/download
+     - ./bb/sources:/osm/sources:rw
+     - ./bb:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bb
+     - AREA_NAME="Barbados"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "bq" - "Caribbean Netherlands"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-bq:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bq/data:/osm/data
+     - ./bq/download:/osm/download
+     - ./bq/sources:/osm/sources:rw
+     - ./bq:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bq
+     - AREA_NAME="Caribbean Netherlands"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "bs" - "The Bahamas"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-bs:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bs/data:/osm/data
+     - ./bs/download:/osm/download
+     - ./bs/sources:/osm/sources:rw
+     - ./bs:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bs
+     - AREA_NAME="The Bahamas"
+     - GDNAME=${GDNAME:-bahamas}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "bz" - "Belize"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-bz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./bz/data:/osm/data
+     - ./bz/download:/osm/download
+     - ./bz/sources:/osm/sources:rw
+     - ./bz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=bz
+     - AREA_NAME="Belize"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "cr" - "Costa Rica"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-cr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cr/data:/osm/data
+     - ./cr/download:/osm/download
+     - ./cr/sources:/osm/sources:rw
+     - ./cr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cr
+     - AREA_NAME="Costa Rica"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "cu" - "Cuba"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-cu:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cu/data:/osm/data
+     - ./cu/download:/osm/download
+     - ./cu/sources:/osm/sources:rw
+     - ./cu:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cu
+     - AREA_NAME="Cuba"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "dm" - "Dominica"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-dm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./dm/data:/osm/data
+     - ./dm/download:/osm/download
+     - ./dm/sources:/osm/sources:rw
+     - ./dm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=dm
+     - AREA_NAME="Dominica"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "do" - "Dominican Republic"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-do:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./do/data:/osm/data
+     - ./do/download:/osm/download
+     - ./do/sources:/osm/sources:rw
+     - ./do:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=do
+     - AREA_NAME="Dominican Republic"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-bl" - "Saint Barthélemy"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-fr-bl:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-bl/data:/osm/data
+     - ./fr-bl/download:/osm/download
+     - ./fr-bl/sources:/osm/sources:rw
+     - ./fr-bl:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-bl
+     - AREA_NAME="Saint Barthélemy"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-mf" - "Saint Martin (France)"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-fr-mf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-mf/data:/osm/data
+     - ./fr-mf/download:/osm/download
+     - ./fr-mf/sources:/osm/sources:rw
+     - ./fr-mf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-mf
+     - AREA_NAME="Saint Martin (France)"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "fr-mq" - "Martinique"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-fr-mq:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-mq/data:/osm/data
+     - ./fr-mq/download:/osm/download
+     - ./fr-mq/sources:/osm/sources:rw
+     - ./fr-mq:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-mq
+     - AREA_NAME="Martinique"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "gd" - "Grenada"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-gd:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gd/data:/osm/data
+     - ./gd/download:/osm/download
+     - ./gd/sources:/osm/sources:rw
+     - ./gd:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gd
+     - AREA_NAME="Grenada"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "gp" - "Guadeloupe"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-gp:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gp/data:/osm/data
+     - ./gp/download:/osm/download
+     - ./gp/sources:/osm/sources:rw
+     - ./gp:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gp
+     - AREA_NAME="Guadeloupe"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "gt" - "Guatemala"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-gt:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./gt/data:/osm/data
+     - ./gt/download:/osm/download
+     - ./gt/sources:/osm/sources:rw
+     - ./gt:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=gt
+     - AREA_NAME="Guatemala"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "hn" - "Honduras"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-hn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./hn/data:/osm/data
+     - ./hn/download:/osm/download
+     - ./hn/sources:/osm/sources:rw
+     - ./hn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=hn
+     - AREA_NAME="Honduras"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "ht" - "Haiti"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ht:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ht/data:/osm/data
+     - ./ht/download:/osm/download
+     - ./ht/sources:/osm/sources:rw
+     - ./ht:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ht
+     - AREA_NAME="Haiti"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "jm" - "Jamaica"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-jm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./jm/data:/osm/data
+     - ./jm/download:/osm/download
+     - ./jm/sources:/osm/sources:rw
+     - ./jm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=jm
+     - AREA_NAME="Jamaica"
+     - GDNAME=${GDNAME:-jamaica}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "kn" - "Saint Kitts and Nevis"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-kn:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./kn/data:/osm/data
+     - ./kn/download:/osm/download
+     - ./kn/sources:/osm/sources:rw
+     - ./kn:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=kn
+     - AREA_NAME="Saint Kitts and Nevis"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "ky" - "Cayman Islands"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ky:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ky/data:/osm/data
+     - ./ky/download:/osm/download
+     - ./ky/sources:/osm/sources:rw
+     - ./ky:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ky
+     - AREA_NAME="Cayman Islands"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "lc" - "Saint Lucia"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-lc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./lc/data:/osm/data
+     - ./lc/download:/osm/download
+     - ./lc/sources:/osm/sources:rw
+     - ./lc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=lc
+     - AREA_NAME="Saint Lucia"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "ms" - "Montserrat"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ms:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ms/data:/osm/data
+     - ./ms/download:/osm/download
+     - ./ms/sources:/osm/sources:rw
+     - ./ms:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ms
+     - AREA_NAME="Montserrat"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "ni" - "Nicaragua"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-ni:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ni/data:/osm/data
+     - ./ni/download:/osm/download
+     - ./ni/sources:/osm/sources:rw
+     - ./ni:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ni
+     - AREA_NAME="Nicaragua"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "nl-aw" - "Aruba"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-nl-aw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nl-aw/data:/osm/data
+     - ./nl-aw/download:/osm/download
+     - ./nl-aw/sources:/osm/sources:rw
+     - ./nl-aw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nl-aw
+     - AREA_NAME="Aruba"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "nl-cw" - "Curacao"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-nl-cw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nl-cw/data:/osm/data
+     - ./nl-cw/download:/osm/download
+     - ./nl-cw/sources:/osm/sources:rw
+     - ./nl-cw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nl-cw
+     - AREA_NAME="Curacao"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "nl-sx" - "Sint Maarten (Netherlands)"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-nl-sx:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nl-sx/data:/osm/data
+     - ./nl-sx/download:/osm/download
+     - ./nl-sx/sources:/osm/sources:rw
+     - ./nl-sx:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nl-sx
+     - AREA_NAME="Sint Maarten (Netherlands)"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "sv" - "El Salvador"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-sv:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sv/data:/osm/data
+     - ./sv/download:/osm/download
+     - ./sv/sources:/osm/sources:rw
+     - ./sv:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sv
+     - AREA_NAME="El Salvador"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "tc" - "Turks and Caicos Islands"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-tc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tc/data:/osm/data
+     - ./tc/download:/osm/download
+     - ./tc/sources:/osm/sources:rw
+     - ./tc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tc
+     - AREA_NAME="Turks and Caicos Islands"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "tt" - "Trinidad and Tobago"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-tt:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tt/data:/osm/data
+     - ./tt/download:/osm/download
+     - ./tt/sources:/osm/sources:rw
+     - ./tt:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tt
+     - AREA_NAME="Trinidad and Tobago"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "vc" - "Saint Vincent and the Grenadines"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-vc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./vc/data:/osm/data
+     - ./vc/download:/osm/download
+     - ./vc/sources:/osm/sources:rw
+     - ./vc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=vc
+     - AREA_NAME="Saint Vincent and the Grenadines"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+  #---------------------------------------------------------
+  # Service for : "vg" - "British Virgin Islands"
+  #            continent: "ca"
+  #
+  taginfo-job-ca-vg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./vg/data:/osm/data
+     - ./vg/download:/osm/download
+     - ./vg/sources:/osm/sources:rw
+     - ./vg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=vg
+     - AREA_NAME="British Virgin Islands"
+     - GDNAME=${GDNAME:-central-america}   
+     - CONTINENT=ca
+     - CONTINENT_LONG=central-america
+
+
+# generated : 2019-12-29:14:52  

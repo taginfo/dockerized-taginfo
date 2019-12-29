@@ -1,0 +1,40 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','dk')  AND  1=1   
+      order by iso ;
+  iso  |             name_en              |     area_pct      |               name               | wikidata |  osm_id  
+-------+----------------------------------+-------------------+----------------------------------+----------+----------
+ ag    | Antigua and Barbuda              |                 1 | Antigua and Barbuda              | Q781     | r536900
+ ai    | Anguilla                         |                 1 | Anguilla                         | Q25228   | r2177161
+ bb    | Barbados                         |                 1 | Barbados                         | Q244     | r547511
+ bq    | Caribbean Netherlands            |                 1 | Caribisch Nederland              | Q27561   | r1216720
+ bs    | The Bahamas                      |                 1 | The Bahamas                      | Q778     | r547469
+ bz    | Belize                           | 0.993771304381711 | Belize                           | Q242     | r287827
+ cr    | Costa Rica                       |                 1 | Costa Rica                       | Q800     | r287667
+ cu    | Cuba                             |                 1 | Cuba                             | Q241     | r307833
+ dm    | Dominica                         |                 1 | Dominica                         | Q784     | r307823
+ do    | Dominican Republic               |                 1 | República Dominicana             | Q786     | r307828
+ fr-bl | Saint Barthélemy                 |                 1 | Saint-Barthélemy                 | Q25362   | r537967
+ fr-mf | Saint Martin (France)            |                 1 | Saint-Martin (France)            | Q126125  | r1891583
+ fr-mq | Martinique                       |                 1 | Martinique                       | Q17054   | r1891495
+ gd    | Grenada                          |                 1 | Grenada                          | Q769     | r550727
+ gp    | Guadeloupe                       |                 1 | Guadeloupe                       | Q17012   | r1401835
+ gt    | Guatemala                        | 0.994516880923729 | Guatemala                        | Q774     | r1521463
+ hn    | Honduras                         |                 1 | Honduras                         | Q783     | r287670
+ ht    | Haiti                            |                 1 | Ayiti                            | Q790     | r307829
+ jm    | Jamaica                          |                 1 | Jamaica                          | Q766     | r555017
+ kn    | Saint Kitts and Nevis            |                 1 | Saint Kitts and Nevis            | Q763     | r536899
+ ky    | Cayman Islands                   |                 1 | Cayman Islands                   | Q5785    | r2185366
+ lc    | Saint Lucia                      |                 1 | Saint Lucia                      | Q760     | r550728
+ ms    | Montserrat                       |                 1 | Montserrat                       | Q13353   | r537257
+ ni    | Nicaragua                        |                 1 | Nicaragua                        | Q811     | r287666
+ nl-aw | Aruba                            |                 1 | Aruba                            | Q21203   | r1231749
+ nl-cw | Curacao                          |                 1 | Curaçao                          | Q25279   | r1216719
+ nl-sx | Sint Maarten (Netherlands)       |                 1 | Sint Maarten (Nederland)         | Q26273   | r1231790
+ sv    | El Salvador                      |                 1 | El Salvador                      | Q792     | r1520612
+ tc    | Turks and Caicos Islands         |                 1 | Turks and Caicos Islands         | Q18221   | r547479
+ tt    | Trinidad and Tobago              |                 1 | Trinidad and Tobago              | Q754     | r555717
+ vc    | Saint Vincent and the Grenadines |                 1 | Saint Vincent and the Grenadines | Q757     | r550725
+ vg    | British Virgin Islands           |                 1 | British Virgin Islands           | Q25305   | r285454
+(32 rows)
+
