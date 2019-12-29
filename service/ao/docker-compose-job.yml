@@ -1,0 +1,512 @@
+# generated : 2019-12-29:15:33  // template : ./setup/template/docker-compose-job.jinja2
+
+# For jobs ...
+
+version: "3.5"
+
+networks:
+  taginfo:
+    name: taginfo
+
+services:
+
+  # for downloading geofabrik osm extract  
+  taginfo_download:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+
+
+  #---------------------------------------------------------
+  # Service for : "au" - "Australia"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-au:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./au/data:/osm/data
+     - ./au/download:/osm/download
+     - ./au/sources:/osm/sources:rw
+     - ./au:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=au
+     - AREA_NAME="Australia"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "cc" - "Cocos (Keeling) Islands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-cc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cc/data:/osm/data
+     - ./cc/download:/osm/download
+     - ./cc/sources:/osm/sources:rw
+     - ./cc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cc
+     - AREA_NAME="Cocos (Keeling) Islands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "cx" - "Christmas Island"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-cx:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./cx/data:/osm/data
+     - ./cx/download:/osm/download
+     - ./cx/sources:/osm/sources:rw
+     - ./cx:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=cx
+     - AREA_NAME="Christmas Island"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "fj" - "Fiji"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-fj:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fj/data:/osm/data
+     - ./fj/download:/osm/download
+     - ./fj/sources:/osm/sources:rw
+     - ./fj:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fj
+     - AREA_NAME="Fiji"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "fm" - "Federated States of Micronesia"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-fm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fm/data:/osm/data
+     - ./fm/download:/osm/download
+     - ./fm/sources:/osm/sources:rw
+     - ./fm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fm
+     - AREA_NAME="Federated States of Micronesia"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "fr-nc" - "New Caledonia"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-fr-nc:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-nc/data:/osm/data
+     - ./fr-nc/download:/osm/download
+     - ./fr-nc/sources:/osm/sources:rw
+     - ./fr-nc:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-nc
+     - AREA_NAME="New Caledonia"
+     - GDNAME=${GDNAME:-new-caledonia}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "fr-tf" - "French Southern and Antarctic Lands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-fr-tf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./fr-tf/data:/osm/data
+     - ./fr-tf/download:/osm/download
+     - ./fr-tf/sources:/osm/sources:rw
+     - ./fr-tf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=fr-tf
+     - AREA_NAME="French Southern and Antarctic Lands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "hm" - "Heard Island and McDonald Islands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-hm:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./hm/data:/osm/data
+     - ./hm/download:/osm/download
+     - ./hm/sources:/osm/sources:rw
+     - ./hm:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=hm
+     - AREA_NAME="Heard Island and McDonald Islands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "ki" - "Kiribati"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-ki:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./ki/data:/osm/data
+     - ./ki/download:/osm/download
+     - ./ki/sources:/osm/sources:rw
+     - ./ki:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=ki
+     - AREA_NAME="Kiribati"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "mh" - "Marshall Islands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-mh:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./mh/data:/osm/data
+     - ./mh/download:/osm/download
+     - ./mh/sources:/osm/sources:rw
+     - ./mh:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=mh
+     - AREA_NAME="Marshall Islands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "nf" - "Norfolk Island"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-nf:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nf/data:/osm/data
+     - ./nf/download:/osm/download
+     - ./nf/sources:/osm/sources:rw
+     - ./nf:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nf
+     - AREA_NAME="Norfolk Island"
+     - GDNAME=${GDNAME:-australia}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "nr" - "Nauru"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-nr:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nr/data:/osm/data
+     - ./nr/download:/osm/download
+     - ./nr/sources:/osm/sources:rw
+     - ./nr:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nr
+     - AREA_NAME="Nauru"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "nz" - "New Zealand"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-nz:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./nz/data:/osm/data
+     - ./nz/download:/osm/download
+     - ./nz/sources:/osm/sources:rw
+     - ./nz:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=nz
+     - AREA_NAME="New Zealand"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "pg" - "Papua New Guinea"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-pg:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./pg/data:/osm/data
+     - ./pg/download:/osm/download
+     - ./pg/sources:/osm/sources:rw
+     - ./pg:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=pg
+     - AREA_NAME="Papua New Guinea"
+     - GDNAME=${GDNAME:-papua-new-guinea}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "pw" - "Palau"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-pw:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./pw/data:/osm/data
+     - ./pw/download:/osm/download
+     - ./pw/sources:/osm/sources:rw
+     - ./pw:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=pw
+     - AREA_NAME="Palau"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "sb" - "Solomon Islands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-sb:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./sb/data:/osm/data
+     - ./sb/download:/osm/download
+     - ./sb/sources:/osm/sources:rw
+     - ./sb:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=sb
+     - AREA_NAME="Solomon Islands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "tv" - "Tuvalu"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-tv:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./tv/data:/osm/data
+     - ./tv/download:/osm/download
+     - ./tv/sources:/osm/sources:rw
+     - ./tv:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=tv
+     - AREA_NAME="Tuvalu"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "us-gu" - "Guam"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-us-gu:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us-gu/data:/osm/data
+     - ./us-gu/download:/osm/download
+     - ./us-gu/sources:/osm/sources:rw
+     - ./us-gu:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us-gu
+     - AREA_NAME="Guam"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "us-mp" - "Northern Mariana Islands"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-us-mp:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us-mp/data:/osm/data
+     - ./us-mp/download:/osm/download
+     - ./us-mp/sources:/osm/sources:rw
+     - ./us-mp:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us-mp
+     - AREA_NAME="Northern Mariana Islands"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "us-um" - "United States of America (Minor Outlying Islands);Wake Island (Disputed area USA-MARSHALL ISLANDS)"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-us-um:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./us-um/data:/osm/data
+     - ./us-um/download:/osm/download
+     - ./us-um/sources:/osm/sources:rw
+     - ./us-um:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=us-um
+     - AREA_NAME="United States of America (Minor Outlying Islands);Wake Island (Disputed area USA-MARSHALL ISLANDS)"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+  #---------------------------------------------------------
+  # Service for : "vu" - "Vanuatu"
+  #            continent: "ao"
+  #
+  taginfo-job-ao-vu:
+    image: taginfo_job
+    user: ${CURRENT_UID}
+    networks:
+      - taginfo    
+    volumes:
+     - ./vu/data:/osm/data
+     - ./vu/download:/osm/download
+     - ./vu/sources:/osm/sources:rw
+     - ./vu:/osm/cfg
+     - ../../import:/osm/import
+     - ../../sh:/osm/sh
+    environment:
+     - AREA_ID=vu
+     - AREA_NAME="Vanuatu"
+     - GDNAME=${GDNAME:-australia-oceania}   
+     - CONTINENT=ao
+     - CONTINENT_LONG=australia-oceania
+
+
+# generated : 2019-12-29:15:33  

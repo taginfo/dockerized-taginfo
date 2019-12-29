@@ -1,0 +1,115 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id from osm_admin2_continent_all order by iso ;
+  iso   |               name_en               |     area_pct      |                                                name                                                | wikidata  |  osm_id   
+--------+-------------------------------------+-------------------+----------------------------------------------------------------------------------------------------+-----------+-----------
+ au     | Australia                           |                 1 | Australia                                                                                          | Q408      | r80500
+ au-act | Australian Capital Territory        |                 1 | Australian Capital Territory                                                                       | Q3258     | r2354197
+ au-nsw | New South Wales                     |                 1 | New South Wales                                                                                    | Q3224     | r2316593
+ au-nt  | Northern Territory                  |                 1 | Northern Territory                                                                                 | Q3235     | r2316594
+ au-qld | Queensland                          |                 1 | Queensland                                                                                         | Q36074    | r2316595
+ au-sa  | South Australia                     |                 1 | South Australia                                                                                    | Q35715    | r2316596
+ au-tas | Tasmania                            |                 1 | Tasmania                                                                                           | Q34366    | r2369652
+ au-vic | Victoria                            |                 1 | Victoria                                                                                           | Q36687    | r2316741
+ au-wa  | Western Australia                   |                 1 | Western Australia                                                                                  | Q3206     | r2316598
+ cc     | Cocos (Keeling) Islands             |                 1 | Cocos (Keeling) Islands                                                                            | Q36004    | r82636
+ cx     | Christmas Island                    |                 1 | Christmas Island                                                                                   | Q31063    | r2177207
+ fj     | Fiji                                |                 1 | Viti                                                                                               | Q712      | r571747
+ fj-c   |                                     |                 1 | Central                                                                                            | Q1053789  | r4632579
+ fj-e   |                                     |                 1 | Eastern                                                                                            | Q182169   | r4632580
+ fj-n   |                                     |                 1 | Northern                                                                                           | Q1062430  | r4632581
+ fj-r   |                                     |                 1 | Rotuma                                                                                             | Q459763   | r7223650
+ fj-w   | Western                             |                 1 | Western                                                                                            | Q1062451  | r4632582
+ fm     | Federated States of Micronesia      |                 1 | Micronesia                                                                                         | Q702      | r571802
+ fm-ksa |                                     |                 1 | Kosrae                                                                                             | Q459848   | r3819480
+ fm-pni |                                     |                 1 | Pohnpei                                                                                            | Q7771127  | r3819481
+ fm-trk |                                     |                 1 | Chuuk                                                                                              | Q221684   | r3819479
+ fm-yap |                                     |                 1 | Yap                                                                                                | Q11342951 | r3819422
+ fr-nc  | New Caledonia                       |                 1 | Nouvelle-Calédonie                                                                                 | Q33788    | r3407643
+ fr-tf  | French Southern and Antarctic Lands | 0.856493605376953 | Terres australes et antarctiques françaises                                                        | Q129003   | r2186658
+ hm     | Heard Island and McDonald Islands   |                 1 | Heard Island and McDonald Islands                                                                  | Q131198   | r2177227
+ id-pa  | Papua                               |                 1 | Papua                                                                                              | Q5095     | r4521144
+ id-pb  | West Papua                          |  0.87442463093294 | Papua Barat                                                                                        | Q5096     | r4521145
+ ki     | Kiribati                            | 0.568998639219037 | Kiribati                                                                                           | Q710      | r571178
+ mh     | Marshall Islands                    |                 1 | M̧ajeļ                                                                                              | Q709      | r571771
+ mu-cc  |                                     |                 1 | Saint Brandon                                                                                      |           | r3691786
+ mu-ro  | Rodrigues                           |                 1 | Rodrigues                                                                                          | Q208668   | r3691784
+ nf     | Norfolk Island                      |                 1 | Norfolk Island                                                                                     | Q31057    | r2574988
+ nr     | Nauru                               |                 1 | Naoero                                                                                             | Q697      | r571804
+ nr-01  | Aiwo District                       |                 1 | Aiwo                                                                                               | Q240017   | r8437545
+ nr-02  | Anabar District                     |                 1 | Anabar                                                                                             | Q328735   | r8437552
+ nr-03  | Anetan District                     |                 1 | Anetan                                                                                             | Q378813   | r8437551
+ nr-04  | Anibare District                    |                 1 | Anibare                                                                                            | Q328733   | r8382189
+ nr-05  | Baitsi District                     |                 1 | Baitsi                                                                                             | Q328727   | r8437549
+ nr-06  | Boe District                        |                 1 | Boe                                                                                                | Q378829   | r8437544
+ nr-07  | Buada District                      |                 1 | Buada                                                                                              | Q202747   | r8437555
+ nr-08  | Denigomodu District                 |                 1 | Denigomodu                                                                                         | Q1187200  | r8437546
+ nr-09  | Ewa District                        |                 1 | Ewa                                                                                                | Q274381   | r8437550
+ nr-10  | iJuw District                       |                 1 | Ijuw                                                                                               | Q328738   | r8382150
+ nr-11  | Meneng District                     |                 1 | Meneng                                                                                             | Q327788   | r8437553
+ nr-12  | Nibok District                      |                 1 | Nibok                                                                                              | Q378780   | r8437547
+ nr-13  | Uaboe District                      |                 1 | Uaboe                                                                                              | Q473764   | r8437548
+ nr-14  | Yaren District                      |                 1 | Yaren                                                                                              | Q31026    | r8384066
+ nz     | New Zealand                         | 0.956666121562465 | New Zealand / Aotearoa                                                                             | Q664      | r556706
+ nz-auk |                                     |                 1 | Auckland                                                                                           | Q726917   | r2094141
+ nz-bop |                                     |                 1 | Bay of Plenty                                                                                      | Q2192924  | r1790755
+ nz-can | Canterbury                          |                 1 | Canterbury                                                                                         | Q657004   | r1640137
+ nz-gis |                                     |                 1 | Gisborne                                                                                           | Q140246   | r2643819
+ nz-hkb |                                     |                 1 | Hawke's Bay                                                                                        | Q251825   | r1643811
+ nz-mbh |                                     |                 1 | Marlborough                                                                                        | Q140083   | r4266977
+ nz-mwt |                                     |                 1 | Manawatu-Wanganui                                                                                  | Q139907   | r1638992
+ nz-nsn |                                     |                 1 | Nelson                                                                                             | Q1995856  | r4266962
+ nz-ntl |                                     |                 1 | Northland                                                                                          | Q59596    | r2133870
+ nz-ota |                                     |                 1 | Otago                                                                                              | Q692912   | r1640138
+ nz-stl |                                     |                 1 | Southland                                                                                          | Q864971   | r1640159
+ nz-tas |                                     |                 1 | Tasman                                                                                             | Q666142   | r4266979
+ nz-tki |                                     |                 1 | Taranaki                                                                                           | Q140207   | r1643812
+ nz-wgn | Wellington                          |                 1 | Wellington                                                                                         | Q856010   | r1638991
+ nz-wko |                                     |                 1 | Waikato                                                                                            | Q139918   | r2094142
+ nz-wtc | West Coast                          |                 1 | West Coast                                                                                         | Q541468   | r1640136
+ pg     | Papua New Guinea                    |                 1 | Papua Niugini                                                                                      | Q691      | r307866
+ pg-cpk |                                     |                 1 | Simbu                                                                                              | Q599448   | r311773
+ pg-cpm |                                     |                 1 | Central                                                                                            | Q874942   | r311783
+ pg-ebr | East New Britain                    |                 1 | East New Britain                                                                                   | Q753702   | r3777381
+ pg-ehg |                                     |                 1 | Eastern Highlands                                                                                  | Q849812   | r311774
+ pg-epw |                                     |                 1 | Enga                                                                                               | Q862584   | r311771
+ pg-esw |                                     |                 1 | East Sepik                                                                                         | Q690880   | r311778
+ pg-gpk |                                     |                 1 | Gulf                                                                                               | Q874980   | r311775
+ pg-hla |                                     |                 1 | Hela                                                                                               | Q1382499  | r3778575
+ pg-jwk |                                     |                 1 | Jiwaka                                                                                             | Q1400625  | r3778576
+ pg-mba |                                     |                 1 | Milne Bay                                                                                          | Q874962   | r311782
+ pg-mpl |                                     |                 1 | Morobe                                                                                             | Q853664   | r311780
+ pg-mpm |                                     |                 1 | Madang                                                                                             | Q326254   | r311779
+ pg-mrl |                                     |                 1 | Manus                                                                                              | Q874935   | r3777382
+ pg-ncd |                                     |                 1 | National Capital District                                                                          | Q1378310  | r269423
+ pg-nik | New Ireland                         |                 1 | New Ireland                                                                                        | Q838690   | r3777383
+ pg-npp |                                     |                 1 | Oro                                                                                                | Q753686   | r311781
+ pg-nsb |                                     |                 1 | Bougainville                                                                                       | Q18826    | r3777380
+ pg-san |                                     |                 1 | Sandaun                                                                                            | Q753689   | r311777
+ pg-shm |                                     |                 1 | Southern Highlands                                                                                 | Q849801   | r311770
+ pg-wbk | West New Britain                    |                 1 | West New Britain                                                                                   | Q667468   | r3777384
+ pg-whm |                                     |                 1 | Western Highlands                                                                                  | Q849807   | r311772
+ pg-wpd |                                     |                 1 | Western                                                                                            | Q849790   | r311776
+ pw     | Palau                               |                 1 | Belau                                                                                              | Q695      | r571805
+ sb     | Solomon Islands                     |                 1 | Solomon Islands                                                                                    | Q685      | r1857436
+ sb-ce  | Central Province                    |                 1 | Central Province                                                                                   | Q293722   | r2536258
+ sb-ch  |                                     |                 1 | Choiseul Province                                                                                  | Q399063   | r2536259
+ sb-ct  |                                     |                 1 | Capital Territory                                                                                  | Q40921    | r2536278
+ sb-gu  |                                     |                 1 | Guadalcanal Province                                                                               | Q760888   | r2536260
+ sb-is  |                                     |                 1 | Isabel Province                                                                                    | Q1139082  | r2536261
+ sb-mk  |                                     |                 1 | Makira-Ulawa Province                                                                              | Q1116700  | r2536262
+ sb-ml  |                                     |                 1 | Malaita Province                                                                                   | Q1190896  | r2536263
+ sb-rb  |                                     |                 1 | Rennell and Bellona Province                                                                       | Q1051475  | r2536264
+ sb-te  |                                     |                 1 | Temotu Province                                                                                    | Q936088   | r2536265
+ sb-we  |                                     |                 1 | Western Province                                                                                   | Q150325   | r2536266
+ tv     | Tuvalu                              | 0.992030690123409 | Tuvalu                                                                                             | Q672      | r2177266
+ us-gu  | Guam                                |                 1 | Guam                                                                                               | Q16635    | r306001
+ us-mp  | Northern Mariana Islands            |                 1 | Northern Mariana Islands                                                                           | Q16644    | r306004
+ us-um  |                                     |                 1 | United States of America (Minor Outlying Islands);Wake Island (Disputed area USA-MARSHALL ISLANDS) |           | w42294763
+ vu     | Vanuatu                             |                 1 | Vanuatu                                                                                            | Q686      | r2177246
+ vu-map |                                     |                 1 | Malampa                                                                                            | Q740656   | r3765629
+ vu-pam |                                     |                 1 | Penama                                                                                             | Q836649   | r3765606
+ vu-sam |                                     |                 1 | Sanma                                                                                              | Q740640   | r3765591
+ vu-see | Shefa Province                      |                 1 | Shefa                                                                                              | Q650617   | r3765630
+ vu-tae |                                     |                 1 | Tafea                                                                                              | Q576417   | r3765631
+ vu-tob |                                     |                 1 | Torba                                                                                              | Q822514   | r3765596
+(110 rows)
+

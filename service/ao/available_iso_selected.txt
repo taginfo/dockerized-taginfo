@@ -1,0 +1,29 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where length(iso)=2 or substr(iso,1,2) in ('fr','nl','es','us')  AND  1=1   
+      order by iso ;
+  iso  |               name_en               |     area_pct      |                                                name                                                | wikidata |  osm_id   
+-------+-------------------------------------+-------------------+----------------------------------------------------------------------------------------------------+----------+-----------
+ au    | Australia                           |                 1 | Australia                                                                                          | Q408     | r80500
+ cc    | Cocos (Keeling) Islands             |                 1 | Cocos (Keeling) Islands                                                                            | Q36004   | r82636
+ cx    | Christmas Island                    |                 1 | Christmas Island                                                                                   | Q31063   | r2177207
+ fj    | Fiji                                |                 1 | Viti                                                                                               | Q712     | r571747
+ fm    | Federated States of Micronesia      |                 1 | Micronesia                                                                                         | Q702     | r571802
+ fr-nc | New Caledonia                       |                 1 | Nouvelle-Calédonie                                                                                 | Q33788   | r3407643
+ fr-tf | French Southern and Antarctic Lands | 0.856493605376953 | Terres australes et antarctiques françaises                                                        | Q129003  | r2186658
+ hm    | Heard Island and McDonald Islands   |                 1 | Heard Island and McDonald Islands                                                                  | Q131198  | r2177227
+ ki    | Kiribati                            | 0.568998639219037 | Kiribati                                                                                           | Q710     | r571178
+ mh    | Marshall Islands                    |                 1 | M̧ajeļ                                                                                              | Q709     | r571771
+ nf    | Norfolk Island                      |                 1 | Norfolk Island                                                                                     | Q31057   | r2574988
+ nr    | Nauru                               |                 1 | Naoero                                                                                             | Q697     | r571804
+ nz    | New Zealand                         | 0.956666121562465 | New Zealand / Aotearoa                                                                             | Q664     | r556706
+ pg    | Papua New Guinea                    |                 1 | Papua Niugini                                                                                      | Q691     | r307866
+ pw    | Palau                               |                 1 | Belau                                                                                              | Q695     | r571805
+ sb    | Solomon Islands                     |                 1 | Solomon Islands                                                                                    | Q685     | r1857436
+ tv    | Tuvalu                              | 0.992030690123409 | Tuvalu                                                                                             | Q672     | r2177266
+ us-gu | Guam                                |                 1 | Guam                                                                                               | Q16635   | r306001
+ us-mp | Northern Mariana Islands            |                 1 | Northern Mariana Islands                                                                           | Q16644   | r306004
+ us-um |                                     |                 1 | United States of America (Minor Outlying Islands);Wake Island (Disputed area USA-MARSHALL ISLANDS) |          | w42294763
+ vu    | Vanuatu                             |                 1 | Vanuatu                                                                                            | Q686     | r2177246
+(21 rows)
+
