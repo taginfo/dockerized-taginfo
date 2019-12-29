@@ -50,8 +50,15 @@ docker-compose run \
 echo ":: generated services"
 cat ./service/$CONTINENT/service_create.sh
 
+echo ":: clean temp poly/img/log files"
+rm -f ./service/$CONTINENT/*/poly/osm.geojson  
+rm -f ./service/$CONTINENT/*/poly/osm.poly
+rm -f ./service/$CONTINENT/*/img/dbackground0.png
+rm -f ./service/$CONTINENT/*/img/nebackground*.*
+rm -f ./service/$CONTINENT/*/img/tdbackground.png
+rm -f ./service/$CONTINENT/*.log
 
-echo ":: don't forget copy hugo files"
-#docker-compose run --rm -T taginfo_dev mkdir -p ./hugo/taginfo/content/$CONTINENT_LONG/
-#docker-compose run --rm -T taginfo_dev cp  ./service/$CONTINENT/service_index.md     ./hugo/taginfo/content/$CONTINENT_LONG/index.md
+echo ":: copy hugo files"
+docker-compose run --rm -T taginfo_dev mkdir -p ./hugo/taginfo/content/$CONTINENT_LONG/
+docker-compose run --rm -T taginfo_dev cp  ./service/$CONTINENT/service_index.md     ./hugo/taginfo/content/$CONTINENT_LONG/index.md
 

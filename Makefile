@@ -243,10 +243,25 @@ listtemposmpbf:
 listoldtaginfo:
 	ls ./service/*/*/data/old/*
 
+
+compress-service:  rmtempdata rmworkdata tar-service
+
 rmtempdata:
 	rm -f ./service/*/*/input/*.osm.pbf
 	rm -f ./service/*/*/data/old/*
 
+rmworkdata:
+	rm -vf ./service/*/*/sources/*.db
+	rm -vf ./service/*/*/sources/*.xlsx
+
+tar-service:
+	tar -zcvf taginfo_servicedata.tar.gz ./service/
+
+untar-service:
+	echo "uncompress to ./service_new  ; please rename to ./service manually"
+	mkdir -p ./service_new 
+	rm -vf ./service_new/*
+	tar -xzvf taginfo_servicedata.tar.gz -C service_new/
 
 rmdebugimages:
 	rm ./service/*/*/poly/osm.geojson
@@ -256,4 +271,3 @@ rmdebugimages:
 	rm ./service/*/*/img/nebackground.png.aux.xml
 	rm ./service/*/*/img/tdbackground.png
 	rm ./service/*/*/img/dbackground0.png
-
