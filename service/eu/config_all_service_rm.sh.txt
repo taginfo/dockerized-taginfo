@@ -1,0 +1,61 @@
+# generated : 2019-12-29:15:47  // template : ./setup/service_rm.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+
+ docker-compose rm -f taginfo-eu-ad
+ docker-compose rm -f taginfo-eu-al
+ docker-compose rm -f taginfo-eu-at
+ docker-compose rm -f taginfo-eu-ax
+ docker-compose rm -f taginfo-eu-ba
+ docker-compose rm -f taginfo-eu-be
+ docker-compose rm -f taginfo-eu-bg
+ docker-compose rm -f taginfo-eu-by
+ docker-compose rm -f taginfo-eu-ch
+ docker-compose rm -f taginfo-eu-cy
+ docker-compose rm -f taginfo-eu-cz
+ docker-compose rm -f taginfo-eu-de
+ docker-compose rm -f taginfo-eu-dk
+ docker-compose rm -f taginfo-eu-ee
+ docker-compose rm -f taginfo-eu-es
+ docker-compose rm -f taginfo-eu-fi
+ docker-compose rm -f taginfo-eu-fo
+ docker-compose rm -f taginfo-eu-fr-metropolitan
+ docker-compose rm -f taginfo-eu-gb
+ docker-compose rm -f taginfo-eu-ge
+ docker-compose rm -f taginfo-eu-gg
+ docker-compose rm -f taginfo-eu-gi
+ docker-compose rm -f taginfo-eu-gr
+ docker-compose rm -f taginfo-eu-hr
+ docker-compose rm -f taginfo-eu-hu
+ docker-compose rm -f taginfo-eu-ie
+ docker-compose rm -f taginfo-eu-im
+ docker-compose rm -f taginfo-eu-is
+ docker-compose rm -f taginfo-eu-it
+ docker-compose rm -f taginfo-eu-je
+ docker-compose rm -f taginfo-eu-li
+ docker-compose rm -f taginfo-eu-lt
+ docker-compose rm -f taginfo-eu-lu
+ docker-compose rm -f taginfo-eu-lv
+ docker-compose rm -f taginfo-eu-mc
+ docker-compose rm -f taginfo-eu-md
+ docker-compose rm -f taginfo-eu-me
+ docker-compose rm -f taginfo-eu-mk
+ docker-compose rm -f taginfo-eu-mt
+ docker-compose rm -f taginfo-eu-nl
+ docker-compose rm -f taginfo-eu-no
+ docker-compose rm -f taginfo-eu-pl
+ docker-compose rm -f taginfo-eu-pt
+ docker-compose rm -f taginfo-eu-ro
+ docker-compose rm -f taginfo-eu-rs
+ docker-compose rm -f taginfo-eu-se
+ docker-compose rm -f taginfo-eu-si
+ docker-compose rm -f taginfo-eu-sk
+ docker-compose rm -f taginfo-eu-sm
+ docker-compose rm -f taginfo-eu-tr
+ docker-compose rm -f taginfo-eu-ua
+ docker-compose rm -f taginfo-eu-uk-sba
+ docker-compose rm -f taginfo-eu-va
+ docker-compose rm -f taginfo-eu-xk
+ 
+# generated : 2019-12-29:15:47

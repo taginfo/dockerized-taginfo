@@ -1,0 +1,61 @@
+# generated : 2019-12-29:15:47  // template : ./setup/service_create.sh.jinja2
+
+export CURRENT_UID="$(id -u):$(id -g)" 
+
+
+ docker-compose up --no-start taginfo-eu-ad
+ docker-compose up --no-start taginfo-eu-al
+ docker-compose up --no-start taginfo-eu-at
+ docker-compose up --no-start taginfo-eu-ax
+ docker-compose up --no-start taginfo-eu-ba
+ docker-compose up --no-start taginfo-eu-be
+ docker-compose up --no-start taginfo-eu-bg
+ docker-compose up --no-start taginfo-eu-by
+ docker-compose up --no-start taginfo-eu-ch
+ docker-compose up --no-start taginfo-eu-cy
+ docker-compose up --no-start taginfo-eu-cz
+ docker-compose up --no-start taginfo-eu-de
+ docker-compose up --no-start taginfo-eu-dk
+ docker-compose up --no-start taginfo-eu-ee
+ docker-compose up --no-start taginfo-eu-es
+ docker-compose up --no-start taginfo-eu-fi
+ docker-compose up --no-start taginfo-eu-fo
+ docker-compose up --no-start taginfo-eu-fr-metropolitan
+ docker-compose up --no-start taginfo-eu-gb
+ docker-compose up --no-start taginfo-eu-ge
+ docker-compose up --no-start taginfo-eu-gg
+ docker-compose up --no-start taginfo-eu-gi
+ docker-compose up --no-start taginfo-eu-gr
+ docker-compose up --no-start taginfo-eu-hr
+ docker-compose up --no-start taginfo-eu-hu
+ docker-compose up --no-start taginfo-eu-ie
+ docker-compose up --no-start taginfo-eu-im
+ docker-compose up --no-start taginfo-eu-is
+ docker-compose up --no-start taginfo-eu-it
+ docker-compose up --no-start taginfo-eu-je
+ docker-compose up --no-start taginfo-eu-li
+ docker-compose up --no-start taginfo-eu-lt
+ docker-compose up --no-start taginfo-eu-lu
+ docker-compose up --no-start taginfo-eu-lv
+ docker-compose up --no-start taginfo-eu-mc
+ docker-compose up --no-start taginfo-eu-md
+ docker-compose up --no-start taginfo-eu-me
+ docker-compose up --no-start taginfo-eu-mk
+ docker-compose up --no-start taginfo-eu-mt
+ docker-compose up --no-start taginfo-eu-nl
+ docker-compose up --no-start taginfo-eu-no
+ docker-compose up --no-start taginfo-eu-pl
+ docker-compose up --no-start taginfo-eu-pt
+ docker-compose up --no-start taginfo-eu-ro
+ docker-compose up --no-start taginfo-eu-rs
+ docker-compose up --no-start taginfo-eu-se
+ docker-compose up --no-start taginfo-eu-si
+ docker-compose up --no-start taginfo-eu-sk
+ docker-compose up --no-start taginfo-eu-sm
+ docker-compose up --no-start taginfo-eu-tr
+ docker-compose up --no-start taginfo-eu-ua
+ docker-compose up --no-start taginfo-eu-uk-sba
+ docker-compose up --no-start taginfo-eu-va
+ docker-compose up --no-start taginfo-eu-xk
+ 
+# generated : 2019-12-29:15:47

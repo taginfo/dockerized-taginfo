@@ -1,0 +1,62 @@
+select iso, name_en,area_pct,name,wikidata,imposmid2shortid(id) as osm_id 
+      from osm_admin2_continent_all
+      where (length(iso)=2 AND iso not in ('ru','fr')) or (iso in ('uk-sba','fr-metropolitan'))  AND  1=1   
+      order by iso ;
+       iso       |           name_en            |     area_pct      |                   name                    | wikidata |  osm_id  
+-----------------+------------------------------+-------------------+-------------------------------------------+----------+----------
+ ad              | Andorra                      |                 1 | Andorra                                   | Q228     | r9407
+ al              | Albania                      |                 1 | Shqipëria                                 | Q222     | r53292
+ at              | Austria                      |                 1 | Österreich                                | Q40      | r16239
+ ax              | Åland Islands                |                 1 | Åland                                     | Q5689    | r1650407
+ ba              | Bosnia and Herzegovina       |                 1 | Bosna i Hercegovina / Босна и Херцеговина | Q225     | r2528142
+ be              | Belgium                      |                 1 | België / Belgique / Belgien               | Q31      | r52411
+ bg              | Bulgaria                     |                 1 | Бългaрия                                  | Q219     | r186382
+ by              | Belarus                      |                 1 | Беларусь                                  | Q184     | r59065
+ ch              | Switzerland                  |                 1 | Schweiz/Suisse/Svizzera/Svizra            | Q39      | r51701
+ cy              | Cyprus                       |                 1 | Κύπρος - Kıbrıs                           | Q229     | r307787
+ cz              | Czechia                      |                 1 | Česko                                     | Q213     | r51684
+ de              | Germany                      |                 1 | Deutschland                               | Q183     | r51477
+ dk              | Denmark                      |                 1 | Danmark                                   | Q35      | r50046
+ ee              | Estonia                      |                 1 | Eesti                                     | Q191     | r79510
+ es              | Spain (except CanaryIsland)  | 0.999998819906598 | España (except Canarias)                  | Q29      | r2
+ fi              | Finland                      |                 1 | Suomi                                     | Q33      | r54224
+ fo              | Faroe Islands                |                 1 | Føroyar                                   | Q4628    | r52939
+ fr-metropolitan | Metropolitan France          |                 1 | France métropolitaine                     | Q212429  | r1403916
+ gb              | United Kingdom               |                 1 | United Kingdom                            | Q145     | r62149
+ ge              | Georgia                      |                 1 | საქართველო                                | Q230     | r28699
+ gg              | Guernsey                     |                 1 | Guernsey                                  | Q25230   | r270009
+ gi              | Gibraltar                    |                 1 | Gibraltar                                 | Q1410    | r1278736
+ gr              | Greece                       |                 1 | Ελλάδα                                    | Q41      | r192307
+ hr              | Croatia                      |                 1 | Hrvatska                                  | Q224     | r214885
+ hu              | Hungary                      |                 1 | Magyarország                              | Q28      | r21335
+ ie              | Ireland                      |                 1 | Ireland                                   | Q27      | r62273
+ im              | Isle of Man                  |                 1 | Isle of Man                               | Q9676    | r62269
+ is              | Iceland                      |                 1 | Ísland                                    | Q189     | r299133
+ it              | Italy                        |                 1 | Italia                                    | Q38      | r365331
+ je              | Jersey                       |                 1 | Jersey                                    | Q785     | r367988
+ li              | Liechtenstein                |                 1 | Liechtenstein                             | Q347     | r1155955
+ lt              | Lithuania                    |                 1 | Lietuva                                   | Q37      | r72596
+ lu              | Luxembourg                   |                 1 | Lëtzebuerg                                | Q32      | r2171347
+ lv              | Latvia                       |                 1 | Latvija                                   | Q211     | r72594
+ mc              | Monaco                       |                 1 | Monaco                                    | Q235     | r1124039
+ md              | Moldova                      |                 1 | Moldova                                   | Q217     | r58974
+ me              | Montenegro                   |                 1 | Crna Gora / Црна Гора                     | Q236     | r53296
+ mk              | North Macedonia              |                 1 | Северна Македонија                        | Q221     | r53293
+ mt              | Malta                        |                 1 | Malta                                     | Q233     | r365307
+ nl              | Netherlands(Eu)              |                 1 | Nederland(Eu)                             | Q55      | r1
+ no              | Norway                       | 0.997956552480414 | Norge                                     | Q20      | r2978650
+ pl              | Poland                       |                 1 | Polska                                    | Q36      | r49715
+ pt              | Portugal                     |                 1 | Portugal                                  | Q45      | r295480
+ ro              | Romania                      |                 1 | România                                   | Q218     | r90689
+ rs              | Serbia                       |                 1 | Србија                                    | Q403     | r1741311
+ se              | Sweden                       |                 1 | Sverige                                   | Q34      | r52822
+ si              | Slovenia                     |                 1 | Slovenija                                 | Q215     | r218657
+ sk              | Slovakia                     |                 1 | Slovensko                                 | Q214     | r14296
+ sm              | San Marino                   |                 1 | San Marino                                | Q238     | r54624
+ tr              | Turkey                       |                 1 | Türkiye                                   | Q43      | r174737
+ ua              | Ukraine                      |                 1 | Україна                                   | Q212     | r60199
+ uk-sba          | British Sovereign Base Areas |                 1 | British Sovereign Base Areas              | Q37362   | r4
+ va              | Vatican City                 |                 1 | Civitas Vaticana                          | Q237     | r36989
+ xk              | Kosovo                       |                 1 | Kosova / Kosovo                           | Q1246    | r2088990
+(54 rows)
+
