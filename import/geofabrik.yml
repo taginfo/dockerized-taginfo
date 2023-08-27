@@ -4807,7 +4807,7 @@ elements:
     parent: africa
   ukraine:
     id: ukraine
-    name: Ukraine (with Crimea)
+    name: Ukraine
     files:
     - osm.pbf
     - kml
